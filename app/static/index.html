@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Development Team - Autonomous Command Center</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: { extend: { colors: { dark: { 800: '#1e1b4b', 900: '#0f172a' } } } }
+        }
+    </script>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen font-sans">
+    <!-- Header -->
+    <header class="border-b border-slate-800 bg-slate-950 px-6 py-4 flex justify-between items-center shadow-md">
+        <div class="flex items-center space-x-3">
+            <div class="h-3 w-3 rounded-full bg-emerald-500 animate-pulse" id="connection-indicator"></div>
+            <h1 class="text-xl font-bold tracking-wide bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">AI Development Team Core</h1>
+        </div>
+        <div class="text-sm text-slate-400">
+            WebSocket Status: <span id="ws-status" class="text-yellow-400 font-medium">Connecting...</span>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto p-6 space-y-6">
+        <!-- Agent Roles Status Grid -->
+        <div class="bg-slate-950 border border-slate-800 rounded-xl p-6 shadow-xl">
+            <h2 class="text-lg font-semibold mb-4 text-indigo-300">Active AI Agent Team</h2>
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                <div id="agent-manager" class="bg-slate-900 border border-slate-800 rounded-lg p-4 transition">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="font-semibold text-sm text-slate-200">📋 Manager</span>
+                        <span class="text-xs px-2 py-0.5 rounded bg-slate-800 text-slate-400 status-badge">Idle</span>
+                    </div>
+                    <p class="text-xs text-slate-500 agent-action">Waiting for task...</p>
+                </div>
+                <div id="agent-architect" class="bg-slate-900 border border-slate-800 rounded-lg p-4 transition">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="font-semibold text-sm text-slate-200">📐 Architect</span>
+                        <span class="text-xs px-2 py-0.5 rounded bg-slate-800 text-slate-400 status-badge">Idle</span>
+                    </div>
+                    <p class="text-xs text-slate-500 agent-action">Waiting for task...</p>
+                </div>
+                <div id="agent-developer" class="bg-slate-900 border border-slate-800 rounded-lg p-4 transition">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="font-semibold text-sm text-slate-200">💻 Developer</span>
+                        <span class="text-xs px-2 py-0.5 rounded bg-slate-800 text-slate-400 status-badge">Idle</span>
+                    </div>
+                    <p class="text-xs text-slate-500 agent-action">Waiting for task...</p>
+                </div>
+                <div id="agent-reviewer" class="bg-slate-900 border border-slate-800 rounded-lg p-4 transition">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="font-semibold text-sm text-slate-200">🔍 Reviewer</span>
+                        <span class="text-xs px-2 py-0.5 rounded bg-slate-800 text-slate-400 status-badge">Idle</span>
+                    </div>
+                    <p class="text-xs text-slate-500 agent-action">Waiting for task...</p>
+                </div>
+                <div id="agent-tester" class="bg-slate-900 border border-slate-800 rounded-lg p-4 transition">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="font-semibold text-sm text-slate-200">🧪 Tester</span>
+                        <span class="text-xs px-2 py-0.5 rounded bg-slate-800 text-slate-400 status-badge">Idle</span>
+                    </div>
+                    <p class="text-xs text-slate-500 agent-action">Waiting for task...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content Layout -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div class="lg:col-span-2 space-y-6">
+                <div class="bg-slate-950 border border-slate-800 rounded-xl p-6 shadow-xl">
+                    <h2 class="text-lg font-semibold mb-4 text-indigo-300">Command Center: Dispatch Task</h2>
+                    <form id="task-form" class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-400 mb-1">Task Title</label>
+                            <input type="text" id="task-title" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2.5 text-slate-200 focus:outline-none focus:border-indigo-500 transition" placeholder="e.g., Create a secure login API endpoint in Python">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-400 mb-1">Instructions for Agents</label>
+                            <textarea id="task-desc" rows="3" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2.5 text-slate-200 focus:outline-none focus:border-indigo-500 transition" placeholder="Specify requirements, constraints, or desired features..."></textarea>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <button type="button" onclick="runOrchestrator()" class="bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-2.5 rounded-lg font-medium transition shadow-lg shadow-emerald-600/20">
+                                Run Engine ⚡
+                            </button>
+                            <button type="submit" class="bg-indigo-600 hover:bg-indigo-500 text-white px-6 py-2.5 rounded-lg font-medium transition shadow-lg shadow-indigo-600/20">
+                                Dispatch Task 🚀
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="bg-slate-950 border border-slate-800 rounded-xl p-6 shadow-xl">
+                    <div class="flex justify-between items-center mb-4">
+                        <h2 class="text-lg font-semibold text-indigo-300">Pipeline Execution Tasks</h2>
+                        <button onclick="fetchTasks()" class="text-xs text-indigo-400 hover:text-indigo-300 border border-indigo-500/30 px-3 py-1.5 rounded-md transition bg-indigo-500/10">Refresh List</button>
+                    </div>
+                    <div id="tasks-container" class="space-y-3 max-h-[300px] overflow-y-auto pr-2">
+                        <p class="text-slate-500 text-sm text-center py-6">No tasks loaded yet.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Live Terminal Stream -->
+            <div class="bg-slate-950 border border-slate-800 rounded-xl p-6 shadow-xl flex flex-col h-[520px]">
+                <h2 class="text-lg font-semibold mb-4 text-indigo-300 flex items-center justify-between">
+                    <span>Live Agent Telemetry</span>
+                    <span class="text-xs font-normal bg-slate-800 px-2 py-1 rounded text-slate-400">Real-time</span>
+                </h2>
+                <div id="log-container" class="flex-1 bg-slate-900 border border-slate-800 rounded-lg p-4 font-mono text-xs overflow-y-auto space-y-2 text-slate-300 select-text">
+                    <div class="text-slate-500">// Connected to agent message bus...</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        async function fetchTasks() {
+            try {
+                const res = await fetch('/tasks/');
+                if (!res.ok) return;
+                const tasks = await res.json();
+                const container = document.getElementById('tasks-container');
+                if (tasks.length === 0) {
+                    container.innerHTML = '<p class="text-slate-500 text-sm text-center py-6">No tasks found.</p>';
+                    return;
+                }
+                container.innerHTML = tasks.map(t => `
+                    <div class="bg-slate-900 border border-slate-800 p-4 rounded-lg flex justify-between items-start transition hover:border-slate-700">
+                        <div>
+                            <h3 class="font-medium text-slate-200">${t.title}</h3>
+                            <p class="text-xs text-slate-400 mt-1">${t.description || 'No description'}</p>
+                        </div>
+                        <span class="text-xs px-2.5 py-1 rounded-full font-semibold ${
+                            t.status === 'DONE' ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20' :
+                            t.status === 'IN_PROGRESS' ? 'bg-amber-500/10 text-amber-400 border border-amber-500/20' :
+                            'bg-slate-800 text-slate-400'
+                        }">${t.status}</span>
+                    </div>
+                `).join('');
+            } catch (e) {
+                console.error('Failed to fetch tasks', e);
+            }
+        }
+
+        document.getElementById('task-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const title = document.getElementById('task-title').value;
+            const description = document.getElementById('task-desc').value;
+            
+            try {
+                const res = await fetch('/tasks/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ title, description, priority: 'MEDIUM', assigned_to: 'DEVELOPER' })
+                });
+                if (res.ok) {
+                    document.getElementById('task-title').value = '';
+                    document.getElementById('task-desc').value = '';
+                    fetchTasks();
+                }
+            } catch (err) {
+                alert('Error dispatching task');
+            }
+        });
+
+        async function runOrchestrator() {
+            try {
+                const res = await fetch('/orchestrator/run', { method: 'POST' });
+                const data = await res.json();
+                if (res.ok) {
+                    fetchTasks();
+                } else {
+                    alert('Error: ' + data.message);
+                }
+            } catch (err) {
+                alert('Failed to trigger orchestrator');
+            }
+        }
+
+        function updateAgentUI(role, status, actionText) {
+            const roleKey = role ? role.toLowerCase() : 'developer';
+            const agentCard = document.getElementById(`agent-${roleKey}`);
+            if (!agentCard) return;
+
+            const badge = agentCard.querySelector('.status-badge');
+            const actionP = agentCard.querySelector('.agent-action');
+
+            if (status === 'WORKING') {
+                agentCard.className = 'bg-slate-900 border border-indigo-500/50 rounded-lg p-4 shadow-lg shadow-indigo-500/10 transition';
+                badge.className = 'text-xs px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20 status-badge animate-pulse';
+                badge.textContent = 'Working';
+            } else if (status === 'SUCCESS') {
+                agentCard.className = 'bg-slate-900 border border-emerald-500/50 rounded-lg p-4 transition';
+                badge.className = 'text-xs px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 status-badge';
+                badge.textContent = 'Done';
+            }
+            if (actionText) {
+                actionP.textContent = actionText;
+                actionP.className = 'text-xs text-indigo-300 mt-1 truncate';
+            }
+        }
+
+        function connectWS() {
+            const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const ws = new WebSocket(`${protocol}//${window.location.host}/ws`);
+            const statusEl = document.getElementById('ws-status');
+            const indicator = document.getElementById('connection-indicator');
+            const logContainer = document.getElementById('log-container');
+
+            ws.onopen = () => {
+                statusEl.textContent = 'Connected (Live)';
+                statusEl.className = 'text-emerald-400 font-medium';
+                indicator.className = 'h-3 w-3 rounded-full bg-emerald-500';
+            };
+
+            ws.onmessage = (event) => {
+                const data = JSON.parse(event.data);
+                const time = new Date().toLocaleTimeString();
+                
+                const logItem = document.createElement('div');
+                logItem.className = 'border-l-2 border-indigo-500 pl-2 py-0.5';
+                logItem.innerHTML = `<span class="text-slate-500">[${time}]</span> <span class="text-cyan-400">${data.event_type || 'INFO'}:</span> ${JSON.stringify(data.payload || data)}`;
+                logContainer.appendChild(logItem);
+                logContainer.scrollTop = logContainer.scrollHeight;
+
+                if (data.source_agent || data.destination_agent) {
+                    const activeRole = data.source_agent !== 'SYSTEM' ? data.source_agent : data.destination_agent;
+                    const messageSnippet = data.payload?.title || data.payload?.message || 'Processing workflow step...';
+                    updateAgentUI(activeRole, 'WORKING', messageSnippet);
+                }
+            };
+
+            ws.onclose = () => {
+                statusEl.textContent = 'Disconnected (Reconnecting...)';
+                statusEl.className = 'text-red-400 font-medium';
+                indicator.className = 'h-3 w-3 rounded-full bg-red-500';
+                setTimeout(connectWS, 3000);
+            };
+        }
+
+        fetchTasks();
+        connectWS();
+    </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+services:
+  ai-dev-team:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ai-development-team-service
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - APP_NAME=AI Development Team
+      - ENVIRONMENT=production
+      - DEBUG=true
+      - WORKSPACE_DIR=/workspace/workspace_sandbox
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+      - LLM_MODEL=${LLM_MODEL:-gpt-4o}
+    volumes:
+      - ./app:/workspace/app
+      - ./workspace_sandbox:/workspace/workspace_sandbox
