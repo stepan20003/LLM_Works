@@ -4,7 +4,6 @@ import logging
 from typing import Any, Optional
 from pydantic import Field, SecretStr
 from openai import AsyncOpenAI
-
 from app.core.base_llm import BaseLLM
 from app.exceptions.base import ConfigurationError
 
