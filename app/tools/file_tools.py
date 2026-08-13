@@ -20,7 +20,9 @@ class FileTool(BaseTool):
     workspace: BaseWorkspace = Field(..., description="Target workspace sandbox instance.")
 
     async def initialize(self) -> None:
-        """Initialize the file tool."""
+        """Initialize the file tool and target workspace."""
+        if hasattr(self, "workspace") and self.workspace and not getattr(self.workspace, "is_initialized", False):
+            await self.workspace.initialize()
         self.is_initialized = True
         logger.info("FileTool initialized.")
 

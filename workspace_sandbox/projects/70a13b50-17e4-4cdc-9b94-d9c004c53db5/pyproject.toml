@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "calculator-api"
+version = "1.0.0"
+description = ""
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = "^2.0.2"
+uvicorn = "^0.17.6"
+sqlalchemy = "^1.4.32"
+psycopg2-binary = "^2.9.5"
+pytest = "^6.2.5"
+pytest-cov = "^2.12.1"
+pytest-flask = "^0.15.0"
+pytest-asyncio = "^0.14.0"
+
+[tool.poetry.dev-dependencies]
+pre-commit = "^2.17.0"

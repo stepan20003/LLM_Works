@@ -116,7 +116,7 @@ async def test_failed_task_execution(orchestrator):
 
     final_task = orchestrator.task_manager.get_task(task.id)
 
-    assert final_task.status == TaskStatus.RETRYING
+    assert final_task.status == TaskStatus.READY
     assert final_task.retry_count == 1
 
 
@@ -141,7 +141,7 @@ async def test_agent_needs_fix(orchestrator):
 
     final_task = orchestrator.task_manager.get_task(task.id)
 
-    assert final_task.status == TaskStatus.RETRYING
+    assert final_task.status == TaskStatus.READY
     assert final_task.retry_count == 1
 
 

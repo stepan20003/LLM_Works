@@ -1,0 +1,1 @@
+def entrypoint(): return 'OK'

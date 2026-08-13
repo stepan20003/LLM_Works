@@ -61,9 +61,12 @@ class BaseWorkerAgent(BaseAgent):
 
         try:
             # Delegate handling to process_task using message content as context payload
+            context_payload = {"content": message.content, "metadata": message.metadata}
+            if message.metadata and message.metadata.extra:
+                context_payload.update(message.metadata.extra)
             response = await self.process_task(
                 task_id=message.task_id,
-                context_payload={"content": message.content, "metadata": message.metadata},
+                context_payload=context_payload,
             )
             self.state = AgentState.IDLE
             return response

@@ -1,0 +1,10 @@
+version: '3'
+services:
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_USER=task_management_api_user
+      - POSTGRES_PASSWORD=task_management_api_password
+      - POSTGRES_DB=task_management_api
+    ports:
+      - "5432:5432"

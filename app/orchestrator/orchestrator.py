@@ -76,6 +76,7 @@ class Orchestrator(BaseComponent):
         This method is only responsible for creating the Message object. It does not
         publish events or dispatch the message.
         """
+        extra_meta = dict(task.metadata.extra) if task.metadata and task.metadata.extra else {}
         return Message(
             sender=AgentRole.SYSTEM,
             receiver=target_role,
@@ -84,7 +85,7 @@ class Orchestrator(BaseComponent):
             priority=task.priority,
             content=f"Execute task [{task.id}]: {task.title}\nDescription: {task.description}",
             correlation_id=uuid4(),
-            metadata=Metadata(source_component="orchestrator"),
+            metadata=Metadata(source_component="orchestrator", extra=extra_meta),
         )
 
     async def _publish_task_event(
@@ -136,7 +137,7 @@ class Orchestrator(BaseComponent):
 
         Rules:
         - None -> treat as success and mark DONE
-        - SUCCESS -> mark DONE
+        - SUCCESS -> hand off to next_agent if specified, else mark DONE
         - NEEDS_FIX or FAILED -> delegate to TaskManager.fail_task
         - WAITING -> leave unchanged
 
@@ -147,12 +148,22 @@ class Orchestrator(BaseComponent):
             logger.info(f"Task {task.id} completed with null response (assumed DONE).")
             return
 
+        if response.metadata and response.metadata.extra:
+            task.metadata.extra.update(response.metadata.extra)
+
         status = response.status
         if status == AgentExecutionStatus.SUCCESS:
-            self.task_manager.update_task_status(task.id, TaskStatus.DONE)
-            logger.info(f"Task {task.id} marked as DONE by agent response.")
+            if response.next_agent and response.next_agent not in {AgentRole.SYSTEM, task.assigned_to}:
+                self.task_manager.update_task_fields(task.id, assigned_to=response.next_agent)
+                self.task_manager.update_task_status(task.id, TaskStatus.READY)
+                logger.info(f"Task {task.id} handed off from {task.assigned_to} to {response.next_agent}.")
+            else:
+                self.task_manager.update_task_status(task.id, TaskStatus.DONE)
+                logger.info(f"Task {task.id} marked as DONE by agent response.")
         elif status in {AgentExecutionStatus.NEEDS_FIX, AgentExecutionStatus.FAILED}:
             self.task_manager.fail_task(task.id, error_message=response.message)
+            if response.next_agent:
+                self.task_manager.update_task_fields(task.id, assigned_to=response.next_agent)
             logger.warning(f"Task {task.id} failed or requested fix: {response.message}")
         else:
             # WAITING or other non-terminal statuses: leave as-is
@@ -235,6 +246,11 @@ class Orchestrator(BaseComponent):
                     destination=AgentRole.SYSTEM,
                     payload={"status": final_task.status, "message": response.message if response else ""},
                 )
+
+                # Automated Retry Loop
+                if final_task.status == TaskStatus.RETRYING:
+                    logger.info(f"Task {task.id} is RETRYING, initiating autonomous retry loop.")
+                    self.task_manager.autonomous_retry_task(task.id)
 
             except Exception as exc:
                 await self._handle_task_failure(task, target_role, exc)

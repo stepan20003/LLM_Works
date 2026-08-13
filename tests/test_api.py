@@ -1,20 +1,25 @@
 """Comprehensive REST API tests for the FastAPI application."""
 
 import importlib
+import time
 from datetime import datetime
 from uuid import UUID, uuid4
 
 import pytest
 from fastapi import FastAPI
 from fastapi.testclient import TestClient
+from pydantic import Field
 
 api_app_module = importlib.import_module("app.api.app")
 from app.api.router import router as api_router
+from app.agents.base_worker_agent import BaseWorkerAgent
 from app.messaging.event_bus import EventBus
 from app.messaging.message_bus import MessageBus
 from app.orchestrator.orchestrator import Orchestrator
-from app.schemas.enums import AgentRole, TaskPriority, TaskStatus
+from app.schemas.enums import AgentExecutionStatus, AgentRole, EventType, TaskPriority, TaskStatus
+from app.schemas.value_objects.agent_response import AgentResponse
 from app.tasks.task_manager import TaskManager
+from app.projects.project_manager import ProjectManager
 from app.workspace.local_workspace import LocalWorkspace
 from app.settings.settings import settings
 
@@ -22,6 +27,7 @@ from app.settings.settings import settings
 @pytest.fixture
 def api_client(monkeypatch):
     """Create a fresh FastAPI app with fresh subsystem instances for each test."""
+    monkeypatch.setattr(settings, "orchestrator_auto_run", False)
     task_manager = TaskManager()
     message_bus = MessageBus()
     event_bus = EventBus()
@@ -38,10 +44,21 @@ def api_client(monkeypatch):
     monkeypatch.setattr(api_app_module, "workspace", workspace)
     monkeypatch.setattr(api_app_module, "orchestrator", orchestrator)
 
+    project_manager = ProjectManager()
+    monkeypatch.setattr(api_app_module, "project_manager", project_manager)
+
     app = api_app_module.create_app()
 
     with TestClient(app) as client:
         yield client, task_manager, orchestrator
+
+
+class SuccessAgent(BaseWorkerAgent):
+    role: AgentRole = AgentRole.DEVELOPER
+    response_status: AgentExecutionStatus = Field(default=AgentExecutionStatus.SUCCESS)
+
+    async def process_task(self, task_id, context_payload):
+        return AgentResponse(status=self.response_status, message="ok")
 
 
 def test_health_endpoint_returns_healthy_when_initialized(api_client):
@@ -286,3 +303,195 @@ def test_openapi_exposes_health_and_task_routes(api_client):
     assert "/health" in paths
     assert "/tasks/" in paths
     assert "/tasks/{task_id}" in paths
+
+
+def test_created_task_is_processed_automatically_and_emits_events(monkeypatch, tmp_path):
+    monkeypatch.setattr(settings, "orchestrator_auto_run", True)
+    monkeypatch.setattr(settings, "orchestrator_poll_interval_seconds", 0.05)
+    monkeypatch.setattr(settings, "workspace_dir", str(tmp_path))
+
+    task_manager = TaskManager()
+    message_bus = MessageBus()
+    event_bus = EventBus()
+    workspace = LocalWorkspace(component_id="api-test-sandbox", root_path=str(tmp_path))
+    orchestrator = Orchestrator(
+        task_manager=task_manager,
+        message_bus=message_bus,
+        event_bus=event_bus,
+    )
+
+    developer = SuccessAgent(component_id="fake-dev")
+    reviewer = SuccessAgent(component_id="fake-reviewer", role=AgentRole.REVIEWER)
+    manager = SuccessAgent(component_id="fake-manager", role=AgentRole.MANAGER)
+
+    monkeypatch.setattr(api_app_module, "task_manager", task_manager)
+    monkeypatch.setattr(api_app_module, "message_bus", message_bus)
+    monkeypatch.setattr(api_app_module, "event_bus", event_bus)
+    monkeypatch.setattr(api_app_module, "workspace", workspace)
+    monkeypatch.setattr(api_app_module, "orchestrator", orchestrator)
+    monkeypatch.setattr(api_app_module, "developer_agent", developer)
+    monkeypatch.setattr(api_app_module, "reviewer_agent", reviewer)
+    monkeypatch.setattr(api_app_module, "manager_agent", manager)
+
+    app = api_app_module.create_app()
+
+    with TestClient(app) as client:
+        captured_events = []
+
+        async def listener(event):
+            captured_events.append(event)
+
+        event_bus.subscribe(EventType.TASK_COMPLETED, listener)
+
+        response = client.post(
+            "/tasks/",
+            json={
+                "title": "Auto task",
+                "description": "Run end-to-end automatically",
+                "assigned_to": AgentRole.DEVELOPER.value,
+                "priority": TaskPriority.NORMAL.value,
+            },
+        )
+        assert response.status_code == 201
+        task_id = UUID(response.json()["id"])
+
+        deadline = time.time() + 3
+        final_status = None
+        while time.time() < deadline:
+            poll = client.get(f"/tasks/{task_id}")
+            assert poll.status_code == 200
+            final_status = poll.json()["status"]
+            if final_status == TaskStatus.DONE.value:
+                break
+            time.sleep(0.05)
+
+        assert final_status == TaskStatus.DONE.value
+
+        second = client.post(
+            "/tasks/",
+            json={
+                "title": "Second auto task",
+                "description": "Second flow",
+                "assigned_to": AgentRole.DEVELOPER.value,
+                "priority": TaskPriority.NORMAL.value,
+            },
+        )
+        assert second.status_code == 201
+        second_id = UUID(second.json()["id"])
+
+        deadline = time.time() + 3
+        second_final = None
+        while time.time() < deadline:
+            poll = client.get(f"/tasks/{second_id}")
+            assert poll.status_code == 200
+            second_final = poll.json()["status"]
+            if second_final == TaskStatus.DONE.value:
+                break
+            time.sleep(0.05)
+
+        assert second_final == TaskStatus.DONE.value
+
+        completed_task_ids = {event.task_id for event in captured_events}
+        assert task_id in completed_task_ids
+        assert second_id in completed_task_ids
+
+
+# ---------------------------------------------------------------------------
+# Project API tests
+# ---------------------------------------------------------------------------
+
+def test_create_project_with_valid_prompt(api_client):
+    client, _, _ = api_client
+
+    response = client.post(
+        "/projects/",
+        json={"prompt": "Build a production-ready e-commerce platform with auth and payments"},
+    )
+
+    assert response.status_code == 201
+    body = response.json()
+    assert UUID(body["id"])
+    assert body["prompt"] == "Build a production-ready e-commerce platform with auth and payments"
+    assert body["status"] == "CREATED"
+    assert body["plan"] is None
+    assert body["summary"] is None
+    assert body["tasks"] == []
+    assert body["progress"] == 0.0
+
+
+def test_create_project_rejects_empty_prompt(api_client):
+    client, _, _ = api_client
+
+    response = client.post("/projects/", json={"prompt": ""})
+    assert response.status_code == 422
+
+
+def test_list_projects_empty(api_client):
+    client, _, _ = api_client
+
+    response = client.get("/projects/")
+    assert response.status_code == 200
+    assert response.json() == []
+
+
+def test_list_projects_returns_created_projects(api_client):
+    client, _, _ = api_client
+
+    client.post("/projects/", json={"prompt": "Project A"})
+    client.post("/projects/", json={"prompt": "Project B"})
+
+    response = client.get("/projects/")
+    assert response.status_code == 200
+    assert len(response.json()) == 2
+
+
+def test_get_project_by_id(api_client):
+    client, _, _ = api_client
+
+    create_response = client.post("/projects/", json={"prompt": "My project"})
+    project_id = create_response.json()["id"]
+
+    response = client.get(f"/projects/{project_id}")
+    assert response.status_code == 200
+    assert response.json()["id"] == project_id
+    assert response.json()["prompt"] == "My project"
+
+
+def test_get_project_not_found(api_client):
+    client, _, _ = api_client
+
+    response = client.get(f"/projects/{uuid4()}")
+    assert response.status_code == 404
+    assert "not found" in response.json()["detail"].lower()
+
+
+def test_openapi_exposes_project_routes(api_client):
+    client, _, _ = api_client
+
+    response = client.get("/openapi.json")
+    assert response.status_code == 200
+    paths = response.json()["paths"]
+    assert "/projects/" in paths
+    assert "/projects/{project_id}" in paths
+    assert "/projects/{project_id}/plan" in paths
+    assert "/projects/{project_id}/execute" in paths
+
+
+def test_execute_project_without_plan_returns_error(api_client):
+    client, _, _ = api_client
+
+    # Create project without a plan
+    create_resp = client.post("/projects/", json={"prompt": "Build something"})
+    project_id = create_resp.json()["id"]
+
+    # Try to execute — should fail because no plan exists
+    response = client.post(f"/projects/{project_id}/execute")
+    assert response.status_code == 400
+    assert "no plan" in response.json()["detail"].lower()
+
+
+def test_execute_project_not_found(api_client):
+    client, _, _ = api_client
+
+    response = client.post(f"/projects/{uuid4()}/execute")
+    assert response.status_code == 404

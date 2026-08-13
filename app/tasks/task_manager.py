@@ -1,11 +1,15 @@
 """In-memory task manager handling engineering task lifecycle, dependencies, and retries."""
 
 import logging
+import json
+import os
+from pathlib import Path
 from datetime import datetime, timezone
 from typing import Optional
 from uuid import UUID
 
 from app.core.base_component import BaseComponent
+from app.settings.settings import settings
 from app.schemas.enums import AgentRole, TaskPriority, TaskStatus
 from app.schemas.entities.task import Task
 from app.exceptions.base import WorkflowError
@@ -19,9 +23,37 @@ class TaskManager(BaseComponent):
     component_id: str = "task-manager"
     tasks: dict[UUID, Task] = {}
 
+    def _get_storage_path(self) -> Path:
+        data_dir = Path(settings.data_dir)
+        data_dir.mkdir(parents=True, exist_ok=True)
+        return data_dir / "tasks.json"
+
+    def _load_state(self) -> None:
+        path = self._get_storage_path()
+        if path.exists():
+            try:
+                data = json.loads(path.read_text(encoding="utf-8"))
+                for task_id_str, task_data in data.items():
+                    task = Task(**task_data)
+                    self.tasks[task.id] = task
+                logger.info(f"Loaded {len(self.tasks)} tasks from {path}.")
+            except Exception as e:
+                logger.error(f"Failed to load task state: {e}")
+
+    def _save_state(self) -> None:
+        if not self.is_initialized:
+            return
+        path = self._get_storage_path()
+        try:
+            data = {str(k): v.model_dump(mode="json") for k, v in self.tasks.items()}
+            path.write_text(json.dumps(data, indent=2), encoding="utf-8")
+        except Exception as e:
+            logger.error(f"Failed to save task state: {e}")
+
     async def initialize(self) -> None:
         """Initialize the task manager system."""
         self.tasks = {}
+        self._load_state()
         self.is_initialized = True
         logger.info("TaskManager initialized successfully.")
 
@@ -73,6 +105,7 @@ class TaskManager(BaseComponent):
 
         self.tasks[task.id] = task
         logger.info(f"Task created: [{task.id}] '{task.title}' (Created by: {created_by})")
+        self._save_state()
         return task
 
     def get_task(self, task_id: UUID) -> Task:
@@ -100,6 +133,7 @@ class TaskManager(BaseComponent):
 
         self.tasks[task_id] = task
         logger.info(f"Task {task_id} status successfully updated to {new_status}")
+        self._save_state()
         return task
 
     def get_ready_tasks(self) -> list[Task]:
@@ -126,6 +160,8 @@ class TaskManager(BaseComponent):
                     task.touch()
                     ready_tasks.append(task)
 
+        if ready_tasks:
+            self._save_state()
         return ready_tasks
     def fail_task(self, task_id: UUID, error_message: str) -> Task:
         """Handle task failure by incrementing retries and setting RETRYING or FAILED status."""
@@ -151,6 +187,7 @@ class TaskManager(BaseComponent):
 
         task.touch()
         self.tasks[task_id] = task
+        self._save_state()
         return task
 
     def update_task_fields(
@@ -171,6 +208,7 @@ class TaskManager(BaseComponent):
         task.touch()
         self.tasks[task_id] = task
         logger.info(f"Task {task_id} updated fields: assigned_to={assigned_to}, priority={priority}")
+        self._save_state()
         return task
 
     def delete_task(self, task_id: UUID) -> None:
@@ -180,6 +218,7 @@ class TaskManager(BaseComponent):
             raise WorkflowError(f"Task with ID {task_id} not found in TaskManager.")
         del self.tasks[task_id]
         logger.info(f"Task {task_id} deleted from TaskManager.")
+        self._save_state()
 
     def retry_task(self, task_id: UUID) -> Task:
         """Prepare a previously failed task to be retried.
@@ -210,4 +249,30 @@ class TaskManager(BaseComponent):
         task.touch()
         self.tasks[task_id] = task
         logger.info(f"Task {task_id} reset for retry (retry_count cleared).")
+        self._save_state()
+        return task
+
+    def autonomous_retry_task(self, task_id: UUID) -> Task:
+        """Prepare a previously failed task to be retried automatically by the Orchestrator loop.
+
+        Rules:
+        - Only tasks in RETRYING state are eligible.
+        - Preserves the incremented retry_count.
+        - Sets the status to READY so the orchestrator can immediately dispatch it again.
+        - Clears failed_at so validation passes.
+        """
+        self.validate_state()
+        task = self.get_task(task_id)
+
+        if task.status != TaskStatus.RETRYING:
+            raise WorkflowError(f"Task {task_id} is not in RETRYING state ({task.status}).")
+
+        # Clear failed_at so Pydantic validators accept non-FAILED status
+        object.__setattr__(task, "failed_at", None)
+
+        task.status = TaskStatus.READY
+        task.touch()
+        self.tasks[task_id] = task
+        logger.info(f"Task {task_id} marked as READY for autonomous retry (Attempt {task.retry_count}/{task.max_retries}).")
+        self._save_state()
         return task

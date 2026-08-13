@@ -30,6 +30,8 @@ class ShellTool(BaseTool):
 
     async def initialize(self) -> None:
         """Initialize the shell tool."""
+        if hasattr(self, "workspace") and self.workspace and not getattr(self.workspace, "is_initialized", False):
+            await self.workspace.initialize()
         self.is_initialized = True
         logger.info("ShellTool initialized.")
 

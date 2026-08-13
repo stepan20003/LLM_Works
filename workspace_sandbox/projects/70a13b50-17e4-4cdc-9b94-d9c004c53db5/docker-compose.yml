@@ -1,0 +1,27 @@
+# Container build and deployment configuration
+version: '3'
+
+services:
+  app:
+    build: .
+    environment:
+      - DB_USER=user
+      - DB_PASSWORD=password
+      - DB_HOST=localhost
+      - DB_PORT=5432
+      - DB_NAME=db
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    restart: always
+
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=db
+    ports:
+      - "5432:5432"
+    restart: always

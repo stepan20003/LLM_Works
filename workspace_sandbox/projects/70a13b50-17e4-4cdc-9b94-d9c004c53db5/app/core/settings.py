@@ -1,0 +1,9 @@
+"""
+Application settings.
+"""
+class Settings:
+    POSTGRES_USER = "user"
+    POSTGRES_PASSWORD = "password"
+    POSTGRES_DB = "db"
+    POSTGRES_HOST = "localhost"
+    POSTGRES_PORT = 5432
