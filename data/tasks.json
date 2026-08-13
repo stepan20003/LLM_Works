@@ -1,0 +1,1462 @@
+{
+  "585427de-e17e-4114-b8fe-72135b68969f": {
+    "id": "585427de-e17e-4114-b8fe-72135b68969f",
+    "created_at": "2026-08-09T13:38:21.029139Z",
+    "updated_at": "2026-08-09T13:38:22.453153Z",
+    "title": "Implement parser",
+    "description": "Add a parser for the request payload.",
+    "status": "DONE",
+    "priority": "NORMAL",
+    "created_by": "MANAGER",
+    "assigned_to": null,
+    "parent_task": null,
+    "dependencies": [],
+    "tags": [],
+    "metadata": {
+      "version": "1.0.0",
+      "source_component": "system",
+      "extra": {}
+    },
+    "retry_count": 0,
+    "max_retries": 5,
+    "estimated_duration": 0.0,
+    "started_at": "2026-08-09T13:38:22.449535Z",
+    "completed_at": "2026-08-09T13:38:22.453144Z",
+    "failed_at": null
+  },
+  "9c51d8e0-b822-40fb-85ee-8cb90cba8d35": {
+    "id": "9c51d8e0-b822-40fb-85ee-8cb90cba8d35",
+    "created_at": "2026-08-09T13:38:21.089120Z",
+    "updated_at": "2026-08-09T13:38:22.459546Z",
+    "title": "Ship release",
+    "description": "Coordinate the release checklist.",
+    "status": "DONE",
+    "priority": "CRITICAL",
+    "created_by": "MANAGER",
+    "assigned_to": "DEVELOPER",
+    "parent_task": null,
+    "dependencies": [],
+    "tags": [],
+    "metadata": {
+      "version": "1.0.0",
+      "source_component": "system",
+      "extra": {}
+    },
+    "retry_count": 0,
+    "max_retries": 7,
+    "estimated_duration": 12.5,
+    "started_at": "2026-08-09T13:38:22.456245Z",
+    "completed_at": "2026-08-09T13:38:22.459538Z",
+    "failed_at": null
+  },
+  "2ad48946-5866-4de4-9496-4cf669d0f8f3": {
+    "id": "2ad48946-5866-4de4-9496-4cf669d0f8f3",
+    "created_at": "2026-08-09T13:38:21.837407Z",
+    "updated_at": "2026-08-09T13:38:22.465766Z",
+    "title": "Lookup task",
+    "description": "Find me through the API.",
+    "status": "DONE",
+    "priority": "NORMAL",
+    "created_by": "REVIEWER",
+    "assigned_to": null,
+    "parent_task": null,
+    "dependencies": [],
+    "tags": [],
+    "metadata": {
+      "version": "1.0.0",
+      "source_component": "system",
+      "extra": {}
+    },
+    "retry_count": 0,
+    "max_retries": 5,
+    "estimated_duration": 0.0,
+    "started_at": "2026-08-09T13:38:22.462476Z",
+    "completed_at": "2026-08-09T13:38:22.465757Z",
+    "failed_at": null
+  },
+  "9cfd79f2-fdb7-4993-86a5-a3f34b445527": {
+    "id": "9cfd79f2-fdb7-4993-86a5-a3f34b445527",
+    "created_at": "2026-08-09T13:38:21.927066Z",
+    "updated_at": "2026-08-09T13:38:21.928517Z",
+    "title": "State task",
+    "description": "Track state changes through the API.",
+    "status": "IN_PROGRESS",
+    "priority": "NORMAL",
+    "created_by": "MANAGER",
+    "assigned_to": null,
+    "parent_task": null,
+    "dependencies": [],
+    "tags": [],
+    "metadata": {
+      "version": "1.0.0",
+      "source_component": "system",
+      "extra": {}
+    },
+    "retry_count": 0,
+    "max_retries": 5,
+    "estimated_duration": 0.0,
+    "started_at": "2026-08-09T13:38:21.928467Z",
+    "completed_at": null,
+    "failed_at": null
+  },
+  "1a59a011-ebab-477f-b259-a58077c026bc": {
+    "id": "1a59a011-ebab-477f-b259-a58077c026bc",
+    "created_at": "2026-08-09T13:38:22.109587Z",
+    "updated_at": "2026-08-09T13:38:22.472812Z",
+    "title": "Serialization task",
+    "description": "Ensure the API response is JSON-serializable.",
+    "status": "DONE",
+    "priority": "HIGH",
+    "created_by": "TESTER",
+    "assigned_to": "DEVELOPER",
+    "parent_task": null,
+    "dependencies": [],
+    "tags": [],
+    "metadata": {
+      "version": "1.0.0",
+      "source_component": "system",
+      "extra": {}
+    },
+    "retry_count": 0,
+    "max_retries": 3,
+    "estimated_duration": 8.25,
+    "started_at": "2026-08-09T13:38:22.469007Z",
+    "completed_at": "2026-08-09T13:38:22.472805Z",
+    "failed_at": null
+  },
+  "56cb5ab3-5d68-4f84-942c-776034a77820": {
+    "id": "56cb5ab3-5d68-4f84-942c-776034a77820",
+    "created_at": "2026-08-09T13:38:22.171307Z",
+    "updated_at": "2026-08-09T13:38:22.479826Z",
+    "title": "Wiring task",
+    "description": "Verify the API uses the injected state.",
+    "status": "DONE",
+    "priority": "NORMAL",
+    "created_by": "MANAGER",
+    "assigned_to": null,
+    "parent_task": null,
+    "dependencies": [],
+    "tags": [],
+    "metadata": {
+      "version": "1.0.0",
+      "source_component": "system",
+      "extra": {}
+    },
+    "retry_count": 0,
+    "max_retries": 5,
+    "estimated_duration": 0.0,
+    "started_at": "2026-08-09T13:38:22.476072Z",
+    "completed_at": "2026-08-09T13:38:22.479818Z",
+    "failed_at": null
+  },
+  "5c879871-af86-4fb2-8f27-d80cddefefc0": {
+    "id": "5c879871-af86-4fb2-8f27-d80cddefefc0",
+    "created_at": "2026-08-09T13:38:22.514157Z",
+    "updated_at": "2026-08-09T13:38:22.540746Z",
+    "title": "Auto task",
+    "description": "Run end-to-end automatically",
+    "status": "DONE",
+    "priority": "NORMAL",
+    "created_by": "MANAGER",
+    "assigned_to": "DEVELOPER",
+    "parent_task": null,
+    "dependencies": [],
+    "tags": [],
+    "metadata": {
+      "version": "1.0.0",
+      "source_component": "system",
+      "extra": {}
+    },
+    "retry_count": 0,
+    "max_retries": 5,
+    "estimated_duration": 0.0,
+    "started_at": "2026-08-09T13:38:22.537378Z",
+    "completed_at": "2026-08-09T13:38:22.540740Z",
+    "failed_at": null
+  },
+  "55d3f9bf-6de6-4ee9-8742-0408facf7bb3": {
+    "id": "55d3f9bf-6de6-4ee9-8742-0408facf7bb3",
+    "created_at": "2026-08-09T13:38:22.577672Z",
+    "updated_at": "2026-08-09T13:38:22.604651Z",
+    "title": "Second auto task",
+    "description": "Second flow",
+    "status": "DONE",
+    "priority": "NORMAL",
+    "created_by": "MANAGER",
+    "assigned_to": "DEVELOPER",
+    "parent_task": null,
+    "dependencies": [],
+    "tags": [],
+    "metadata": {
+      "version": "1.0.0",
+      "source_component": "system",
+      "extra": {}
+    },
+    "retry_count": 0,
+    "max_retries": 5,
+    "estimated_duration": 0.0,
+    "started_at": "2026-08-09T13:38:22.599820Z",
+    "completed_at": "2026-08-09T13:38:22.604641Z",
+    "failed_at": null
+  },
+  "06d0bd77-254b-4304-81ef-daa010c0977b": {
+    "id": "06d0bd77-254b-4304-81ef-daa010c0977b",
+    "created_at": "2026-08-09T13:38:26.031760Z",
+    "updated_at": "2026-08-09T13:38:26.046858Z",
+    "title": "Test task",
+    "description": "Execute test task",
+    "status": "DONE",
+    "priority": "NORMAL",
+    "created_by": "MANAGER",
+    "assigned_to": "DEVELOPER",
+    "parent_task": null,
+    "dependencies": [],
+    "tags": [],
+    "metadata": {
+      "version": "1.0.0",
+      "source_component": "system",
+      "extra": {}
+    },
+    "retry_count": 0,
+    "max_retries": 5,
+    "estimated_duration": 0.0,
+    "started_at": "2026-08-09T13:38:26.041581Z",
+    "completed_at": "2026-08-09T13:38:26.046849Z",
+    "failed_at": null
+  },
+  "bbf17e82-6740-46eb-a0d9-74944373ea32": {
+    "id": "bbf17e82-6740-46eb-a0d9-74944373ea32",
+    "created_at": "2026-08-09T13:38:26.057798Z",
+    "updated_at": "2026-08-09T13:38:26.120146Z",
+    "title": "Failing task",
+    "description": "This task should fail",
+    "status": "RETRYING",
+    "priority": "NORMAL",
+    "created_by": "MANAGER",
+    "assigned_to": "DEVELOPER",
+    "parent_task": null,
+    "dependencies": [],
+    "tags": [],
+    "metadata": {
+      "version": "1.0.0",
+      "source_component": "system",
+      "extra": {}
+    },
+    "retry_count": 3,
+    "max_retries": 5,
+    "estimated_duration": 0.0,
+    "started_at": "2026-08-09T13:38:26.065143Z",
+    "completed_at": null,
+    "failed_at": null
+  },
+  "757eb3bf-b548-4cfd-a21a-c679c80c4822": {
+    "id": "757eb3bf-b548-4cfd-a21a-c679c80c4822",
+    "created_at": "2026-08-09T13:38:26.078813Z",
+    "updated_at": "2026-08-09T13:38:26.127452Z",
+    "title": "Needs fix",
+    "description": "Task requiring correction",
+    "status": "RETRYING",
+    "priority": "NORMAL",
+    "created_by": "MANAGER",
+    "assigned_to": "DEVELOPER",
+    "parent_task": null,
+    "dependencies": [],
+    "tags": [],
+    "metadata": {
+      "version": "1.0.0",
+      "source_component": "system",
+      "extra": {}
+    },
+    "retry_count": 2,
+    "max_retries": 5,
+    "estimated_duration": 0.0,
+    "started_at": "2026-08-09T13:38:26.094182Z",
+    "completed_at": null,
+    "failed_at": null
+  },
+  "b1ab437f-e93c-4910-9093-37d1a7f33a57": {
+    "id": "b1ab437f-e93c-4910-9093-37d1a7f33a57",
+    "created_at": "2026-08-09T13:38:26.108836Z",
+    "updated_at": "2026-08-09T13:38:26.134292Z",
+    "title": "Unregistered agent",
+    "description": "No agent is registered",
+    "status": "RETRYING",
+    "priority": "NORMAL",
+    "created_by": "MANAGER",
+    "assigned_to": "DEVELOPER",
+    "parent_task": null,
+    "dependencies": [],
+    "tags": [],
+    "metadata": {
+      "version": "1.0.0",
+      "source_component": "system",
+      "extra": {}
+    },
+    "retry_count": 1,
+    "max_retries": 5,
+    "estimated_duration": 0.0,
+    "started_at": "2026-08-09T13:38:26.130608Z",
+    "completed_at": null,
+    "failed_at": null
+  },
+  "41f73719-a0dc-4618-9238-7554c897014c": {
+    "id": "41f73719-a0dc-4618-9238-7554c897014c",
+    "created_at": "2026-08-09T13:38:26.142797Z",
+    "updated_at": "2026-08-09T13:38:26.157091Z",
+    "title": "First task",
+    "description": "First task",
+    "status": "DONE",
+    "priority": "NORMAL",
+    "created_by": "MANAGER",
+    "assigned_to": "DEVELOPER",
+    "parent_task": null,
+    "dependencies": [],
+    "tags": [],
+    "metadata": {
+      "version": "1.0.0",
+      "source_component": "system",
+      "extra": {}
+    },
+    "retry_count": 0,
+    "max_retries": 5,
+    "estimated_duration": 0.0,
+    "started_at": "2026-08-09T13:38:26.153310Z",
+    "completed_at": "2026-08-09T13:38:26.157086Z",
+    "failed_at": null
+  },
+  "304ae0d3-a5c6-4c7a-8122-95d1c6b506e4": {
+    "id": "304ae0d3-a5c6-4c7a-8122-95d1c6b506e4",
+    "created_at": "2026-08-09T13:38:26.146314Z",
+    "updated_at": "2026-08-09T13:38:26.167897Z",
+    "title": "Second task",
+    "description": "Depends on first",
+    "status": "DONE",
+    "priority": "NORMAL",
+    "created_by": "MANAGER",
+    "assigned_to": "DEVELOPER",
+    "parent_task": null,
+    "dependencies": [
+      "41f73719-a0dc-4618-9238-7554c897014c"
+    ],
+    "tags": [],
+    "metadata": {
+      "version": "1.0.0",
+      "source_component": "system",
+      "extra": {}
+    },
+    "retry_count": 0,
+    "max_retries": 5,
+    "estimated_duration": 0.0,
+    "started_at": "2026-08-09T13:38:26.164160Z",
+    "completed_at": "2026-08-09T13:38:26.167893Z",
+    "failed_at": null
+  },
+  "edab83f7-caba-4c17-94e3-27d35d5ecc2c": {
+    "id": "edab83f7-caba-4c17-94e3-27d35d5ecc2c",
+    "created_at": "2026-08-09T13:38:26.176603Z",
+    "updated_at": "2026-08-09T13:38:26.188767Z",
+    "title": "Event test",
+    "description": "Check events",
+    "status": "DONE",
+    "priority": "NORMAL",
+    "created_by": "MANAGER",
+    "assigned_to": "DEVELOPER",
+    "parent_task": null,
+    "dependencies": [],
+    "tags": [],
+    "metadata": {
+      "version": "1.0.0",
+      "source_component": "system",
+      "extra": {}
+    },
+    "retry_count": 0,
+    "max_retries": 5,
+    "estimated_duration": 0.0,
+    "started_at": "2026-08-09T13:38:26.184450Z",
+    "completed_at": "2026-08-09T13:38:26.188763Z",
+    "failed_at": null
+  },
+  "5e15b00d-701a-452e-94cb-9d62061e2959": {
+    "id": "5e15b00d-701a-452e-94cb-9d62061e2959",
+    "created_at": "2026-08-09T13:38:26.219323Z",
+    "updated_at": "2026-08-09T13:44:08.873220Z",
+    "title": "A",
+    "description": "First task",
+    "status": "DONE",
+    "priority": "NORMAL",
+    "created_by": "MANAGER",
+    "assigned_to": "DEVELOPER",
+    "parent_task": null,
+    "dependencies": [],
+    "tags": [],
+    "metadata": {
+      "version": "1.0.0",
+      "source_component": "system",
+      "extra": {}
+    },
+    "retry_count": 0,
+    "max_retries": 5,
+    "estimated_duration": 0.0,
+    "started_at": "2026-08-09T13:44:07.644519Z",
+    "completed_at": "2026-08-09T13:44:08.873208Z",
+    "failed_at": null
+  },
+  "788c5f3c-5114-405e-b913-dfab3d50e031": {
+    "id": "788c5f3c-5114-405e-b913-dfab3d50e031",
+    "created_at": "2026-08-09T13:38:26.225024Z",
+    "updated_at": "2026-08-09T15:46:41.480701Z",
+    "title": "B",
+    "description": "Second task",
+    "status": "DONE",
+    "priority": "NORMAL",
+    "created_by": "MANAGER",
+    "assigned_to": "DEVELOPER",
+    "parent_task": null,
+    "dependencies": [
+      "5e15b00d-701a-452e-94cb-9d62061e2959"
+    ],
+    "tags": [],
+    "metadata": {
+      "version": "1.0.0",
+      "source_component": "system",
+      "extra": {}
+    },
+    "retry_count": 0,
+    "max_retries": 5,
+    "estimated_duration": 0.0,
+    "started_at": "2026-08-09T15:46:40.425433Z",
+    "completed_at": "2026-08-09T15:46:41.480687Z",
+    "failed_at": null
+  },
+  "5e3d761f-816c-4058-8fb9-e55366acdf59": {
+    "id": "5e3d761f-816c-4058-8fb9-e55366acdf59",
+    "created_at": "2026-08-09T13:38:26.231083Z",
+    "updated_at": "2026-08-09T15:46:46.222731Z",
+    "title": "C",
+    "description": "Third task",
+    "status": "DONE",
+    "priority": "NORMAL",
+    "created_by": "MANAGER",
+    "assigned_to": "DEVELOPER",
+    "parent_task": null,
+    "dependencies": [
+      "788c5f3c-5114-405e-b913-dfab3d50e031"
+    ],
+    "tags": [],
+    "metadata": {
+      "version": "1.0.0",
+      "source_component": "system",
+      "extra": {}
+    },
+    "retry_count": 0,
+    "max_retries": 5,
+    "estimated_duration": 0.0,
+    "started_at": "2026-08-09T15:46:45.218993Z",
+    "completed_at": "2026-08-09T15:46:46.222719Z",
+    "failed_at": null
+  },
+  "a9acff47-14b7-4cd0-937b-216b53b2e73c": {
+    "id": "a9acff47-14b7-4cd0-937b-216b53b2e73c",
+    "created_at": "2026-08-09T13:38:26.248245Z",
+    "updated_at": "2026-08-09T13:44:09.796229Z",
+    "title": "Root",
+    "description": "Start",
+    "status": "DONE",
+    "priority": "NORMAL",
+    "created_by": "MANAGER",
+    "assigned_to": "DEVELOPER",
+    "parent_task": null,
+    "dependencies": [],
+    "tags": [],
+    "metadata": {
+      "version": "1.0.0",
+      "source_component": "system",
+      "extra": {}
+    },
+    "retry_count": 0,
+    "max_retries": 5,
+    "estimated_duration": 0.0,
+    "started_at": "2026-08-09T13:44:08.876203Z",
+    "completed_at": "2026-08-09T13:44:09.796207Z",
+    "failed_at": null
+  },
+  "ffdd0c33-fdc2-4545-aa99-012aad205d04": {
+    "id": "ffdd0c33-fdc2-4545-aa99-012aad205d04",
+    "created_at": "2026-08-09T13:38:26.255441Z",
+    "updated_at": "2026-08-09T15:46:42.214446Z",
+    "title": "Left",
+    "description": "Left branch",
+    "status": "DONE",
+    "priority": "NORMAL",
+    "created_by": "MANAGER",
+    "assigned_to": "DEVELOPER",
+    "parent_task": null,
+    "dependencies": [
+      "a9acff47-14b7-4cd0-937b-216b53b2e73c"
+    ],
+    "tags": [],
+    "metadata": {
+      "version": "1.0.0",
+      "source_component": "system",
+      "extra": {}
+    },
+    "retry_count": 0,
+    "max_retries": 5,
+    "estimated_duration": 0.0,
+    "started_at": "2026-08-09T15:46:41.492999Z",
+    "completed_at": "2026-08-09T15:46:42.214428Z",
+    "failed_at": null
+  },
+  "485bd091-cab7-4ea4-a653-bbd82bd77689": {
+    "id": "485bd091-cab7-4ea4-a653-bbd82bd77689",
+    "created_at": "2026-08-09T13:38:26.262608Z",
+    "updated_at": "2026-08-09T15:46:42.809061Z",
+    "title": "Right",
+    "description": "Right branch",
+    "status": "DONE",
+    "priority": "NORMAL",
+    "created_by": "MANAGER",
+    "assigned_to": "DEVELOPER",
+    "parent_task": null,
+    "dependencies": [
+      "a9acff47-14b7-4cd0-937b-216b53b2e73c"
+    ],
+    "tags": [],
+    "metadata": {
+      "version": "1.0.0",
+      "source_component": "system",
+      "extra": {}
+    },
+    "retry_count": 0,
+    "max_retries": 5,
+    "estimated_duration": 0.0,
+    "started_at": "2026-08-09T15:46:42.230327Z",
+    "completed_at": "2026-08-09T15:46:42.809043Z",
+    "failed_at": null
+  },
+  "408a547c-5e8c-4524-86d4-0234c33eedec": {
+    "id": "408a547c-5e8c-4524-86d4-0234c33eedec",
+    "created_at": "2026-08-09T13:38:26.270403Z",
+    "updated_at": "2026-08-09T15:46:46.234205Z",
+    "title": "Join",
+    "description": "Merge",
+    "status": "IN_PROGRESS",
+    "priority": "NORMAL",
+    "created_by": "MANAGER",
+    "assigned_to": "DEVELOPER",
+    "parent_task": null,
+    "dependencies": [
+      "ffdd0c33-fdc2-4545-aa99-012aad205d04",
+      "485bd091-cab7-4ea4-a653-bbd82bd77689"
+    ],
+    "tags": [],
+    "metadata": {
+      "version": "1.0.0",
+      "source_component": "system",
+      "extra": {}
+    },
+    "retry_count": 0,
+    "max_retries": 5,
+    "estimated_duration": 0.0,
+    "started_at": "2026-08-09T15:46:46.234159Z",
+    "completed_at": null,
+    "failed_at": null
+  },
+  "389db3bf-67db-4571-9945-43b7d563c039": {
+    "id": "389db3bf-67db-4571-9945-43b7d563c039",
+    "created_at": "2026-08-09T13:38:26.291610Z",
+    "updated_at": "2026-08-09T13:44:10.614797Z",
+    "title": "A",
+    "description": "Independent 1",
+    "status": "DONE",
+    "priority": "NORMAL",
+    "created_by": "MANAGER",
+    "assigned_to": "DEVELOPER",
+    "parent_task": null,
+    "dependencies": [],
+    "tags": [],
+    "metadata": {
+      "version": "1.0.0",
+      "source_component": "system",
+      "extra": {}
+    },
+    "retry_count": 0,
+    "max_retries": 5,
+    "estimated_duration": 0.0,
+    "started_at": "2026-08-09T13:44:09.798749Z",
+    "completed_at": "2026-08-09T13:44:10.614785Z",
+    "failed_at": null
+  },
+  "188190ed-40ba-44b9-b76e-9f015c7718eb": {
+    "id": "188190ed-40ba-44b9-b76e-9f015c7718eb",
+    "created_at": "2026-08-09T13:38:26.300340Z",
+    "updated_at": "2026-08-09T13:44:11.946263Z",
+    "title": "B",
+    "description": "Independent 2",
+    "status": "DONE",
+    "priority": "NORMAL",
+    "created_by": "MANAGER",
+    "assigned_to": "DEVELOPER",
+    "parent_task": null,
+    "dependencies": [],
+    "tags": [],
+    "metadata": {
+      "version": "1.0.0",
+      "source_component": "system",
+      "extra": {}
+    },
+    "retry_count": 0,
+    "max_retries": 5,
+    "estimated_duration": 0.0,
+    "started_at": "2026-08-09T13:44:10.618459Z",
+    "completed_at": "2026-08-09T13:44:11.946249Z",
+    "failed_at": null
+  },
+  "7b0bda0c-4121-4182-9b8f-c33915276233": {
+    "id": "7b0bda0c-4121-4182-9b8f-c33915276233",
+    "created_at": "2026-08-09T13:38:26.309639Z",
+    "updated_at": "2026-08-09T13:44:12.867427Z",
+    "title": "C",
+    "description": "Independent 3",
+    "status": "DONE",
+    "priority": "NORMAL",
+    "created_by": "MANAGER",
+    "assigned_to": "DEVELOPER",
+    "parent_task": null,
+    "dependencies": [],
+    "tags": [],
+    "metadata": {
+      "version": "1.0.0",
+      "source_component": "system",
+      "extra": {}
+    },
+    "retry_count": 0,
+    "max_retries": 5,
+    "estimated_duration": 0.0,
+    "started_at": "2026-08-09T13:44:11.950341Z",
+    "completed_at": "2026-08-09T13:44:12.867413Z",
+    "failed_at": null
+  },
+  "12771d83-c2b1-4854-8132-92dab86074b9": {
+    "id": "12771d83-c2b1-4854-8132-92dab86074b9",
+    "created_at": "2026-08-09T13:38:26.333481Z",
+    "updated_at": "2026-08-09T13:44:13.891749Z",
+    "title": "Task",
+    "description": "A task",
+    "status": "DONE",
+    "priority": "NORMAL",
+    "created_by": "MANAGER",
+    "assigned_to": "DEVELOPER",
+    "parent_task": null,
+    "dependencies": [],
+    "tags": [],
+    "metadata": {
+      "version": "1.0.0",
+      "source_component": "system",
+      "extra": {}
+    },
+    "retry_count": 0,
+    "max_retries": 5,
+    "estimated_duration": 0.0,
+    "started_at": "2026-08-09T13:44:12.871077Z",
+    "completed_at": "2026-08-09T13:44:13.891737Z",
+    "failed_at": null
+  },
+  "adbe35c9-1356-4e24-9b6e-736b66f98736": {
+    "id": "adbe35c9-1356-4e24-9b6e-736b66f98736",
+    "created_at": "2026-08-09T13:38:26.359220Z",
+    "updated_at": "2026-08-09T13:44:14.710410Z",
+    "title": "A",
+    "description": "First",
+    "status": "DONE",
+    "priority": "NORMAL",
+    "created_by": "MANAGER",
+    "assigned_to": "DEVELOPER",
+    "parent_task": null,
+    "dependencies": [],
+    "tags": [],
+    "metadata": {
+      "version": "1.0.0",
+      "source_component": "system",
+      "extra": {}
+    },
+    "retry_count": 0,
+    "max_retries": 5,
+    "estimated_duration": 0.0,
+    "started_at": "2026-08-09T13:44:13.895461Z",
+    "completed_at": "2026-08-09T13:44:14.710398Z",
+    "failed_at": null
+  },
+  "3a61b57f-5b9c-494c-b4a3-8d878e0e375f": {
+    "id": "3a61b57f-5b9c-494c-b4a3-8d878e0e375f",
+    "created_at": "2026-08-09T13:38:26.369841Z",
+    "updated_at": "2026-08-09T13:44:15.836992Z",
+    "title": "B",
+    "description": "Second",
+    "status": "DONE",
+    "priority": "NORMAL",
+    "created_by": "MANAGER",
+    "assigned_to": "DEVELOPER",
+    "parent_task": null,
+    "dependencies": [],
+    "tags": [],
+    "metadata": {
+      "version": "1.0.0",
+      "source_component": "system",
+      "extra": {}
+    },
+    "retry_count": 0,
+    "max_retries": 5,
+    "estimated_duration": 0.0,
+    "started_at": "2026-08-09T13:44:14.714165Z",
+    "completed_at": "2026-08-09T13:44:15.836981Z",
+    "failed_at": null
+  },
+  "bf8b69b9-2274-447b-a26a-1bd66b37201d": {
+    "id": "bf8b69b9-2274-447b-a26a-1bd66b37201d",
+    "created_at": "2026-08-09T13:38:26.397899Z",
+    "updated_at": "2026-08-09T13:44:18.292824Z",
+    "title": "Write code",
+    "description": "Implement feature",
+    "status": "DONE",
+    "priority": "HIGH",
+    "created_by": "MANAGER",
+    "assigned_to": "DEVELOPER",
+    "parent_task": null,
+    "dependencies": [],
+    "tags": [],
+    "metadata": {
+      "version": "1.0.0",
+      "source_component": "system",
+      "extra": {}
+    },
+    "retry_count": 0,
+    "max_retries": 5,
+    "estimated_duration": 0.0,
+    "started_at": "2026-08-09T13:44:15.839926Z",
+    "completed_at": "2026-08-09T13:44:18.292816Z",
+    "failed_at": null
+  },
+  "9a98fbc2-cb54-4145-b966-54c95f462fc1": {
+    "id": "9a98fbc2-cb54-4145-b966-54c95f462fc1",
+    "created_at": "2026-08-09T13:38:26.409328Z",
+    "updated_at": "2026-08-09T15:46:42.855886Z",
+    "title": "Review code",
+    "description": "Code review",
+    "status": "DONE",
+    "priority": "NORMAL",
+    "created_by": "MANAGER",
+    "assigned_to": "REVIEWER",
+    "parent_task": null,
+    "dependencies": [
+      "bf8b69b9-2274-447b-a26a-1bd66b37201d"
+    ],
+    "tags": [],
+    "metadata": {
+      "version": "1.0.0",
+      "source_component": "system",
+      "extra": {}
+    },
+    "retry_count": 0,
+    "max_retries": 5,
+    "estimated_duration": 0.0,
+    "started_at": "2026-08-09T15:46:42.825052Z",
+    "completed_at": "2026-08-09T15:46:42.855873Z",
+    "failed_at": null
+  },
+  "cbb59a83-10d5-4803-9512-21e5bf97f0a1": {
+    "id": "cbb59a83-10d5-4803-9512-21e5bf97f0a1",
+    "created_at": "2026-08-09T13:38:26.504314Z",
+    "updated_at": "2026-08-09T13:38:26.545076Z",
+    "title": "First",
+    "description": "Root task",
+    "status": "DONE",
+    "priority": "NORMAL",
+    "created_by": "MANAGER",
+    "assigned_to": "DEVELOPER",
+    "parent_task": null,
+    "dependencies": [],
+    "tags": [],
+    "metadata": {
+      "version": "1.0.0",
+      "source_component": "system",
+      "extra": {}
+    },
+    "retry_count": 0,
+    "max_retries": 5,
+    "estimated_duration": 0.0,
+    "started_at": null,
+    "completed_at": "2026-08-09T13:38:26.545069Z",
+    "failed_at": null
+  },
+  "1e1f6cfa-ee74-488e-af56-800449a32b60": {
+    "id": "1e1f6cfa-ee74-488e-af56-800449a32b60",
+    "created_at": "2026-08-09T13:38:26.518033Z",
+    "updated_at": "2026-08-09T13:44:30.991594Z",
+    "title": "Second",
+    "description": "Depends on first",
+    "status": "DONE",
+    "priority": "NORMAL",
+    "created_by": "MANAGER",
+    "assigned_to": "DEVELOPER",
+    "parent_task": null,
+    "dependencies": [
+      "cbb59a83-10d5-4803-9512-21e5bf97f0a1"
+    ],
+    "tags": [],
+    "metadata": {
+      "version": "1.0.0",
+      "source_component": "system",
+      "extra": {}
+    },
+    "retry_count": 0,
+    "max_retries": 5,
+    "estimated_duration": 0.0,
+    "started_at": "2026-08-09T13:44:18.294658Z",
+    "completed_at": "2026-08-09T13:44:30.991584Z",
+    "failed_at": null
+  },
+  "7475c12b-9a6f-4392-9fc7-8395cc2172db": {
+    "id": "7475c12b-9a6f-4392-9fc7-8395cc2172db",
+    "created_at": "2026-08-09T13:38:27.347030Z",
+    "updated_at": "2026-08-09T15:46:42.886250Z",
+    "title": "Test Task",
+    "description": "Testing task creation logic.",
+    "status": "DONE",
+    "priority": "HIGH",
+    "created_by": "MANAGER",
+    "assigned_to": "REVIEWER",
+    "parent_task": null,
+    "dependencies": [],
+    "tags": [],
+    "metadata": {
+      "version": "1.0.0",
+      "source_component": "system",
+      "extra": {}
+    },
+    "retry_count": 1,
+    "max_retries": 5,
+    "estimated_duration": 0.0,
+    "started_at": "2026-08-09T13:44:30.994048Z",
+    "completed_at": "2026-08-09T15:46:42.886241Z",
+    "failed_at": null
+  },
+  "92cfa56c-c7cf-4280-adfd-8be67993349f": {
+    "id": "92cfa56c-c7cf-4280-adfd-8be67993349f",
+    "created_at": "2026-08-09T13:38:27.363134Z",
+    "updated_at": "2026-08-09T13:38:27.381551Z",
+    "title": "Timestamp Task",
+    "description": "Testing timestamps.",
+    "status": "DONE",
+    "priority": "NORMAL",
+    "created_by": "DEVELOPER",
+    "assigned_to": null,
+    "parent_task": null,
+    "dependencies": [],
+    "tags": [],
+    "metadata": {
+      "version": "1.0.0",
+      "source_component": "system",
+      "extra": {}
+    },
+    "retry_count": 0,
+    "max_retries": 5,
+    "estimated_duration": 0.0,
+    "started_at": "2026-08-09T13:38:27.372696Z",
+    "completed_at": "2026-08-09T13:38:27.381543Z",
+    "failed_at": null
+  },
+  "e7f41e2b-3d97-4715-952a-68236fc09259": {
+    "id": "e7f41e2b-3d97-4715-952a-68236fc09259",
+    "created_at": "2026-08-09T13:38:27.395562Z",
+    "updated_at": "2026-08-09T13:38:27.433357Z",
+    "title": "Parent Task",
+    "description": "Must be done first.",
+    "status": "DONE",
+    "priority": "NORMAL",
+    "created_by": "MANAGER",
+    "assigned_to": null,
+    "parent_task": null,
+    "dependencies": [],
+    "tags": [],
+    "metadata": {
+      "version": "1.0.0",
+      "source_component": "system",
+      "extra": {}
+    },
+    "retry_count": 0,
+    "max_retries": 5,
+    "estimated_duration": 0.0,
+    "started_at": null,
+    "completed_at": "2026-08-09T13:38:27.433340Z",
+    "failed_at": null
+  },
+  "edd65b6f-00de-4a4c-8c24-5feecdfdcab2": {
+    "id": "edd65b6f-00de-4a4c-8c24-5feecdfdcab2",
+    "created_at": "2026-08-09T13:38:27.407057Z",
+    "updated_at": "2026-08-09T13:44:45.936049Z",
+    "title": "Child Task",
+    "description": "Depends on parent.",
+    "status": "IN_PROGRESS",
+    "priority": "NORMAL",
+    "created_by": "DEVELOPER",
+    "assigned_to": null,
+    "parent_task": null,
+    "dependencies": [
+      "e7f41e2b-3d97-4715-952a-68236fc09259"
+    ],
+    "tags": [],
+    "metadata": {
+      "version": "1.0.0",
+      "source_component": "system",
+      "extra": {}
+    },
+    "retry_count": 0,
+    "max_retries": 5,
+    "estimated_duration": 0.0,
+    "started_at": "2026-08-09T13:44:45.936036Z",
+    "completed_at": null,
+    "failed_at": null
+  },
+  "0e3aad64-f09b-4abf-8637-f11fbf37ef9b": {
+    "id": "0e3aad64-f09b-4abf-8637-f11fbf37ef9b",
+    "created_at": "2026-08-09T13:38:27.466099Z",
+    "updated_at": "2026-08-09T13:38:27.494690Z",
+    "title": "Flaky Task",
+    "description": "Testing retries.",
+    "status": "FAILED",
+    "priority": "NORMAL",
+    "created_by": "DEVELOPER",
+    "assigned_to": null,
+    "parent_task": null,
+    "dependencies": [],
+    "tags": [],
+    "metadata": {
+      "version": "1.0.0",
+      "source_component": "system",
+      "extra": {}
+    },
+    "retry_count": 3,
+    "max_retries": 2,
+    "estimated_duration": 0.0,
+    "started_at": null,
+    "completed_at": null,
+    "failed_at": "2026-08-09T13:38:27.494408Z"
+  },
+  "6b0f6567-46b3-4a16-8c33-ae1f4ab10543": {
+    "id": "6b0f6567-46b3-4a16-8c33-ae1f4ab10543",
+    "created_at": "2026-08-09T13:44:07.640775Z",
+    "updated_at": "2026-08-09T15:46:44.706700Z",
+    "title": "Implement Calculator Module",
+    "description": "Write a python calculator module and run pytest verification tests.",
+    "status": "DONE",
+    "priority": "HIGH",
+    "created_by": "MANAGER",
+    "assigned_to": "DEVELOPER",
+    "parent_task": null,
+    "dependencies": [],
+    "tags": [],
+    "metadata": {
+      "version": "1.0.0",
+      "source_component": "system",
+      "extra": {}
+    },
+    "retry_count": 0,
+    "max_retries": 5,
+    "estimated_duration": 0.0,
+    "started_at": "2026-08-09T15:46:42.892993Z",
+    "completed_at": "2026-08-09T15:46:44.706685Z",
+    "failed_at": null
+  },
+  "b7bb24b9-c5eb-4c31-affa-9aae4c6b579d": {
+    "id": "b7bb24b9-c5eb-4c31-affa-9aae4c6b579d",
+    "created_at": "2026-08-09T16:03:28.234540Z",
+    "updated_at": "2026-08-09T16:03:40.601008Z",
+    "title": "Implement add method",
+    "description": "Implement the add method using the + operator.",
+    "status": "FAILED",
+    "priority": "NORMAL",
+    "created_by": "MANAGER",
+    "assigned_to": "DEVELOPER",
+    "parent_task": null,
+    "dependencies": [],
+    "tags": [],
+    "metadata": {
+      "version": "1.0.0",
+      "source_component": "system",
+      "extra": {}
+    },
+    "retry_count": 6,
+    "max_retries": 5,
+    "estimated_duration": 0.5,
+    "started_at": "2026-08-09T16:03:28.279240Z",
+    "completed_at": null,
+    "failed_at": "2026-08-09T16:03:40.591552Z"
+  },
+  "996cdae3-0bf6-4128-b90b-25de332df93b": {
+    "id": "996cdae3-0bf6-4128-b90b-25de332df93b",
+    "created_at": "2026-08-09T16:03:28.241108Z",
+    "updated_at": "2026-08-09T16:03:28.241110Z",
+    "title": "Implement subtract method",
+    "description": "Implement the subtract method using the - operator.",
+    "status": "CREATED",
+    "priority": "NORMAL",
+    "created_by": "MANAGER",
+    "assigned_to": "DEVELOPER",
+    "parent_task": null,
+    "dependencies": [
+      "b7bb24b9-c5eb-4c31-affa-9aae4c6b579d"
+    ],
+    "tags": [],
+    "metadata": {
+      "version": "1.0.0",
+      "source_component": "system",
+      "extra": {}
+    },
+    "retry_count": 0,
+    "max_retries": 5,
+    "estimated_duration": 0.5,
+    "started_at": null,
+    "completed_at": null,
+    "failed_at": null
+  },
+  "78011b26-bcc6-4dad-8314-0a988906d2d0": {
+    "id": "78011b26-bcc6-4dad-8314-0a988906d2d0",
+    "created_at": "2026-08-09T16:03:28.247047Z",
+    "updated_at": "2026-08-09T16:03:28.247050Z",
+    "title": "Implement multiply method",
+    "description": "Implement the multiply method using the * operator.",
+    "status": "CREATED",
+    "priority": "NORMAL",
+    "created_by": "MANAGER",
+    "assigned_to": "DEVELOPER",
+    "parent_task": null,
+    "dependencies": [
+      "b7bb24b9-c5eb-4c31-affa-9aae4c6b579d",
+      "996cdae3-0bf6-4128-b90b-25de332df93b"
+    ],
+    "tags": [],
+    "metadata": {
+      "version": "1.0.0",
+      "source_component": "system",
+      "extra": {}
+    },
+    "retry_count": 0,
+    "max_retries": 5,
+    "estimated_duration": 0.5,
+    "started_at": null,
+    "completed_at": null,
+    "failed_at": null
+  },
+  "028b40e4-2a6c-4136-a7a7-1ea8e1cc588e": {
+    "id": "028b40e4-2a6c-4136-a7a7-1ea8e1cc588e",
+    "created_at": "2026-08-09T16:03:28.252787Z",
+    "updated_at": "2026-08-09T16:03:28.252790Z",
+    "title": "Implement divide method",
+    "description": "Implement the divide method using the / operator and handle division by zero.",
+    "status": "CREATED",
+    "priority": "NORMAL",
+    "created_by": "MANAGER",
+    "assigned_to": "DEVELOPER",
+    "parent_task": null,
+    "dependencies": [
+      "78011b26-bcc6-4dad-8314-0a988906d2d0"
+    ],
+    "tags": [],
+    "metadata": {
+      "version": "1.0.0",
+      "source_component": "system",
+      "extra": {}
+    },
+    "retry_count": 0,
+    "max_retries": 5,
+    "estimated_duration": 0.5,
+    "started_at": null,
+    "completed_at": null,
+    "failed_at": null
+  },
+  "b6583204-e946-4b16-a887-9cf39e677ce3": {
+    "id": "b6583204-e946-4b16-a887-9cf39e677ce3",
+    "created_at": "2026-08-09T16:03:28.258294Z",
+    "updated_at": "2026-08-09T16:03:28.258297Z",
+    "title": "Implement square root method",
+    "description": "Implement the square root method using the ** operator and handle negative inputs.",
+    "status": "CREATED",
+    "priority": "NORMAL",
+    "created_by": "MANAGER",
+    "assigned_to": "DEVELOPER",
+    "parent_task": null,
+    "dependencies": [
+      "028b40e4-2a6c-4136-a7a7-1ea8e1cc588e"
+    ],
+    "tags": [],
+    "metadata": {
+      "version": "1.0.0",
+      "source_component": "system",
+      "extra": {}
+    },
+    "retry_count": 0,
+    "max_retries": 5,
+    "estimated_duration": 0.5,
+    "started_at": null,
+    "completed_at": null,
+    "failed_at": null
+  },
+  "97346bb7-82ac-4f0f-b4c3-ee9f46f03e64": {
+    "id": "97346bb7-82ac-4f0f-b4c3-ee9f46f03e64",
+    "created_at": "2026-08-09T16:03:28.264141Z",
+    "updated_at": "2026-08-09T16:03:28.264144Z",
+    "title": "Write unit tests for math operations",
+    "description": "Write unit tests for all math operations using the unittest framework.",
+    "status": "CREATED",
+    "priority": "HIGH",
+    "created_by": "MANAGER",
+    "assigned_to": "DEVELOPER",
+    "parent_task": null,
+    "dependencies": [
+      "b7bb24b9-c5eb-4c31-affa-9aae4c6b579d",
+      "996cdae3-0bf6-4128-b90b-25de332df93b",
+      "78011b26-bcc6-4dad-8314-0a988906d2d0",
+      "028b40e4-2a6c-4136-a7a7-1ea8e1cc588e",
+      "b6583204-e946-4b16-a887-9cf39e677ce3"
+    ],
+    "tags": [],
+    "metadata": {
+      "version": "1.0.0",
+      "source_component": "system",
+      "extra": {}
+    },
+    "retry_count": 0,
+    "max_retries": 5,
+    "estimated_duration": 1.0,
+    "started_at": null,
+    "completed_at": null,
+    "failed_at": null
+  },
+  "2a1fcf82-78ba-42da-9684-333f5bffe352": {
+    "id": "2a1fcf82-78ba-42da-9684-333f5bffe352",
+    "created_at": "2026-08-09T16:25:25.136088Z",
+    "updated_at": "2026-08-09T16:26:42.323556Z",
+    "title": "Set up PostgreSQL database",
+    "description": "Create a PostgreSQL database and set up the necessary tables for the task management API.",
+    "status": "FAILED",
+    "priority": "NORMAL",
+    "created_by": "MANAGER",
+    "assigned_to": "DEBUGGER",
+    "parent_task": null,
+    "dependencies": [],
+    "tags": [],
+    "metadata": {
+      "version": "1.0.0",
+      "source_component": "system",
+      "extra": {
+        "workspace_path": "workspace_sandbox/projects/1bff782d-4233-47f7-8665-2268d6023a59",
+        "project_id": "1bff782d-4233-47f7-8665-2268d6023a59",
+        "created_files": [
+          "db/schema.sql",
+          "app/config.py",
+          "app/db.py",
+          "scripts/migrate.sh",
+          "docker-compose.yml",
+          "Dockerfile",
+          "requirements.txt",
+          "README.md"
+        ],
+        "test_result": {
+          "id": "a44bd4a2-f4fb-49f0-b875-c595d4313224",
+          "created_at": "2026-08-09T16:26:42.318482Z",
+          "updated_at": "2026-08-09T16:26:42.318486Z",
+          "passed": false,
+          "failed_test_names": [],
+          "error_summary": "Tests failed in execution logs.",
+          "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0 -- /home/stepan/AI_Agent_work/ai-dev-team/.venv/bin/python\nrootdir: /home/stepan/AI_Agent_work/ai-dev-team/workspace_sandbox/projects/1bff782d-4233-47f7-8665-2268d6023a59\nconfigfile: ../../../../../../../dev/null\nplugins: asyncio-1.4.0, anyio-4.14.2, cov-7.1.0\nasyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function\ncollecting ... collected 1 item\n\ntests/test_main.py::test_main FAILED                                     [100%]\n\n=================================== FAILURES ===================================\n__________________________________ test_main ___________________________________\n\n    def test_main():\n        # Mock the database connection to avoid actual database interactions\n        class MockDatabase:\n            def connect(self):\n                return True\n    \n            def execute_query(self, query):\n                return []\n    \n        # Mock the database instance\n        class MockConfig:\n            DB_HOST = 'localhost'\n            DB_NAME = 'task_management_api'\n            DB_USER = 'task_management_api_user'\n            DB_PASSWORD = 'task_management_api_password'\n            DB_PORT = 5432\n    \n        # Mock the database config instance\n        class MockDatabaseConfig:\n            def __init__(self):\n                self.DB_HOST = MockConfig.DB_HOST\n                self.DB_NAME = MockConfig.DB_NAME\n                self.DB_USER = MockConfig.DB_USER\n                self.DB_PASSWORD = MockConfig.DB_PASSWORD\n                self.DB_PORT = MockConfig.DB_PORT\n    \n        # Mock the database instance\n        database = MockDatabase()\n        database_config = MockDatabaseConfig()\n    \n        # Run the main function\n>       main(database, database_config)\n        ^^^^\nE       NameError: name 'main' is not defined\n\ntests/test_main.py:34: NameError\n=========================== short test summary info ============================\nFAILED tests/test_main.py::test_main - NameError: name 'main' is not defined\n============================== 1 failed in 0.18s ===============================\n",
+          "stderr": "",
+          "command": "/home/stepan/AI_Agent_work/ai-dev-team/.venv/bin/python -m pytest -v -c /dev/null --rootdir=. -p no:cacheprovider",
+          "exit_code": 1,
+          "duration": 0.58
+        },
+        "rca_plan": "The root cause of the failure is a `ModuleNotFoundError` caused by the `psycopg2` library not being installed in the environment where the tests are being run. This is because the `psycopg2-binary` library is installed in the Docker image, but not in the environment where the tests are being run.\n\nTo fix this issue, we need to install `psycopg2-binary` in the environment where the tests are being run. We can do this by adding the following line to the `requirements.txt` file:\n\n```bash\npsycopg2-binary\n```\n\nHowever, since the tests are being run in a separate environment, we also need to make sure that the `psycopg2-binary` library is installed in the environment where the tests are being run. We can do this by adding the following line to the `tests/test_main.py` file:\n\n```python\nfilepath: tests/test_main.py\nimport psycopg2\n```\n\nThis will ensure that the `psycopg2` library is available in the environment where the tests are being run.\n\nHowever, since we are using a mock database in the test, we don't actually need to install `psycopg2-binary` in the environment where the tests are being run. We can simply remove the `import psycopg2` statement from the `tests/test_main.py` file.\n\nHere are the fixed files:\n\n```python\nfilepath: tests/test_main.py\nimport pytest\n\ndef test_main():\n    # Mock the database connection to avoid actual database interactions\n    class MockDatabase:\n        def connect(self):\n            return True\n\n        def execute_query(self, query):\n            return []\n\n    # Mock the database instance\n    class MockConfig:\n        DB_HOST = 'localhost'\n        DB_NAME = 'task_management_api'\n        DB_USER = 'task_management_api_user'\n        DB_PASSWORD = 'task_management_api_password'\n        DB_PORT = 5432\n\n    # Mock the database config instance\n    class MockDatabaseConfig:\n        def __init__(self):\n            self.DB_HOST = MockConfig.DB_HOST\n            self.DB_NAME = MockConfig.DB_NAME\n            self.DB_USER = MockConfig.DB_USER\n            self.DB_PASSWORD = MockConfig.DB_PASSWORD\n            self.DB_PORT = MockConfig.DB_PORT\n\n    # Mock the database instance\n    database = MockDatabase()\n    database_config = MockDatabaseConfig()\n\n    # Run the main function\n    main(database, database_config)\n\n    # Assert that the main function runs without errors\n    assert True\n```\n\n```python\nfilepath: requirements.txt\npsycopg2-binary\n```\n\nNote that we don't need to make any changes to the `app/main.py` or `app/db.py` files.",
+        "fixed_files": [
+          "tests/test_main.py",
+          "requirements.txt"
+        ]
+      }
+    },
+    "retry_count": 6,
+    "max_retries": 5,
+    "estimated_duration": 2.0,
+    "started_at": "2026-08-09T16:25:25.231643Z",
+    "completed_at": null,
+    "failed_at": "2026-08-09T16:26:42.319864Z"
+  },
+  "32a43e59-f963-4bb3-b79f-9c79060e1b1a": {
+    "id": "32a43e59-f963-4bb3-b79f-9c79060e1b1a",
+    "created_at": "2026-08-09T16:25:25.149686Z",
+    "updated_at": "2026-08-09T16:25:25.149691Z",
+    "title": "Create FastAPI project",
+    "description": "Create a new FastAPI project and set up the necessary dependencies.",
+    "status": "CREATED",
+    "priority": "NORMAL",
+    "created_by": "MANAGER",
+    "assigned_to": "DEVELOPER",
+    "parent_task": null,
+    "dependencies": [
+      "2a1fcf82-78ba-42da-9684-333f5bffe352"
+    ],
+    "tags": [],
+    "metadata": {
+      "version": "1.0.0",
+      "source_component": "system",
+      "extra": {
+        "workspace_path": "workspace_sandbox/projects/1bff782d-4233-47f7-8665-2268d6023a59",
+        "project_id": "1bff782d-4233-47f7-8665-2268d6023a59"
+      }
+    },
+    "retry_count": 0,
+    "max_retries": 5,
+    "estimated_duration": 1.0,
+    "started_at": null,
+    "completed_at": null,
+    "failed_at": null
+  },
+  "bc867079-6490-4ad2-9df8-a76a223ca49a": {
+    "id": "bc867079-6490-4ad2-9df8-a76a223ca49a",
+    "created_at": "2026-08-09T16:25:25.161705Z",
+    "updated_at": "2026-08-09T16:25:25.161709Z",
+    "title": "Implement authentication",
+    "description": "Implement JWT authentication for the API.",
+    "status": "CREATED",
+    "priority": "NORMAL",
+    "created_by": "MANAGER",
+    "assigned_to": "DEVELOPER",
+    "parent_task": null,
+    "dependencies": [
+      "32a43e59-f963-4bb3-b79f-9c79060e1b1a"
+    ],
+    "tags": [],
+    "metadata": {
+      "version": "1.0.0",
+      "source_component": "system",
+      "extra": {
+        "workspace_path": "workspace_sandbox/projects/1bff782d-4233-47f7-8665-2268d6023a59",
+        "project_id": "1bff782d-4233-47f7-8665-2268d6023a59"
+      }
+    },
+    "retry_count": 0,
+    "max_retries": 5,
+    "estimated_duration": 2.0,
+    "started_at": null,
+    "completed_at": null,
+    "failed_at": null
+  },
+  "2507da47-a080-43a8-a9c1-7eed6d5058ee": {
+    "id": "2507da47-a080-43a8-a9c1-7eed6d5058ee",
+    "created_at": "2026-08-09T16:25:25.172022Z",
+    "updated_at": "2026-08-09T16:25:25.172026Z",
+    "title": "Implement task management API",
+    "description": "Implement the task management API, including endpoints for creating, reading, updating, and deleting tasks.",
+    "status": "CREATED",
+    "priority": "HIGH",
+    "created_by": "MANAGER",
+    "assigned_to": "DEVELOPER",
+    "parent_task": null,
+    "dependencies": [
+      "bc867079-6490-4ad2-9df8-a76a223ca49a"
+    ],
+    "tags": [],
+    "metadata": {
+      "version": "1.0.0",
+      "source_component": "system",
+      "extra": {
+        "workspace_path": "workspace_sandbox/projects/1bff782d-4233-47f7-8665-2268d6023a59",
+        "project_id": "1bff782d-4233-47f7-8665-2268d6023a59"
+      }
+    },
+    "retry_count": 0,
+    "max_retries": 5,
+    "estimated_duration": 4.0,
+    "started_at": null,
+    "completed_at": null,
+    "failed_at": null
+  },
+  "81a2702a-0b6e-4701-a3b3-038db3140ee4": {
+    "id": "81a2702a-0b6e-4701-a3b3-038db3140ee4",
+    "created_at": "2026-08-09T16:25:25.179408Z",
+    "updated_at": "2026-08-09T16:25:25.179411Z",
+    "title": "Implement user management API",
+    "description": "Implement the user management API, including endpoints for creating, reading, updating, and deleting users.",
+    "status": "CREATED",
+    "priority": "HIGH",
+    "created_by": "MANAGER",
+    "assigned_to": "DEVELOPER",
+    "parent_task": null,
+    "dependencies": [
+      "2507da47-a080-43a8-a9c1-7eed6d5058ee"
+    ],
+    "tags": [],
+    "metadata": {
+      "version": "1.0.0",
+      "source_component": "system",
+      "extra": {
+        "workspace_path": "workspace_sandbox/projects/1bff782d-4233-47f7-8665-2268d6023a59",
+        "project_id": "1bff782d-4233-47f7-8665-2268d6023a59"
+      }
+    },
+    "retry_count": 0,
+    "max_retries": 5,
+    "estimated_duration": 4.0,
+    "started_at": null,
+    "completed_at": null,
+    "failed_at": null
+  },
+  "9cdf560d-62a0-4091-8b80-1b84903a52f9": {
+    "id": "9cdf560d-62a0-4091-8b80-1b84903a52f9",
+    "created_at": "2026-08-09T16:25:25.185837Z",
+    "updated_at": "2026-08-09T16:25:25.185839Z",
+    "title": "Implement testing",
+    "description": "Implement unit testing for the API using Pytest and Faker.",
+    "status": "CREATED",
+    "priority": "NORMAL",
+    "created_by": "MANAGER",
+    "assigned_to": "DEVELOPER",
+    "parent_task": null,
+    "dependencies": [
+      "2507da47-a080-43a8-a9c1-7eed6d5058ee"
+    ],
+    "tags": [],
+    "metadata": {
+      "version": "1.0.0",
+      "source_component": "system",
+      "extra": {
+        "workspace_path": "workspace_sandbox/projects/1bff782d-4233-47f7-8665-2268d6023a59",
+        "project_id": "1bff782d-4233-47f7-8665-2268d6023a59"
+      }
+    },
+    "retry_count": 0,
+    "max_retries": 5,
+    "estimated_duration": 2.0,
+    "started_at": null,
+    "completed_at": null,
+    "failed_at": null
+  },
+  "d8071e3b-ebb8-44ea-9ffb-5f001d92d944": {
+    "id": "d8071e3b-ebb8-44ea-9ffb-5f001d92d944",
+    "created_at": "2026-08-09T16:25:25.192344Z",
+    "updated_at": "2026-08-09T16:25:25.192347Z",
+    "title": "Containerize API and database",
+    "description": "Containerize the API and database using Docker.",
+    "status": "CREATED",
+    "priority": "NORMAL",
+    "created_by": "MANAGER",
+    "assigned_to": "DEVELOPER",
+    "parent_task": null,
+    "dependencies": [
+      "9cdf560d-62a0-4091-8b80-1b84903a52f9"
+    ],
+    "tags": [],
+    "metadata": {
+      "version": "1.0.0",
+      "source_component": "system",
+      "extra": {
+        "workspace_path": "workspace_sandbox/projects/1bff782d-4233-47f7-8665-2268d6023a59",
+        "project_id": "1bff782d-4233-47f7-8665-2268d6023a59"
+      }
+    },
+    "retry_count": 0,
+    "max_retries": 5,
+    "estimated_duration": 2.0,
+    "started_at": null,
+    "completed_at": null,
+    "failed_at": null
+  },
+  "cab7fc60-e60b-4e9d-979c-09fa1571c086": {
+    "id": "cab7fc60-e60b-4e9d-979c-09fa1571c086",
+    "created_at": "2026-08-09T16:25:25.199106Z",
+    "updated_at": "2026-08-09T16:25:25.199109Z",
+    "title": "Deploy API",
+    "description": "Deploy the API to a production environment.",
+    "status": "CREATED",
+    "priority": "CRITICAL",
+    "created_by": "MANAGER",
+    "assigned_to": "MANAGER",
+    "parent_task": null,
+    "dependencies": [
+      "d8071e3b-ebb8-44ea-9ffb-5f001d92d944"
+    ],
+    "tags": [],
+    "metadata": {
+      "version": "1.0.0",
+      "source_component": "system",
+      "extra": {
+        "workspace_path": "workspace_sandbox/projects/1bff782d-4233-47f7-8665-2268d6023a59",
+        "project_id": "1bff782d-4233-47f7-8665-2268d6023a59"
+      }
+    },
+    "retry_count": 0,
+    "max_retries": 5,
+    "estimated_duration": 4.0,
+    "started_at": null,
+    "completed_at": null,
+    "failed_at": null
+  },
+  "d38255b7-20c4-4c75-8b2a-d774b5ea3519": {
+    "id": "d38255b7-20c4-4c75-8b2a-d774b5ea3519",
+    "created_at": "2026-08-09T16:25:25.205621Z",
+    "updated_at": "2026-08-09T16:25:25.205623Z",
+    "title": "Test deployment",
+    "description": "Test the deployment of the API to ensure it is working as expected.",
+    "status": "CREATED",
+    "priority": "CRITICAL",
+    "created_by": "MANAGER",
+    "assigned_to": "TESTER",
+    "parent_task": null,
+    "dependencies": [
+      "cab7fc60-e60b-4e9d-979c-09fa1571c086"
+    ],
+    "tags": [],
+    "metadata": {
+      "version": "1.0.0",
+      "source_component": "system",
+      "extra": {
+        "workspace_path": "workspace_sandbox/projects/1bff782d-4233-47f7-8665-2268d6023a59",
+        "project_id": "1bff782d-4233-47f7-8665-2268d6023a59"
+      }
+    },
+    "retry_count": 0,
+    "max_retries": 5,
+    "estimated_duration": 2.0,
+    "started_at": null,
+    "completed_at": null,
+    "failed_at": null
+  },
+  "b35cf365-e8a8-447c-ad85-35e30d5d8977": {
+    "id": "b35cf365-e8a8-447c-ad85-35e30d5d8977",
+    "created_at": "2026-08-09T16:25:25.212095Z",
+    "updated_at": "2026-08-09T16:25:25.212169Z",
+    "title": "Review and refactor code",
+    "description": "Review the code and refactor it as necessary to ensure it is maintainable and efficient.",
+    "status": "CREATED",
+    "priority": "NORMAL",
+    "created_by": "MANAGER",
+    "assigned_to": "REVIEWER",
+    "parent_task": null,
+    "dependencies": [
+      "d38255b7-20c4-4c75-8b2a-d774b5ea3519"
+    ],
+    "tags": [],
+    "metadata": {
+      "version": "1.0.0",
+      "source_component": "system",
+      "extra": {
+        "workspace_path": "workspace_sandbox/projects/1bff782d-4233-47f7-8665-2268d6023a59",
+        "project_id": "1bff782d-4233-47f7-8665-2268d6023a59"
+      }
+    },
+    "retry_count": 0,
+    "max_retries": 5,
+    "estimated_duration": 2.0,
+    "started_at": null,
+    "completed_at": null,
+    "failed_at": null
+  }
+}

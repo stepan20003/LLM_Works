@@ -6,7 +6,7 @@ from uuid import UUID
 from pydantic import Field
 
 from app.core.base_component import BaseComponent
-from app.schemas.enums import AgentRole, AgentState
+from app.schemas.enums import AgentRole, AgentState, EventType
 from app.schemas.value_objects.agent_response import AgentResponse
 from app.schemas.value_objects.agent_runtime import AgentRuntimeState
 
@@ -23,6 +23,23 @@ class BaseAgent(BaseComponent):
     current_task_id: Optional[UUID] = Field(
         default=None, description="UUID of the task currently being processed, if any."
     )
+    event_bus: Optional[Any] = Field(
+        default=None, description="EventBus instance for publishing telemetry.", exclude=True
+    )
+
+    async def publish_telemetry(self, event_type: EventType, payload: dict[str, Any]) -> None:
+        """Helper to publish a telemetry event if the event bus is attached."""
+        if self.event_bus:
+            # Import Event inside to avoid potential circular dependencies if schemas change
+            from app.schemas.entities.event import Event
+            event = Event(
+                event_type=event_type,
+                source_agent=self.role,
+                task_id=self.current_task_id,
+                payload=payload,
+                metadata=self.metadata
+            )
+            await self.event_bus.publish(event)
 
     @abstractmethod
     async def process_task(

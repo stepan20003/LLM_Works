@@ -96,3 +96,17 @@ class LocalWorkspace(BaseWorkspace):
                 rel_path = os.path.relpath(full_path, self.root_path)
                 result_files.append(rel_path.replace("\\", "/"))
         return result_files
+
+
+def get_project_workspace(project_id: str | Path, base_dir: str | Path | None = None) -> LocalWorkspace:
+    """Factory function creating a LocalWorkspace isolated for a specific project ID."""
+    from app.settings.settings import settings
+
+    root_base = Path(base_dir or settings.workspace_dir)
+    project_root = root_base / "projects" / str(project_id)
+    project_root.mkdir(parents=True, exist_ok=True)
+
+    return LocalWorkspace(
+        component_id=f"workspace-{project_id}",
+        root_path=str(project_root),
+    )

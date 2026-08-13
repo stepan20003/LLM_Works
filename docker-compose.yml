@@ -7,13 +7,17 @@ services:
     restart: unless-stopped
     ports:
       - "8000:8000"
+    env_file:
+      - .env
     environment:
       - APP_NAME=AI Development Team
       - ENVIRONMENT=production
       - DEBUG=true
       - WORKSPACE_DIR=/workspace/workspace_sandbox
-      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
-      - LLM_MODEL=${LLM_MODEL:-gpt-4o}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - LLM_MODEL=${LLM_MODEL:-llama-3.1-8b-instant}
+      - BASE_URL=${BASE_URL:-https://api.groq.com/openai/v1}
+      - PROVIDER=openai
     volumes:
       - ./app:/workspace/app
       - ./workspace_sandbox:/workspace/workspace_sandbox

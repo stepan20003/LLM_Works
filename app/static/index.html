@@ -1,248 +1,769 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en" class="dark h-full">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Development Team - Autonomous Command Center</title>
+    <title>AI DEV TEAM — Autonomous Project Execution Platform</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             darkMode: 'class',
-            theme: { extend: { colors: { dark: { 800: '#1e1b4b', 900: '#0f172a' } } } }
+            theme: {
+                extend: {
+                    colors: {
+                        zinc: {
+                            950: '#09090b',
+                            900: '#121215',
+                            850: '#18181b',
+                            800: '#27272a',
+                            700: '#3f3f46',
+                            400: '#a1a1aa',
+                            100: '#f4f4f5'
+                        }
+                    }
+                }
+            }
         }
     </script>
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Inter Font -->
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        [x-cloak] { display: none !important; }
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #09090b; }
+        ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 15px rgba(99, 102, 241, 0.4); }
+            50% { box-shadow: 0 0 30px rgba(99, 102, 241, 0.8); }
+        }
+        .active-pipeline-node { animation: pulse-glow 2s infinite; }
+    </style>
 </head>
-<body class="bg-slate-900 text-slate-100 min-h-screen font-sans">
-    <!-- Header -->
-    <header class="border-b border-slate-800 bg-slate-950 px-6 py-4 flex justify-between items-center shadow-md">
-        <div class="flex items-center space-x-3">
-            <div class="h-3 w-3 rounded-full bg-emerald-500 animate-pulse" id="connection-indicator"></div>
-            <h1 class="text-xl font-bold tracking-wide bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">AI Development Team Core</h1>
-        </div>
-        <div class="text-sm text-slate-400">
-            WebSocket Status: <span id="ws-status" class="text-yellow-400 font-medium">Connecting...</span>
-        </div>
-    </header>
+<body class="bg-zinc-950 text-zinc-100 h-full antialiased selection:bg-zinc-800 selection:text-zinc-100" x-data="appData()" x-init="init()">
 
-    <main class="max-w-7xl mx-auto p-6 space-y-6">
-        <!-- Agent Roles Status Grid -->
-        <div class="bg-slate-950 border border-slate-800 rounded-xl p-6 shadow-xl">
-            <h2 class="text-lg font-semibold mb-4 text-indigo-300">Active AI Agent Team</h2>
-            <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
-                <div id="agent-manager" class="bg-slate-900 border border-slate-800 rounded-lg p-4 transition">
-                    <div class="flex justify-between items-center mb-2">
-                        <span class="font-semibold text-sm text-slate-200">📋 Manager</span>
-                        <span class="text-xs px-2 py-0.5 rounded bg-slate-800 text-slate-400 status-badge">Idle</span>
+    <div class="flex h-screen overflow-hidden">
+        
+        <!-- SIDEBAR -->
+        <aside class="w-64 border-r border-zinc-800/80 bg-zinc-950 flex flex-col justify-between shrink-0 select-none transition-all duration-300">
+            <div>
+                <!-- Brand Logo -->
+                <div class="h-16 px-6 flex items-center space-x-3 border-b border-zinc-800/80">
+                    <div class="h-8 w-8 rounded-xl bg-indigo-600 border border-indigo-400 flex items-center justify-center font-bold text-xs text-white shadow-lg shadow-indigo-500/30">AI</div>
+                    <div class="flex flex-col">
+                        <span class="font-bold tracking-tight text-sm text-zinc-100">AI DEV TEAM</span>
+                        <span class="text-[10px] text-indigo-400 font-medium tracking-wide">AUTONOMOUS PLATFORM</span>
                     </div>
-                    <p class="text-xs text-slate-500 agent-action">Waiting for task...</p>
-                </div>
-                <div id="agent-architect" class="bg-slate-900 border border-slate-800 rounded-lg p-4 transition">
-                    <div class="flex justify-between items-center mb-2">
-                        <span class="font-semibold text-sm text-slate-200">📐 Architect</span>
-                        <span class="text-xs px-2 py-0.5 rounded bg-slate-800 text-slate-400 status-badge">Idle</span>
-                    </div>
-                    <p class="text-xs text-slate-500 agent-action">Waiting for task...</p>
-                </div>
-                <div id="agent-developer" class="bg-slate-900 border border-slate-800 rounded-lg p-4 transition">
-                    <div class="flex justify-between items-center mb-2">
-                        <span class="font-semibold text-sm text-slate-200">💻 Developer</span>
-                        <span class="text-xs px-2 py-0.5 rounded bg-slate-800 text-slate-400 status-badge">Idle</span>
-                    </div>
-                    <p class="text-xs text-slate-500 agent-action">Waiting for task...</p>
-                </div>
-                <div id="agent-reviewer" class="bg-slate-900 border border-slate-800 rounded-lg p-4 transition">
-                    <div class="flex justify-between items-center mb-2">
-                        <span class="font-semibold text-sm text-slate-200">🔍 Reviewer</span>
-                        <span class="text-xs px-2 py-0.5 rounded bg-slate-800 text-slate-400 status-badge">Idle</span>
-                    </div>
-                    <p class="text-xs text-slate-500 agent-action">Waiting for task...</p>
-                </div>
-                <div id="agent-tester" class="bg-slate-900 border border-slate-800 rounded-lg p-4 transition">
-                    <div class="flex justify-between items-center mb-2">
-                        <span class="font-semibold text-sm text-slate-200">🧪 Tester</span>
-                        <span class="text-xs px-2 py-0.5 rounded bg-slate-800 text-slate-400 status-badge">Idle</span>
-                    </div>
-                    <p class="text-xs text-slate-500 agent-action">Waiting for task...</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Main Content Layout -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            <div class="lg:col-span-2 space-y-6">
-                <div class="bg-slate-950 border border-slate-800 rounded-xl p-6 shadow-xl">
-                    <h2 class="text-lg font-semibold mb-4 text-indigo-300">Command Center: Dispatch Task</h2>
-                    <form id="task-form" class="space-y-4">
-                        <div>
-                            <label class="block text-sm font-medium text-slate-400 mb-1">Task Title</label>
-                            <input type="text" id="task-title" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2.5 text-slate-200 focus:outline-none focus:border-indigo-500 transition" placeholder="e.g., Create a secure login API endpoint in Python">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-slate-400 mb-1">Instructions for Agents</label>
-                            <textarea id="task-desc" rows="3" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2.5 text-slate-200 focus:outline-none focus:border-indigo-500 transition" placeholder="Specify requirements, constraints, or desired features..."></textarea>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <button type="button" onclick="runOrchestrator()" class="bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-2.5 rounded-lg font-medium transition shadow-lg shadow-emerald-600/20">
-                                Run Engine ⚡
-                            </button>
-                            <button type="submit" class="bg-indigo-600 hover:bg-indigo-500 text-white px-6 py-2.5 rounded-lg font-medium transition shadow-lg shadow-indigo-600/20">
-                                Dispatch Task 🚀
-                            </button>
-                        </div>
-                    </form>
                 </div>
 
-                <div class="bg-slate-950 border border-slate-800 rounded-xl p-6 shadow-xl">
-                    <div class="flex justify-between items-center mb-4">
-                        <h2 class="text-lg font-semibold text-indigo-300">Pipeline Execution Tasks</h2>
-                        <button onclick="fetchTasks()" class="text-xs text-indigo-400 hover:text-indigo-300 border border-indigo-500/30 px-3 py-1.5 rounded-md transition bg-indigo-500/10">Refresh List</button>
-                    </div>
-                    <div id="tasks-container" class="space-y-3 max-h-[300px] overflow-y-auto pr-2">
-                        <p class="text-slate-500 text-sm text-center py-6">No tasks loaded yet.</p>
-                    </div>
-                </div>
+                <!-- Navigation Links -->
+                <nav class="p-3 space-y-1">
+                    <template x-for="item in navItems" :key="item.id">
+                        <button @click="currentTab = item.id"
+                                :class="currentTab === item.id ? 'bg-zinc-850 text-zinc-100 border-zinc-700/50 shadow-sm' : 'text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900/60 border-transparent'"
+                                class="w-full flex items-center space-x-3 px-3 py-2.5 rounded-lg text-xs font-medium border transition-all text-left">
+                            <span x-html="item.icon" class="w-4 h-4 shrink-0"></span>
+                            <span x-text="item.label"></span>
+                        </button>
+                    </template>
+                </nav>
             </div>
 
-            <!-- Right Column: Live Terminal Stream -->
-            <div class="bg-slate-950 border border-slate-800 rounded-xl p-6 shadow-xl flex flex-col h-[520px]">
-                <h2 class="text-lg font-semibold mb-4 text-indigo-300 flex items-center justify-between">
-                    <span>Live Agent Telemetry</span>
-                    <span class="text-xs font-normal bg-slate-800 px-2 py-1 rounded text-slate-400">Real-time</span>
-                </h2>
-                <div id="log-container" class="flex-1 bg-slate-900 border border-slate-800 rounded-lg p-4 font-mono text-xs overflow-y-auto space-y-2 text-slate-300 select-text">
-                    <div class="text-slate-500">// Connected to agent message bus...</div>
+            <!-- Sidebar Footer -->
+            <div class="p-4 border-t border-zinc-800/80 space-y-3">
+                <button @click="currentTab = 'projects'" class="w-full flex items-center justify-center space-x-2 bg-indigo-600 hover:bg-indigo-500 text-white px-3 py-2.5 rounded-lg text-xs font-semibold transition shadow-md shadow-indigo-600/20">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                    <span>New Project Prompt</span>
+                </button>
+                <div class="flex items-center justify-between text-[11px] text-zinc-500 px-1">
+                    <span>Engine v2.0</span>
+                    <span class="flex items-center space-x-1.5">
+                        <span class="h-1.5 w-1.5 rounded-full" :class="wsConnected ? 'bg-emerald-500' : 'bg-red-500'"></span>
+                        <span x-text="wsConnected ? 'Connected' : 'Offline'"></span>
+                    </span>
                 </div>
             </div>
-        </div>
-    </main>
+        </aside>
 
-    <script>
-        async function fetchTasks() {
-            try {
-                const res = await fetch('/tasks/');
-                if (!res.ok) return;
-                const tasks = await res.json();
-                const container = document.getElementById('tasks-container');
-                if (tasks.length === 0) {
-                    container.innerHTML = '<p class="text-slate-500 text-sm text-center py-6">No tasks found.</p>';
-                    return;
-                }
-                container.innerHTML = tasks.map(t => `
-                    <div class="bg-slate-900 border border-slate-800 p-4 rounded-lg flex justify-between items-start transition hover:border-slate-700">
-                        <div>
-                            <h3 class="font-medium text-slate-200">${t.title}</h3>
-                            <p class="text-xs text-slate-400 mt-1">${t.description || 'No description'}</p>
-                        </div>
-                        <span class="text-xs px-2.5 py-1 rounded-full font-semibold ${
-                            t.status === 'DONE' ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20' :
-                            t.status === 'IN_PROGRESS' ? 'bg-amber-500/10 text-amber-400 border border-amber-500/20' :
-                            'bg-slate-800 text-slate-400'
-                        }">${t.status}</span>
-                    </div>
-                `).join('');
-            } catch (e) {
-                console.error('Failed to fetch tasks', e);
-            }
-        }
-
-        document.getElementById('task-form').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const title = document.getElementById('task-title').value;
-            const description = document.getElementById('task-desc').value;
+        <!-- MAIN CONTENT AREA -->
+        <div class="flex-1 flex flex-col min-w-0 overflow-hidden bg-zinc-950">
             
-            try {
-                const res = await fetch('/tasks/', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ title, description, priority: 'MEDIUM', assigned_to: 'DEVELOPER' })
-                });
-                if (res.ok) {
-                    document.getElementById('task-title').value = '';
-                    document.getElementById('task-desc').value = '';
-                    fetchTasks();
-                }
-            } catch (err) {
-                alert('Error dispatching task');
-            }
-        });
+            <!-- TOP NAVIGATION -->
+            <header class="h-16 border-b border-zinc-800/80 px-6 flex items-center justify-between bg-zinc-950/80 backdrop-blur shrink-0 z-10">
+                <div class="flex items-center space-x-3">
+                    <h2 class="text-sm font-semibold text-zinc-200 capitalize" x-text="currentTab"></h2>
+                    <span class="text-zinc-700">/</span>
+                    <span class="text-xs text-zinc-400">Autonomous Multi-Agent Software Execution</span>
+                </div>
 
-        async function runOrchestrator() {
-            try {
-                const res = await fetch('/orchestrator/run', { method: 'POST' });
-                const data = await res.json();
-                if (res.ok) {
-                    fetchTasks();
-                } else {
-                    alert('Error: ' + data.message);
-                }
-            } catch (err) {
-                alert('Failed to trigger orchestrator');
-            }
-        }
+                <div class="flex items-center space-x-4">
+                    <!-- Global Search -->
+                    <div class="relative hidden sm:block">
+                        <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-zinc-500 text-xs">🔍</span>
+                        <input type="text" x-model="searchQuery" placeholder="Search project, files, events..." class="bg-zinc-900 border border-zinc-800 rounded-lg pl-8 pr-4 py-1.5 text-xs text-zinc-200 placeholder-zinc-500 focus:outline-none focus:border-zinc-700 w-64 transition">
+                    </div>
 
-        function updateAgentUI(role, status, actionText) {
-            const roleKey = role ? role.toLowerCase() : 'developer';
-            const agentCard = document.getElementById(`agent-${roleKey}`);
-            if (!agentCard) return;
+                    <!-- System Status Badge -->
+                    <div class="hidden md:flex items-center space-x-2 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-[11px]">
+                        <span class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                        <span class="text-zinc-300 font-medium">Platform Ready</span>
+                    </div>
+                </div>
+            </header>
 
-            const badge = agentCard.querySelector('.status-badge');
-            const actionP = agentCard.querySelector('.agent-action');
+            <!-- DYNAMIC VIEW CONTAINER -->
+            <main class="flex-1 overflow-y-auto p-8 space-y-6">
 
-            if (status === 'WORKING') {
-                agentCard.className = 'bg-slate-900 border border-indigo-500/50 rounded-lg p-4 shadow-lg shadow-indigo-500/10 transition';
-                badge.className = 'text-xs px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20 status-badge animate-pulse';
-                badge.textContent = 'Working';
-            } else if (status === 'SUCCESS') {
-                agentCard.className = 'bg-slate-900 border border-emerald-500/50 rounded-lg p-4 transition';
-                badge.className = 'text-xs px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 status-badge';
-                badge.textContent = 'Done';
-            }
-            if (actionText) {
-                actionP.textContent = actionText;
-                actionP.className = 'text-xs text-indigo-300 mt-1 truncate';
-            }
-        }
+                <!-- TOAST NOTIFICATION -->
+                <div x-show="toast.show" x-transition.opacity class="fixed bottom-6 right-6 z-50 bg-zinc-900 border border-zinc-700 text-zinc-100 px-4 py-3 rounded-xl shadow-2xl flex items-center space-x-3 text-xs" x-cloak>
+                    <span x-text="toast.type === 'success' ? '✅' : '⚠️'"></span>
+                    <span x-text="toast.message"></span>
+                </div>
 
-        function connectWS() {
-            const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
-            const ws = new WebSocket(`${protocol}//${window.location.host}/ws`);
-            const statusEl = document.getElementById('ws-status');
-            const indicator = document.getElementById('connection-indicator');
-            const logContainer = document.getElementById('log-container');
+                <!-- ==================== 0. PROJECTS VIEW (MAIN AUTONOMOUS PLATFORM) ==================== -->
+                <div x-show="currentTab === 'projects'" x-cloak class="space-y-8">
+                    
+                    <!-- PROMPT SUBMISSION PANEL -->
+                    <div class="bg-zinc-900/60 border border-zinc-800/80 rounded-2xl p-6 shadow-xl space-y-4">
+                        <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-2">
+                            <div>
+                                <h3 class="text-base font-bold text-zinc-100 flex items-center space-x-2">
+                                    <span>🚀 Submit Software Project Prompt</span>
+                                </h3>
+                                <p class="text-xs text-zinc-400">Specify requirements and let the autonomous AI team design, build, test, review, and package your software.</p>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <span class="text-[11px] text-zinc-400">Presets:</span>
+                                <button @click="projectPrompt = 'Build a production-ready FastApi REST API with JWT authentication, PostgreSQL database schema, user CRUD operations, unit test suite, and Swagger documentation.'" class="px-2.5 py-1 rounded-lg bg-zinc-850 hover:bg-zinc-800 text-[11px] text-indigo-300 border border-zinc-700/50 transition">FastAPI Auth API</button>
+                                <button @click="projectPrompt = 'Build a real-time WebSocket chat server with room channels, message history, unit tests, and Docker deployment config.'" class="px-2.5 py-1 rounded-lg bg-zinc-850 hover:bg-zinc-800 text-[11px] text-indigo-300 border border-zinc-700/50 transition">WebSocket Chat</button>
+                            </div>
+                        </div>
 
-            ws.onopen = () => {
-                statusEl.textContent = 'Connected (Live)';
-                statusEl.className = 'text-emerald-400 font-medium';
-                indicator.className = 'h-3 w-3 rounded-full bg-emerald-500';
-            };
+                        <div class="space-y-3">
+                            <textarea x-model="projectPrompt" rows="4" placeholder="Enter your detailed software project description here (e.g. Build an e-commerce platform with auth, payment processing, product catalog, tests, and documentation)..." class="w-full bg-zinc-950 border border-zinc-800 rounded-xl p-4 text-xs text-zinc-100 placeholder-zinc-500 focus:outline-none focus:border-indigo-500/60 focus:ring-1 focus:ring-indigo-500/60 transition shadow-inner font-mono"></textarea>
+                            
+                            <div class="flex justify-between items-center pt-1">
+                                <div class="flex items-center space-x-4 text-xs text-zinc-400">
+                                    <span class="flex items-center space-x-1.5"><span class="h-1.5 w-1.5 rounded-full bg-indigo-400"></span><span>Isolated Workspace Sandbox</span></span>
+                                    <span class="flex items-center space-x-1.5"><span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span><span>Auto Report & ZIP Package</span></span>
+                                </div>
+                                <button @click="launchProject()" :disabled="isLaunchingProject || !projectPrompt.trim()" class="bg-indigo-600 hover:bg-indigo-500 disabled:opacity-50 text-white px-6 py-2.5 rounded-xl text-xs font-semibold transition shadow-lg shadow-indigo-600/30 flex items-center space-x-2">
+                                    <span x-show="!isLaunchingProject">Start Autonomous Execution Pipeline ➔</span>
+                                    <span x-show="isLaunchingProject" class="flex items-center space-x-2">
+                                        <svg class="animate-spin h-3.5 w-3.5 text-white" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path></svg>
+                                        <span>Orchestrating Pipeline...</span>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
 
-            ws.onmessage = (event) => {
-                const data = JSON.parse(event.data);
-                const time = new Date().toLocaleTimeString();
+                    <!-- ACTIVE PROJECT DASHBOARD -->
+                    <template x-if="activeProject">
+                        <div class="space-y-6">
+                            
+                            <!-- PIPELINE TIMELINE VISUALIZER -->
+                            <div class="bg-zinc-900/60 border border-zinc-800/80 rounded-2xl p-6 shadow-xl space-y-6">
+                                <div class="flex flex-col sm:flex-row justify-between sm:items-center border-b border-zinc-800/80 pb-4 gap-2">
+                                    <div>
+                                        <div class="flex items-center space-x-3">
+                                            <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Active Execution Timeline</span>
+                                            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase border" :class="activeProject.status === 'APPROVED' ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20' : 'bg-amber-500/10 text-amber-400 border-amber-500/20'" x-text="activeProject.status"></span>
+                                        </div>
+                                        <h3 class="text-sm font-semibold text-zinc-100 mt-1 truncate max-w-xl" x-text="activeProject.prompt"></h3>
+                                    </div>
+                                    <div class="text-right flex flex-col items-end">
+                                        <span class="text-xs text-zinc-400">Progress</span>
+                                        <span class="text-xl font-extrabold text-indigo-400" x-text="activeProject.progress + '%'">0%</span>
+                                    </div>
+                                </div>
+
+                                <!-- Progress Bar -->
+                                <div class="w-full bg-zinc-950 rounded-full h-2 overflow-hidden border border-zinc-800">
+                                    <div class="bg-gradient-to-r from-indigo-600 via-indigo-400 to-emerald-400 h-2 rounded-full transition-all duration-500" :style="'width: ' + activeProject.progress + '%'"></div>
+                                </div>
+
+                                <!-- 7-STAGE AGENT PIPELINE NODES -->
+                                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-7 gap-3 pt-2">
+                                    <!-- 1. MANAGER -->
+                                    <div class="p-3.5 rounded-xl border flex flex-col items-center justify-between text-center transition-all"
+                                         :class="getNodeState('MANAGER') === 'ACTIVE' ? 'bg-indigo-950/80 border-indigo-500 active-pipeline-node text-white' : (getNodeState('MANAGER') === 'COMPLETED' ? 'bg-emerald-950/60 border-emerald-500/60 text-emerald-300' : 'bg-zinc-950 border-zinc-800 text-zinc-500')">
+                                        <span class="text-lg mb-1">📋</span>
+                                        <span class="text-xs font-bold">MANAGER</span>
+                                        <span x-show="getNodeState('MANAGER') === 'COMPLETED'" class="text-[9px] mt-1 text-emerald-400 font-semibold">✅ DONE</span>
+                                        <span x-show="getNodeState('MANAGER') === 'ACTIVE'" class="text-[9px] mt-1 text-indigo-300 font-semibold animate-pulse">⚡ RUNNING</span>
+                                        <span x-show="getNodeState('MANAGER') === 'PENDING'" class="text-[9px] mt-1 opacity-70">Decompose</span>
+                                    </div>
+
+                                    <!-- 2. ARCHITECT -->
+                                    <div class="p-3.5 rounded-xl border flex flex-col items-center justify-between text-center transition-all"
+                                         :class="getNodeState('ARCHITECT') === 'ACTIVE' ? 'bg-indigo-950/80 border-indigo-500 active-pipeline-node text-white' : (getNodeState('ARCHITECT') === 'COMPLETED' ? 'bg-emerald-950/60 border-emerald-500/60 text-emerald-300' : 'bg-zinc-950 border-zinc-800 text-zinc-500')">
+                                        <span class="text-lg mb-1">🏗️</span>
+                                        <span class="text-xs font-bold">ARCHITECT</span>
+                                        <span x-show="getNodeState('ARCHITECT') === 'COMPLETED'" class="text-[9px] mt-1 text-emerald-400 font-semibold">✅ DONE</span>
+                                        <span x-show="getNodeState('ARCHITECT') === 'ACTIVE'" class="text-[9px] mt-1 text-indigo-300 font-semibold animate-pulse">⚡ RUNNING</span>
+                                        <span x-show="getNodeState('ARCHITECT') === 'PENDING'" class="text-[9px] mt-1 opacity-70">Design</span>
+                                    </div>
+
+                                    <!-- 3. DEVELOPER -->
+                                    <div class="p-3.5 rounded-xl border flex flex-col items-center justify-between text-center transition-all"
+                                         :class="getNodeState('DEVELOPER') === 'ACTIVE' ? 'bg-indigo-950/80 border-indigo-500 active-pipeline-node text-white' : (getNodeState('DEVELOPER') === 'COMPLETED' ? 'bg-emerald-950/60 border-emerald-500/60 text-emerald-300' : 'bg-zinc-950 border-zinc-800 text-zinc-500')">
+                                        <span class="text-lg mb-1">💻</span>
+                                        <span class="text-xs font-bold">DEVELOPER</span>
+                                        <span x-show="getNodeState('DEVELOPER') === 'COMPLETED'" class="text-[9px] mt-1 text-emerald-400 font-semibold">✅ DONE</span>
+                                        <span x-show="getNodeState('DEVELOPER') === 'ACTIVE'" class="text-[9px] mt-1 text-indigo-300 font-semibold animate-pulse">⚡ RUNNING</span>
+                                        <span x-show="getNodeState('DEVELOPER') === 'PENDING'" class="text-[9px] mt-1 opacity-70">Code & Tools</span>
+                                    </div>
+
+                                    <!-- 4. REVIEWER -->
+                                    <div class="p-3.5 rounded-xl border flex flex-col items-center justify-between text-center transition-all"
+                                         :class="getNodeState('REVIEWER') === 'ACTIVE' ? 'bg-indigo-950/80 border-indigo-500 active-pipeline-node text-white' : (getNodeState('REVIEWER') === 'COMPLETED' ? 'bg-emerald-950/60 border-emerald-500/60 text-emerald-300' : 'bg-zinc-950 border-zinc-800 text-zinc-500')">
+                                        <span class="text-lg mb-1">🔍</span>
+                                        <span class="text-xs font-bold">REVIEWER</span>
+                                        <span x-show="getNodeState('REVIEWER') === 'COMPLETED'" class="text-[9px] mt-1 text-emerald-400 font-semibold">✅ DONE</span>
+                                        <span x-show="getNodeState('REVIEWER') === 'ACTIVE'" class="text-[9px] mt-1 text-indigo-300 font-semibold animate-pulse">⚡ RUNNING</span>
+                                        <span x-show="getNodeState('REVIEWER') === 'PENDING'" class="text-[9px] mt-1 opacity-70">QA & Security</span>
+                                    </div>
+
+                                    <!-- 5. TESTER -->
+                                    <div class="p-3.5 rounded-xl border flex flex-col items-center justify-between text-center transition-all"
+                                         :class="getNodeState('TESTER') === 'ACTIVE' ? 'bg-indigo-950/80 border-indigo-500 active-pipeline-node text-white' : (getNodeState('TESTER') === 'COMPLETED' ? 'bg-emerald-950/60 border-emerald-500/60 text-emerald-300' : 'bg-zinc-950 border-zinc-800 text-zinc-500')">
+                                        <span class="text-lg mb-1">🧪</span>
+                                        <span class="text-xs font-bold">TESTER</span>
+                                        <span x-show="getNodeState('TESTER') === 'COMPLETED'" class="text-[9px] mt-1 text-emerald-400 font-semibold">✅ DONE</span>
+                                        <span x-show="getNodeState('TESTER') === 'ACTIVE'" class="text-[9px] mt-1 text-indigo-300 font-semibold animate-pulse">⚡ RUNNING</span>
+                                        <span x-show="getNodeState('TESTER') === 'PENDING'" class="text-[9px] mt-1 opacity-70">Validation</span>
+                                    </div>
+
+                                    <!-- 6. DEBUGGER -->
+                                    <div class="p-3.5 rounded-xl border flex flex-col items-center justify-between text-center transition-all"
+                                         :class="getNodeState('DEBUGGER') === 'ACTIVE' ? 'bg-indigo-950/80 border-indigo-500 active-pipeline-node text-white' : (getNodeState('DEBUGGER') === 'COMPLETED' ? 'bg-emerald-950/60 border-emerald-500/60 text-emerald-300' : (getNodeState('DEBUGGER') === 'SKIPPED' ? 'bg-zinc-950/40 border-zinc-800/80 text-zinc-600' : 'bg-zinc-950 border-zinc-800 text-zinc-500'))">
+                                        <span class="text-lg mb-1">🐛</span>
+                                        <span class="text-xs font-bold">DEBUGGER</span>
+                                        <span x-show="getNodeState('DEBUGGER') === 'COMPLETED'" class="text-[9px] mt-1 text-emerald-400 font-semibold">✅ DONE</span>
+                                        <span x-show="getNodeState('DEBUGGER') === 'ACTIVE'" class="text-[9px] mt-1 text-indigo-300 font-semibold animate-pulse">⚡ RUNNING</span>
+                                        <span x-show="getNodeState('DEBUGGER') === 'SKIPPED'" class="text-[9px] mt-1 text-zinc-500 font-semibold">⏭️ SKIPPED</span>
+                                        <span x-show="getNodeState('DEBUGGER') === 'PENDING'" class="text-[9px] mt-1 opacity-70">RCA & Fix</span>
+                                    </div>
+
+                                    <!-- 7. APPROVED -->
+                                    <div class="p-3.5 rounded-xl border flex flex-col items-center justify-between text-center transition-all"
+                                         :class="getNodeState('APPROVED') === 'COMPLETED' ? 'bg-emerald-950/80 border-emerald-500 text-emerald-300' : 'bg-zinc-950 border-zinc-800 text-zinc-500'">
+                                        <span class="text-lg mb-1">✨</span>
+                                        <span class="text-xs font-bold">APPROVED</span>
+                                        <span x-show="getNodeState('APPROVED') === 'COMPLETED'" class="text-[9px] mt-1 text-emerald-400 font-semibold">✅ DONE</span>
+                                        <span x-show="getNodeState('APPROVED') !== 'COMPLETED'" class="text-[9px] mt-1 opacity-70">Complete</span>
+                                    </div>
+                                </div>
+
+                                <!-- Current Phase Details -->
+                                <div class="bg-zinc-950 border border-zinc-850 p-4 rounded-xl flex items-center justify-between text-xs">
+                                    <div class="flex items-center space-x-3">
+                                        <span class="h-2.5 w-2.5 rounded-full" :class="activeProject.status === 'APPROVED' ? 'bg-emerald-500' : 'bg-indigo-500 animate-ping'"></span>
+                                        <span class="text-zinc-400">Current Execution Phase:</span>
+                                        <span class="text-indigo-300 font-semibold" x-text="activeProject.current_phase || 'Initializing execution engine...'"></span>
+                                    </div>
+                                    <div class="text-zinc-400 text-[11px]" x-text="'Workspace: ' + (activeProject.workspace_path || 'Allocated sandbox')"></div>
+                                </div>
+                            </div>
+
+                            <!-- COMPLETED PROJECT DOWNLOAD CARD -->
+                            <div x-show="activeProject.status === 'APPROVED' || activeProject.status === 'DONE'" class="bg-gradient-to-r from-emerald-950/60 via-zinc-900 to-indigo-950/60 border border-emerald-500/40 rounded-2xl p-6 shadow-2xl flex flex-col sm:flex-row items-center justify-between gap-4">
+                                <div class="space-y-1">
+                                    <h4 class="text-base font-bold text-emerald-300 flex items-center space-x-2">
+                                        <span>🎉 Project Execution Completed & Approved!</span>
+                                    </h4>
+                                    <p class="text-xs text-zinc-300">All subtasks implemented, tests validated, code reviewed, and 6 documentation reports generated.</p>
+                                    <div class="flex flex-wrap gap-2 text-[10px] text-zinc-400 pt-1">
+                                        <span class="px-2 py-0.5 rounded bg-zinc-850 border border-zinc-700">📄 README.md</span>
+                                        <span class="px-2 py-0.5 rounded bg-zinc-850 border border-zinc-700">📄 REQUIREMENTS.md</span>
+                                        <span class="px-2 py-0.5 rounded bg-zinc-850 border border-zinc-700">📄 ARCHITECTURE.md</span>
+                                        <span class="px-2 py-0.5 rounded bg-zinc-850 border border-zinc-700">📄 TEST_REPORT.md</span>
+                                        <span class="px-2 py-0.5 rounded bg-zinc-850 border border-zinc-700">📄 PROJECT_REPORT.md</span>
+                                        <span class="px-2 py-0.5 rounded bg-zinc-850 border border-zinc-700">📄 CHANGELOG.md</span>
+                                    </div>
+                                </div>
+                                <button @click="downloadProjectZip(activeProject.id)" class="bg-emerald-500 hover:bg-emerald-400 text-zinc-950 font-bold px-6 py-3 rounded-xl text-xs transition shadow-lg shadow-emerald-500/20 shrink-0 flex items-center space-x-2">
+                                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                                    <span>Download Completed Project (.ZIP)</span>
+                                </button>
+                            </div>
+
+                            <!-- DETAILED TELEMETRY GRID -->
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                
+                                <!-- Files Created & Modified -->
+                                <div class="bg-zinc-900/60 border border-zinc-800/80 rounded-2xl p-5 shadow-sm space-y-3">
+                                    <h4 class="text-xs font-bold text-zinc-300 uppercase tracking-wider flex justify-between">
+                                        <span>Files Created / Modified</span>
+                                        <span class="text-indigo-400" x-text="(activeProject.created_files?.length || 0) + (activeProject.modified_files?.length || 0)">0</span>
+                                    </h4>
+                                    <div class="space-y-1.5 font-mono text-[11px] max-h-48 overflow-y-auto pr-1">
+                                        <template x-for="file in activeProject.created_files" :key="file">
+                                            <div class="flex items-center space-x-2 text-emerald-400 bg-zinc-950 px-2.5 py-1 rounded border border-zinc-850">
+                                                <span class="text-[9px] px-1 rounded bg-emerald-500/20">NEW</span>
+                                                <span class="truncate" x-text="file"></span>
+                                            </div>
+                                        </template>
+                                        <template x-for="file in activeProject.modified_files" :key="file">
+                                            <div class="flex items-center space-x-2 text-amber-400 bg-zinc-950 px-2.5 py-1 rounded border border-zinc-850">
+                                                <span class="text-[9px] px-1 rounded bg-amber-500/20">MOD</span>
+                                                <span class="truncate" x-text="file"></span>
+                                            </div>
+                                        </template>
+                                        <div x-show="!activeProject.created_files?.length && !activeProject.modified_files?.length" class="text-zinc-600 text-xs italic">// No files modified yet</div>
+                                    </div>
+                                </div>
+
+                                <!-- Test & Verification Results -->
+                                <div class="bg-zinc-900/60 border border-zinc-800/80 rounded-2xl p-5 shadow-sm space-y-3">
+                                    <h4 class="text-xs font-bold text-zinc-300 uppercase tracking-wider flex justify-between">
+                                        <span>Test & Verification Results</span>
+                                        <span class="text-emerald-400" x-text="activeProject.test_results?.length || 0">0</span>
+                                    </h4>
+                                    <div class="space-y-2 text-xs max-h-48 overflow-y-auto pr-1">
+                                        <template x-for="tr in activeProject.test_results" :key="tr.timestamp">
+                                            <div class="p-2.5 rounded-lg bg-zinc-950 border border-zinc-850 space-y-1">
+                                                <div class="flex justify-between items-center text-[11px]">
+                                                    <span class="font-semibold text-emerald-400" x-text="tr.status"></span>
+                                                    <span class="text-zinc-500" x-text="tr.passed + ' Passed | ' + tr.failed + ' Failed'"></span>
+                                                </div>
+                                                <div class="text-[10px] text-zinc-400 font-mono truncate" x-text="tr.output"></div>
+                                            </div>
+                                        </template>
+                                        <div x-show="!activeProject.test_results?.length" class="text-zinc-600 text-xs italic">// Awaiting test runs</div>
+                                    </div>
+                                </div>
+
+                                <!-- Code Review Findings -->
+                                <div class="bg-zinc-900/60 border border-zinc-800/80 rounded-2xl p-5 shadow-sm space-y-3">
+                                    <h4 class="text-xs font-bold text-zinc-300 uppercase tracking-wider flex justify-between">
+                                        <span>Review & Security QA</span>
+                                        <span class="text-indigo-400" x-text="activeProject.review_results?.length || 0">0</span>
+                                    </h4>
+                                    <div class="space-y-2 text-xs max-h-48 overflow-y-auto pr-1">
+                                        <template x-for="rr in activeProject.review_results" :key="rr.timestamp">
+                                            <div class="p-2.5 rounded-lg bg-zinc-950 border border-zinc-850 space-y-1">
+                                                <div class="flex justify-between items-center text-[11px]">
+                                                    <span class="font-semibold text-indigo-300" x-text="'Reviewer: ' + rr.status"></span>
+                                                </div>
+                                                <div class="text-[11px] text-zinc-300" x-text="rr.comments"></div>
+                                            </div>
+                                        </template>
+                                        <div x-show="!activeProject.review_results?.length" class="text-zinc-600 text-xs italic">// Code review pending</div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- TIMELINE EVENT LOG -->
+                            <div class="bg-zinc-900/60 border border-zinc-800/80 rounded-2xl p-6 shadow-sm space-y-4">
+                                <h4 class="text-xs font-bold text-zinc-300 uppercase tracking-wider">Project Timeline Event Feed</h4>
+                                <div class="bg-zinc-950 border border-zinc-850 p-4 rounded-xl font-mono text-xs max-h-60 overflow-y-auto space-y-2">
+                                    <template x-for="ev in activeProject.timeline_events" :key="ev.timestamp + ev.message">
+                                        <div class="flex items-start space-x-3 text-zinc-300 border-l-2 border-indigo-500/60 pl-3 py-1">
+                                            <span class="text-zinc-500 shrink-0" x-text="ev.timestamp?.substring(11, 19)"></span>
+                                            <span class="text-indigo-400 font-bold shrink-0" x-text="'[' + (ev.agent || 'SYSTEM') + ']'"></span>
+                                            <span class="text-zinc-200" x-text="ev.message"></span>
+                                        </div>
+                                    </template>
+                                    <div x-show="!activeProject.timeline_events?.length" class="text-zinc-600 italic">// Timeline events recorded live</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </template>
+                </div>
+
+                <!-- 1. OVERVIEW VIEW -->
+                <div x-show="currentTab === 'overview'" x-cloak class="space-y-6">
+                    <!-- Metric Cards Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <div class="bg-zinc-900/60 border border-zinc-800/80 rounded-xl p-5 shadow-sm">
+                            <p class="text-xs font-medium text-zinc-400">Total Projects</p>
+                            <h3 class="text-2xl font-bold text-zinc-100 mt-2" x-text="projectsList.length">0</h3>
+                            <span class="text-[11px] text-zinc-500 mt-1 block">Registered project workflows</span>
+                        </div>
+                        <div class="bg-zinc-900/60 border border-zinc-800/80 rounded-xl p-5 shadow-sm">
+                            <p class="text-xs font-medium text-zinc-400">Active Project</p>
+                            <h3 class="text-2xl font-bold text-indigo-400 mt-2 truncate" x-text="activeProject ? activeProject.status : 'None'">None</h3>
+                            <span class="text-[11px] text-zinc-500 mt-1 block">Pipeline execution state</span>
+                        </div>
+                        <div class="bg-zinc-900/60 border border-zinc-800/80 rounded-xl p-5 shadow-sm">
+                            <p class="text-xs font-medium text-zinc-400">Total Tasks</p>
+                            <h3 class="text-2xl font-bold text-amber-400 mt-2" x-text="tasks.length">0</h3>
+                            <span class="text-[11px] text-zinc-500 mt-1 block">Subtasks materialized</span>
+                        </div>
+                        <div class="bg-zinc-900/60 border border-zinc-800/80 rounded-xl p-5 shadow-sm">
+                            <p class="text-xs font-medium text-zinc-400">Pipeline Health</p>
+                            <h3 class="text-2xl font-bold text-emerald-400 mt-2">100%</h3>
+                            <span class="text-[11px] text-zinc-500 mt-1 block">System operational</span>
+                        </div>
+                    </div>
+
+                    <!-- Agents Quick Preview -->
+                    <div class="bg-zinc-900/40 border border-zinc-800/80 rounded-xl p-6">
+                        <h3 class="text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-4">Autonomous Multi-Agent Team</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-3">
+                            <template x-for="agent in agentsList" :key="agent.role">
+                                <div class="bg-zinc-900 border border-zinc-800 p-3.5 rounded-xl flex flex-col justify-between">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="text-xs font-medium text-zinc-200" x-text="agent.icon + ' ' + agent.role"></span>
+                                        <span class="h-2 w-2 rounded-full" :class="agent.status === 'WORKING' ? 'bg-amber-400 animate-pulse' : 'bg-emerald-500'"></span>
+                                    </div>
+                                    <p class="text-[10px] text-zinc-400 truncate" x-text="agent.status === 'WORKING' ? agent.currentAction : 'Idle / Ready'"></p>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. TASKS VIEW -->
+                <div x-show="currentTab === 'tasks'" x-cloak class="space-y-6">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                        <div>
+                            <h3 class="text-lg font-semibold text-zinc-100">Task Management</h3>
+                            <p class="text-xs text-zinc-400">Dispatch and monitor multi-agent engineering workflows.</p>
+                        </div>
+                        <button @click="showTaskModal = true" class="bg-zinc-100 hover:bg-white text-zinc-950 px-4 py-2 rounded-lg text-xs font-semibold transition shadow-sm">
+                            + Create New Task
+                        </button>
+                    </div>
+
+                    <!-- Tasks Table -->
+                    <div class="bg-zinc-900/40 border border-zinc-800/80 rounded-xl overflow-hidden">
+                        <table class="w-full text-left text-xs">
+                            <thead class="bg-zinc-900 border-b border-zinc-800 text-zinc-400 font-medium">
+                                <tr>
+                                    <th class="px-6 py-3">Task Title</th>
+                                    <th class="px-6 py-3">Assigned Agent</th>
+                                    <th class="px-6 py-3">Priority</th>
+                                    <th class="px-6 py-3">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-zinc-800/60">
+                                <template x-for="task in tasks" :key="task.id || task.title">
+                                    <tr class="hover:bg-zinc-900/30 transition">
+                                        <td class="px-6 py-4 font-medium text-zinc-200" x-text="task.title"></td>
+                                        <td class="px-6 py-4 text-zinc-400" x-text="task.assigned_to || 'DEVELOPER'"></td>
+                                        <td class="px-6 py-4">
+                                            <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-zinc-800 text-zinc-300" x-text="task.priority || 'MEDIUM'"></span>
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            <span class="px-2.5 py-1 rounded-full text-[10px] font-semibold border"
+                                                  :class="task.status === 'DONE' ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20' : (task.status === 'IN_PROGRESS' ? 'bg-amber-500/10 text-amber-400 border-amber-500/20' : 'bg-zinc-800 text-zinc-400 border-zinc-700')"
+                                                  x-text="task.status || 'PENDING'"></span>
+                                        </td>
+                                    </tr>
+                                </template>
+                                <tr x-show="tasks.length === 0">
+                                    <td colspan="4" class="px-6 py-12 text-center text-zinc-500">No tasks found. Create a project to generate subtasks.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 3. AGENTS VIEW -->
+                <div x-show="currentTab === 'agents'" x-cloak class="space-y-6">
+                    <div>
+                        <h3 class="text-lg font-semibold text-zinc-100">AI Agent Roster</h3>
+                        <p class="text-xs text-zinc-400">Specialized autonomous worker nodes powering the software pipeline.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <template x-for="agent in agentsList" :key="agent.role">
+                            <div class="bg-zinc-900/60 border border-zinc-800/80 rounded-xl p-6 flex flex-col justify-between shadow-sm">
+                                <div>
+                                    <div class="flex items-center justify-between mb-4">
+                                        <span class="text-sm font-semibold text-zinc-200" x-text="agent.icon + ' ' + agent.role"></span>
+                                        <span class="px-2.5 py-0.5 rounded-full text-[10px] font-semibold border"
+                                              :class="agent.status === 'WORKING' ? 'bg-amber-500/10 text-amber-400 border-amber-500/20' : 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'"
+                                              x-text="agent.status"></span>
+                                    </div>
+                                    <p class="text-xs text-zinc-400 mb-4" x-text="agent.description"></p>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+
+                <!-- 4. ACTIVITY VIEW -->
+                <div x-show="currentTab === 'activity'" x-cloak class="space-y-6">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <h3 class="text-lg font-semibold text-zinc-100">Live Telemetry Console</h3>
+                            <p class="text-xs text-zinc-400">Real-time WebSocket event stream from Orchestrator and EventBus.</p>
+                        </div>
+                        <button @click="logs = []" class="bg-zinc-900 hover:bg-zinc-800 text-zinc-300 border border-zinc-800 px-3 py-1.5 rounded-lg text-xs font-medium transition">
+                            Clear Console
+                        </button>
+                    </div>
+
+                    <div class="bg-zinc-950 border border-zinc-800 rounded-xl p-6 font-mono text-xs h-[520px] overflow-y-auto space-y-2 shadow-inner">
+                        <template x-for="log in logs" :key="log.id">
+                            <div class="flex items-start space-x-3 text-zinc-300 border-l-2 border-indigo-500/60 pl-3 py-1">
+                                <span class="text-zinc-500 shrink-0" x-text="log.time"></span>
+                                <span class="text-cyan-400 font-semibold shrink-0" x-text="log.type"></span>
+                                <span class="text-zinc-300 break-all" x-text="log.message"></span>
+                            </div>
+                        </template>
+                        <div x-show="logs.length === 0" class="text-zinc-600 italic">// Listening for incoming agent events on /ws...</div>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <!-- TASK CREATION MODAL -->
+    <div x-show="showTaskModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4" x-cloak>
+        <div class="bg-zinc-900 border border-zinc-800 rounded-xl max-w-md w-full p-6 space-y-4 shadow-2xl">
+            <div class="flex justify-between items-center">
+                <h3 class="text-sm font-semibold text-zinc-100">Create New Agent Task</h3>
+                <button @click="showTaskModal = false" class="text-zinc-500 hover:text-zinc-300">✕</button>
+            </div>
+            <form @submit.prevent="createTask()" class="space-y-3">
+                <div>
+                    <label class="block text-xs font-medium text-zinc-400 mb-1">Task Title</label>
+                    <input type="text" x-model="newTask.title" required placeholder="e.g., Implement secure user authentication endpoint" class="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-3 py-2 text-xs text-zinc-200 focus:outline-none focus:border-zinc-700">
+                </div>
+                <div>
+                    <label class="block text-xs font-medium text-zinc-400 mb-1">Instructions / Description</label>
+                    <textarea x-model="newTask.description" rows="3" placeholder="Specify requirements for the development team..." class="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-3 py-2 text-xs text-zinc-200 focus:outline-none focus:border-zinc-700"></textarea>
+                </div>
+                <div class="flex justify-end space-x-3 pt-2">
+                    <button type="button" @click="showTaskModal = false" class="bg-zinc-800 hover:bg-zinc-700 text-zinc-300 px-4 py-2 rounded-lg text-xs font-medium transition">Cancel</button>
+                    <button type="submit" class="bg-zinc-100 hover:bg-white text-zinc-950 px-4 py-2 rounded-lg text-xs font-semibold transition">Dispatch Task 🚀</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- FRONTEND APP LOGIC -->
+    <script>
+        function appData() {
+            return {
+                currentTab: 'projects',
+                wsConnected: false,
+                tasks: [],
+                logs: [],
+                searchQuery: '',
+                showTaskModal: false,
+                newTask: { title: '', description: '', priority: 'NORMAL', assigned_to: 'DEVELOPER' },
+                toast: { show: false, message: '', type: 'success' },
+
+                // Project Execution Platform State
+                projectPrompt: 'Build a production-ready FastAPI REST API with JWT authentication, PostgreSQL schema, user CRUD endpoints, unit test suite, and OpenAPI documentation.',
+                isLaunchingProject: false,
+                projectsList: [],
+                activeProject: null,
                 
-                const logItem = document.createElement('div');
-                logItem.className = 'border-l-2 border-indigo-500 pl-2 py-0.5';
-                logItem.innerHTML = `<span class="text-slate-500">[${time}]</span> <span class="text-cyan-400">${data.event_type || 'INFO'}:</span> ${JSON.stringify(data.payload || data)}`;
-                logContainer.appendChild(logItem);
-                logContainer.scrollTop = logContainer.scrollHeight;
+                navItems: [
+                    { id: 'projects', label: 'Autonomous Projects', icon: '<svg class="w-4 h-4 fill-none stroke-current" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>' },
+                    { id: 'overview', label: 'Overview', icon: '<svg class="w-4 h-4 fill-none stroke-current" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>' },
+                    { id: 'tasks', label: 'Tasks', icon: '<svg class="w-4 h-4 fill-none stroke-current" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012-2m-6 9l2 2 4-4"/></svg>' },
+                    { id: 'agents', label: 'Agents', icon: '<svg class="w-4 h-4 fill-none stroke-current" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>' },
+                    { id: 'activity', label: 'Activity', icon: '<svg class="w-4 h-4 fill-none stroke-current" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>' }
+                ],
 
-                if (data.source_agent || data.destination_agent) {
-                    const activeRole = data.source_agent !== 'SYSTEM' ? data.source_agent : data.destination_agent;
-                    const messageSnippet = data.payload?.title || data.payload?.message || 'Processing workflow step...';
-                    updateAgentUI(activeRole, 'WORKING', messageSnippet);
+                agentsList: [
+                    { role: 'MANAGER', icon: '📋', status: 'ONLINE', currentAction: '', description: 'Coordinates project requirements and plans subtask decomposition graph.' },
+                    { role: 'ARCHITECT', icon: '🏗️', status: 'ONLINE', currentAction: '', description: 'Designs system architecture, component schemas, and file layout.' },
+                    { role: 'DEVELOPER', icon: '💻', status: 'ONLINE', currentAction: '', description: 'Writes clean code, unit tests, and executes filesystem tools.' },
+                    { role: 'REVIEWER', icon: '🔍', status: 'ONLINE', currentAction: '', description: 'Performs code review, quality checks, and security audits.' },
+                    { role: 'TESTER', icon: '🧪', status: 'ONLINE', currentAction: '', description: 'Executes automated test suites and validates sandbox results.' },
+                    { role: 'DEBUGGER', icon: '🐛', status: 'ONLINE', currentAction: '', description: 'Performs Root Cause Analysis and fixes failing tests.' }
+                ],
+
+                getNodeState(role) {
+                    if (!this.activeProject) return 'PENDING';
+                    const status = (this.activeProject.status || '').toUpperCase();
+                    const currAgent = (this.activeProject.current_agent || '').toUpperCase();
+                    const isApproved = status === 'APPROVED' || status === 'DONE';
+
+                    if (role === 'APPROVED') {
+                        return isApproved ? 'COMPLETED' : 'PENDING';
+                    }
+
+                    if (isApproved) {
+                        if (role === 'DEBUGGER') {
+                            const hasDebuggerRun = (this.activeProject.errors_and_retries?.length > 0) ||
+                                (this.activeProject.timeline_events?.some(e => (e.agent || '').toUpperCase() === 'DEBUGGER'));
+                            return hasDebuggerRun ? 'COMPLETED' : 'SKIPPED';
+                        }
+                        return 'COMPLETED';
+                    }
+
+                    // Active project running
+                    if (currAgent === role) return 'ACTIVE';
+
+                    const order = ['MANAGER', 'ARCHITECT', 'DEVELOPER', 'REVIEWER', 'TESTER', 'DEBUGGER', 'APPROVED'];
+                    const currIdx = order.indexOf(currAgent);
+                    const roleIdx = order.indexOf(role);
+
+                    if (role === 'DEBUGGER') {
+                        const hasDebuggerRun = (this.activeProject.errors_and_retries?.length > 0) ||
+                            (this.activeProject.timeline_events?.some(e => (e.agent || '').toUpperCase() === 'DEBUGGER'));
+                        if (currIdx > roleIdx && !hasDebuggerRun) return 'SKIPPED';
+                    }
+
+                    if (currIdx > roleIdx && currIdx !== -1) return 'COMPLETED';
+                    return 'PENDING';
+                },
+
+                init() {
+                    this.fetchProjects();
+                    this.fetchTasks();
+                    this.connectWS();
+                },
+
+                showToast(msg, type = 'success') {
+                    this.toast = { show: true, message: msg, type };
+                    setTimeout(() => { this.toast.show = false; }, 3500);
+                },
+
+                async fetchProjects() {
+                    try {
+                        const res = await fetch('/projects/');
+                        if (res.ok) {
+                            this.projectsList = await res.json();
+                            if (this.projectsList.length > 0 && !this.activeProject) {
+                                this.fetchProjectDetails(this.projectsList[this.projectsList.length - 1].id);
+                            }
+                        }
+                    } catch (e) {
+                        console.error('Failed to fetch projects', e);
+                    }
+                },
+
+                async fetchProjectDetails(projectId) {
+                    try {
+                        const res = await fetch(`/projects/${projectId}`);
+                        if (res.ok) {
+                            const proj = await res.json();
+                            // Ensure progress is 100 on APPROVED
+                            if (proj.status === 'APPROVED' || proj.status === 'DONE') {
+                                proj.progress = 100.0;
+                                proj.current_phase = 'APPROVED';
+                            }
+                            this.activeProject = proj;
+                        }
+                    } catch (e) {
+                        console.error('Failed to fetch project details', e);
+                    }
+                },
+
+                async launchProject() {
+                    if (!this.projectPrompt.trim()) return;
+                    this.isLaunchingProject = true;
+
+                    try {
+                        // 1. Create project
+                        const createRes = await fetch('/projects/', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ prompt: this.projectPrompt })
+                        });
+                        
+                        if (!createRes.ok) {
+                            this.showToast('Failed to create project', 'error');
+                            this.isLaunchingProject = false;
+                            return;
+                        }
+
+                        const project = await createRes.json();
+                        this.activeProject = project;
+                        this.showToast('Project created! Launching autonomous pipeline...');
+
+                        // 2. Start full execution pipeline
+                        const startRes = await fetch(`/projects/${project.id}/start`, { method: 'POST' });
+                        if (startRes.ok) {
+                            await this.fetchProjectDetails(project.id);
+                            this.showToast('Project execution finished with status: ' + this.activeProject.status);
+                            this.fetchProjects();
+                        } else {
+                            this.showToast('Pipeline execution encountered an issue', 'error');
+                        }
+                    } catch (e) {
+                        this.showToast('Network error executing project pipeline', 'error');
+                    } finally {
+                        this.isLaunchingProject = false;
+                    }
+                },
+
+                downloadProjectZip(projectId) {
+                    if (!projectId) return;
+                    window.location.href = `/projects/${projectId}/download`;
+                },
+
+                async fetchTasks() {
+                    try {
+                        const res = await fetch('/tasks/');
+                        if (res.ok) {
+                            this.tasks = await res.json();
+                        }
+                    } catch (e) {
+                        console.error('Failed to fetch tasks', e);
+                    }
+                },
+
+                async createTask() {
+                    try {
+                        const res = await fetch('/tasks/', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(this.newTask)
+                        });
+                        if (res.ok) {
+                            this.newTask = { title: '', description: '', priority: 'NORMAL', assigned_to: 'DEVELOPER' };
+                            this.showTaskModal = false;
+                            this.showToast('Task dispatched successfully 🚀');
+                            this.fetchTasks();
+                        }
+                    } catch (e) {
+                        this.showToast('Network error creating task', 'error');
+                    }
+                },
+
+                connectWS() {
+                    const proto = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+                    const ws = new WebSocket(`${proto}//${window.location.host}/ws`);
+
+                    ws.onopen = () => { this.wsConnected = true; };
+                    ws.onmessage = (event) => {
+                        try {
+                            const data = JSON.parse(event.data);
+                            this.logs.push({
+                                id: Date.now(),
+                                time: new Date().toLocaleTimeString(),
+                                type: data.event_type || 'INFO',
+                                message: JSON.stringify(data.payload || data)
+                            });
+
+                            if (this.activeProject && (
+                                data.event_type?.startsWith('PROJECT_') ||
+                                data.event_type?.startsWith('TASK_') ||
+                                data.event_type === 'TEST_FINISHED' ||
+                                data.event_type === 'REVIEW_RESULT' ||
+                                data.event_type === 'FILE_CHANGED'
+                            )) {
+                                this.fetchProjectDetails(this.activeProject.id);
+                            }
+                        } catch (e) {
+                            this.logs.push({ id: Date.now(), time: new Date().toLocaleTimeString(), type: 'DATA', message: event.data });
+                        }
+                    };
+                    ws.onclose = () => {
+                        this.wsConnected = false;
+                        setTimeout(() => this.connectWS(), 3000);
+                    };
                 }
-            };
-
-            ws.onclose = () => {
-                statusEl.textContent = 'Disconnected (Reconnecting...)';
-                statusEl.className = 'text-red-400 font-medium';
-                indicator.className = 'h-3 w-3 rounded-full bg-red-500';
-                setTimeout(connectWS, 3000);
-            };
+            }
         }
-
-        fetchTasks();
-        connectWS();
     </script>
 </body>
 </html>

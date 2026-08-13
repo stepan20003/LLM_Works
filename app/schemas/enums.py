@@ -47,9 +47,11 @@ class AgentRole(StrEnum):
 
     SYSTEM = "SYSTEM"
     MANAGER = "MANAGER"
+    ARCHITECT = "ARCHITECT"
     DEVELOPER = "DEVELOPER"
     REVIEWER = "REVIEWER"
     TESTER = "TESTER"
+    DEBUGGER = "DEBUGGER"
 
 
 class AgentState(StrEnum):
@@ -76,10 +78,51 @@ class AgentExecutionStatus(StrEnum):
 class EventType(StrEnum):
     """Categories of events emitted across the system event bus."""
 
+    # Messaging and core task lifecycle
     MESSAGE_SENT = "MESSAGE_SENT"
     MESSAGE_RECEIVED = "MESSAGE_RECEIVED"
     TASK_CREATED = "TASK_CREATED"
     TASK_UPDATED = "TASK_UPDATED"
     TASK_COMPLETED = "TASK_COMPLETED"
-    TOOL_EXECUTED = "TOOL_EXECUTED"
     ERROR = "ERROR"
+    
+    # Project planning & timeline
+    PROJECT_CREATED = "PROJECT_CREATED"
+    PROJECT_PLANNED = "PROJECT_PLANNED"
+    PROJECT_PHASE_CHANGED = "PROJECT_PHASE_CHANGED"
+    PROJECT_TIMELINE_EVENT = "PROJECT_TIMELINE_EVENT"
+    PROJECT_APPROVED = "PROJECT_APPROVED"
+    PROJECT_FAILED = "PROJECT_FAILED"
+
+    # Agent execution loop
+    AGENT_STARTED = "AGENT_STARTED"
+    AGENT_THINKING = "AGENT_THINKING"
+    AGENT_ACTION = "AGENT_ACTION"
+    MODEL_SELECTED = "MODEL_SELECTED"
+
+    # Tools and workspace
+    TOOL_STARTED = "TOOL_STARTED"
+    TOOL_FINISHED = "TOOL_FINISHED"
+    TOOL_EXECUTED = "TOOL_EXECUTED"
+    FILE_CHANGED = "FILE_CHANGED"
+
+    # Verification and testing
+    TEST_STARTED = "TEST_STARTED"
+    TEST_FINISHED = "TEST_FINISHED"
+    DEBUG_STARTED = "DEBUG_STARTED"
+    REVIEW_STARTED = "REVIEW_STARTED"
+    REVIEW_RESULT = "REVIEW_RESULT"
+    RETRY_STARTED = "RETRY_STARTED"
+
+
+class ProjectStatus(StrEnum):
+    """Lifecycle statuses for a high-level software engineering project."""
+    CREATED = "CREATED"
+    PLANNING = "PLANNING"
+    EXECUTING = "EXECUTING"
+    TESTING = "TESTING"
+    REVIEWING = "REVIEWING"
+    BLOCKED = "BLOCKED"
+    APPROVED = "APPROVED"
+    FAILED = "FAILED"
+    DONE = "DONE"

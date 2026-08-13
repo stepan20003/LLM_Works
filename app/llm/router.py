@@ -6,19 +6,38 @@ from pydantic import Field
 
 from app.core.base_component import BaseComponent
 from app.core.base_llm import BaseLLM
+from app.llm.model_registry import model_registry
 from app.schemas.enums import AgentRole
+from app.settings.settings import settings
 
 logger = logging.getLogger(__name__)
 
 
 class LLMRouter(BaseComponent):
-    """Routes LLM requests to specific model clients depending on agent roles or task complexity."""
+    """Routes LLM requests to specific model clients depending on agent roles or task configurations."""
 
     component_id: str = "llm-router"
     default_client: BaseLLM = Field(..., description="Default fallback LLM client instance.")
     role_clients: dict[AgentRole, BaseLLM] = Field(
         default_factory=dict, description="Mapping of specialized agent roles to dedicated LLM clients."
     )
+
+    @classmethod
+    def from_settings(cls) -> "LLMRouter":
+        """Factory method to initialize LLMRouter and role clients directly from settings and model registry."""
+        default_client = model_registry.create_client("default")
+        role_clients: dict[AgentRole, BaseLLM] = {}
+
+        for role_str, model_id in settings.agent_models.items():
+            try:
+                role_enum = AgentRole(role_str.upper())
+                client = model_registry.create_client(model_id)
+                role_clients[role_enum] = client
+                logger.info(f"Configured router role '{role_enum}' with model ID '{model_id}'")
+            except ValueError:
+                logger.warning(f"Unknown AgentRole string in settings.agent_models: {role_str}")
+
+        return cls(default_client=default_client, role_clients=role_clients)
 
     async def initialize(self) -> None:
         """Initialize router and all managed LLM clients."""
@@ -30,7 +49,7 @@ class LLMRouter(BaseComponent):
                 await client.initialize()
 
         self.is_initialized = True
-        logger.info("LLMRouter initialized successfully.")
+        logger.info("LLMRouter initialized successfully with Model Registry support.")
 
     async def shutdown(self) -> None:
         """Shutdown default client and all role-specific clients."""
@@ -52,7 +71,7 @@ class LLMRouter(BaseComponent):
         return True
 
     def register_role_client(self, role: AgentRole, client: BaseLLM) -> None:
-        """Register a specialized LLM client for a specific agent role."""
+        """Register a specialized LLM client for a specific agent role dynamically."""
         self.validate_state()
         self.role_clients[role] = client
         logger.info(f"Registered dedicated LLM client for role: {role} (Model: {client.model_name})")

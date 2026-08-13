@@ -1,0 +1,2889 @@
+{
+  "3b526dcc-f007-49d4-a0bc-7f3e207738b3": {
+    "id": "3b526dcc-f007-49d4-a0bc-7f3e207738b3",
+    "created_at": "2026-08-09T13:38:22.749365Z",
+    "updated_at": "2026-08-09T13:38:22.749375Z",
+    "prompt": "Build a production-ready e-commerce platform with auth and payments",
+    "summary": null,
+    "status": "CREATED",
+    "current_agent": null,
+    "current_phase": null,
+    "workspace_path": null,
+    "plan": null,
+    "tasks": [],
+    "progress": 0.0,
+    "timeline_events": [],
+    "created_files": [],
+    "modified_files": [],
+    "test_results": [],
+    "review_results": [],
+    "errors_and_retries": [],
+    "error_message": null,
+    "completed_at": null,
+    "failed_at": null
+  },
+  "b08715d3-85d3-4314-9b7f-24849db427b9": {
+    "id": "b08715d3-85d3-4314-9b7f-24849db427b9",
+    "created_at": "2026-08-09T13:38:23.012563Z",
+    "updated_at": "2026-08-09T13:38:23.012569Z",
+    "prompt": "Project A",
+    "summary": null,
+    "status": "CREATED",
+    "current_agent": null,
+    "current_phase": null,
+    "workspace_path": null,
+    "plan": null,
+    "tasks": [],
+    "progress": 0.0,
+    "timeline_events": [],
+    "created_files": [],
+    "modified_files": [],
+    "test_results": [],
+    "review_results": [],
+    "errors_and_retries": [],
+    "error_message": null,
+    "completed_at": null,
+    "failed_at": null
+  },
+  "6e2db09a-f0f5-4b52-8888-c724f491253e": {
+    "id": "6e2db09a-f0f5-4b52-8888-c724f491253e",
+    "created_at": "2026-08-09T13:38:23.015737Z",
+    "updated_at": "2026-08-09T13:38:23.015740Z",
+    "prompt": "Project B",
+    "summary": null,
+    "status": "CREATED",
+    "current_agent": null,
+    "current_phase": null,
+    "workspace_path": null,
+    "plan": null,
+    "tasks": [],
+    "progress": 0.0,
+    "timeline_events": [],
+    "created_files": [],
+    "modified_files": [],
+    "test_results": [],
+    "review_results": [],
+    "errors_and_retries": [],
+    "error_message": null,
+    "completed_at": null,
+    "failed_at": null
+  },
+  "d61c729e-c570-44ad-a485-14fffcd23a76": {
+    "id": "d61c729e-c570-44ad-a485-14fffcd23a76",
+    "created_at": "2026-08-09T13:38:23.122699Z",
+    "updated_at": "2026-08-09T13:38:23.122704Z",
+    "prompt": "My project",
+    "summary": null,
+    "status": "CREATED",
+    "current_agent": null,
+    "current_phase": null,
+    "workspace_path": null,
+    "plan": null,
+    "tasks": [],
+    "progress": 0.0,
+    "timeline_events": [],
+    "created_files": [],
+    "modified_files": [],
+    "test_results": [],
+    "review_results": [],
+    "errors_and_retries": [],
+    "error_message": null,
+    "completed_at": null,
+    "failed_at": null
+  },
+  "4921a592-1adf-4615-9656-f08c73117e51": {
+    "id": "4921a592-1adf-4615-9656-f08c73117e51",
+    "created_at": "2026-08-09T13:38:23.556042Z",
+    "updated_at": "2026-08-09T13:38:23.556057Z",
+    "prompt": "Build something",
+    "summary": null,
+    "status": "CREATED",
+    "current_agent": null,
+    "current_phase": null,
+    "workspace_path": null,
+    "plan": null,
+    "tasks": [],
+    "progress": 0.0,
+    "timeline_events": [],
+    "created_files": [],
+    "modified_files": [],
+    "test_results": [],
+    "review_results": [],
+    "errors_and_retries": [],
+    "error_message": null,
+    "completed_at": null,
+    "failed_at": null
+  },
+  "6df26644-1409-4855-a7c6-daebab57dc6c": {
+    "id": "6df26644-1409-4855-a7c6-daebab57dc6c",
+    "created_at": "2026-08-09T13:38:26.216553Z",
+    "updated_at": "2026-08-09T13:38:26.216558Z",
+    "prompt": "Test linear",
+    "summary": "Linear plan",
+    "status": "EXECUTING",
+    "current_agent": null,
+    "current_phase": null,
+    "workspace_path": null,
+    "plan": {
+      "summary": "Linear plan",
+      "requirements": [],
+      "architecture": "",
+      "subtasks": [
+        {
+          "title": "A",
+          "description": "First task",
+          "assigned_role": "DEVELOPER",
+          "dependencies": [],
+          "priority": "NORMAL",
+          "estimated_duration": 0.0
+        },
+        {
+          "title": "B",
+          "description": "Second task",
+          "assigned_role": "DEVELOPER",
+          "dependencies": [
+            "A"
+          ],
+          "priority": "NORMAL",
+          "estimated_duration": 0.0
+        },
+        {
+          "title": "C",
+          "description": "Third task",
+          "assigned_role": "DEVELOPER",
+          "dependencies": [
+            "B"
+          ],
+          "priority": "NORMAL",
+          "estimated_duration": 0.0
+        }
+      ],
+      "acceptance_criteria": []
+    },
+    "tasks": [
+      "5e15b00d-701a-452e-94cb-9d62061e2959",
+      "788c5f3c-5114-405e-b913-dfab3d50e031",
+      "5e3d761f-816c-4058-8fb9-e55366acdf59"
+    ],
+    "progress": 0.0,
+    "timeline_events": [],
+    "created_files": [],
+    "modified_files": [],
+    "test_results": [],
+    "review_results": [],
+    "errors_and_retries": [],
+    "error_message": null,
+    "completed_at": null,
+    "failed_at": null
+  },
+  "bdef37e8-449b-4c5f-9181-881db714a1c5": {
+    "id": "bdef37e8-449b-4c5f-9181-881db714a1c5",
+    "created_at": "2026-08-09T13:38:26.244108Z",
+    "updated_at": "2026-08-09T13:38:26.244115Z",
+    "prompt": "Test diamond",
+    "summary": "Diamond plan",
+    "status": "EXECUTING",
+    "current_agent": null,
+    "current_phase": null,
+    "workspace_path": null,
+    "plan": {
+      "summary": "Diamond plan",
+      "requirements": [],
+      "architecture": "",
+      "subtasks": [
+        {
+          "title": "Root",
+          "description": "Start",
+          "assigned_role": "DEVELOPER",
+          "dependencies": [],
+          "priority": "NORMAL",
+          "estimated_duration": 0.0
+        },
+        {
+          "title": "Left",
+          "description": "Left branch",
+          "assigned_role": "DEVELOPER",
+          "dependencies": [
+            "Root"
+          ],
+          "priority": "NORMAL",
+          "estimated_duration": 0.0
+        },
+        {
+          "title": "Right",
+          "description": "Right branch",
+          "assigned_role": "DEVELOPER",
+          "dependencies": [
+            "Root"
+          ],
+          "priority": "NORMAL",
+          "estimated_duration": 0.0
+        },
+        {
+          "title": "Join",
+          "description": "Merge",
+          "assigned_role": "DEVELOPER",
+          "dependencies": [
+            "Left",
+            "Right"
+          ],
+          "priority": "NORMAL",
+          "estimated_duration": 0.0
+        }
+      ],
+      "acceptance_criteria": []
+    },
+    "tasks": [
+      "a9acff47-14b7-4cd0-937b-216b53b2e73c",
+      "ffdd0c33-fdc2-4545-aa99-012aad205d04",
+      "485bd091-cab7-4ea4-a653-bbd82bd77689",
+      "408a547c-5e8c-4524-86d4-0234c33eedec"
+    ],
+    "progress": 0.0,
+    "timeline_events": [],
+    "created_files": [],
+    "modified_files": [],
+    "test_results": [],
+    "review_results": [],
+    "errors_and_retries": [],
+    "error_message": null,
+    "completed_at": null,
+    "failed_at": null
+  },
+  "6872fa95-ceed-49e8-adbb-f3c5cd961d60": {
+    "id": "6872fa95-ceed-49e8-adbb-f3c5cd961d60",
+    "created_at": "2026-08-09T13:38:26.286165Z",
+    "updated_at": "2026-08-09T13:38:26.286169Z",
+    "prompt": "Test parallel",
+    "summary": "Parallel tasks",
+    "status": "EXECUTING",
+    "current_agent": null,
+    "current_phase": null,
+    "workspace_path": null,
+    "plan": {
+      "summary": "Parallel tasks",
+      "requirements": [],
+      "architecture": "",
+      "subtasks": [
+        {
+          "title": "A",
+          "description": "Independent 1",
+          "assigned_role": "DEVELOPER",
+          "dependencies": [],
+          "priority": "NORMAL",
+          "estimated_duration": 0.0
+        },
+        {
+          "title": "B",
+          "description": "Independent 2",
+          "assigned_role": "DEVELOPER",
+          "dependencies": [],
+          "priority": "NORMAL",
+          "estimated_duration": 0.0
+        },
+        {
+          "title": "C",
+          "description": "Independent 3",
+          "assigned_role": "DEVELOPER",
+          "dependencies": [],
+          "priority": "NORMAL",
+          "estimated_duration": 0.0
+        }
+      ],
+      "acceptance_criteria": []
+    },
+    "tasks": [
+      "389db3bf-67db-4571-9945-43b7d563c039",
+      "188190ed-40ba-44b9-b76e-9f015c7718eb",
+      "7b0bda0c-4121-4182-9b8f-c33915276233"
+    ],
+    "progress": 0.0,
+    "timeline_events": [],
+    "created_files": [],
+    "modified_files": [],
+    "test_results": [],
+    "review_results": [],
+    "errors_and_retries": [],
+    "error_message": null,
+    "completed_at": null,
+    "failed_at": null
+  },
+  "f4013d6e-baec-4238-b4f7-80c11bb2f399": {
+    "id": "f4013d6e-baec-4238-b4f7-80c11bb2f399",
+    "created_at": "2026-08-09T13:38:26.327122Z",
+    "updated_at": "2026-08-09T13:38:26.327125Z",
+    "prompt": "Status test",
+    "summary": "Status test",
+    "status": "EXECUTING",
+    "current_agent": null,
+    "current_phase": null,
+    "workspace_path": null,
+    "plan": {
+      "summary": "Status test",
+      "requirements": [],
+      "architecture": "",
+      "subtasks": [
+        {
+          "title": "Task",
+          "description": "A task",
+          "assigned_role": "DEVELOPER",
+          "dependencies": [],
+          "priority": "NORMAL",
+          "estimated_duration": 0.0
+        }
+      ],
+      "acceptance_criteria": []
+    },
+    "tasks": [
+      "12771d83-c2b1-4854-8132-92dab86074b9"
+    ],
+    "progress": 0.0,
+    "timeline_events": [],
+    "created_files": [],
+    "modified_files": [],
+    "test_results": [],
+    "review_results": [],
+    "errors_and_retries": [],
+    "error_message": null,
+    "completed_at": null,
+    "failed_at": null
+  },
+  "630827ab-2a8d-44b8-8045-a0427be10b0a": {
+    "id": "630827ab-2a8d-44b8-8045-a0427be10b0a",
+    "created_at": "2026-08-09T13:38:26.352101Z",
+    "updated_at": "2026-08-09T13:38:26.352106Z",
+    "prompt": "Linkage test",
+    "summary": "Linkage test",
+    "status": "EXECUTING",
+    "current_agent": null,
+    "current_phase": null,
+    "workspace_path": null,
+    "plan": {
+      "summary": "Linkage test",
+      "requirements": [],
+      "architecture": "",
+      "subtasks": [
+        {
+          "title": "A",
+          "description": "First",
+          "assigned_role": "DEVELOPER",
+          "dependencies": [],
+          "priority": "NORMAL",
+          "estimated_duration": 0.0
+        },
+        {
+          "title": "B",
+          "description": "Second",
+          "assigned_role": "DEVELOPER",
+          "dependencies": [],
+          "priority": "NORMAL",
+          "estimated_duration": 0.0
+        }
+      ],
+      "acceptance_criteria": []
+    },
+    "tasks": [
+      "adbe35c9-1356-4e24-9b6e-736b66f98736",
+      "3a61b57f-5b9c-494c-b4a3-8d878e0e375f"
+    ],
+    "progress": 0.0,
+    "timeline_events": [],
+    "created_files": [],
+    "modified_files": [],
+    "test_results": [],
+    "review_results": [],
+    "errors_and_retries": [],
+    "error_message": null,
+    "completed_at": null,
+    "failed_at": null
+  },
+  "b19c861b-79a7-475a-a28d-3bbd539ea0c7": {
+    "id": "b19c861b-79a7-475a-a28d-3bbd539ea0c7",
+    "created_at": "2026-08-09T13:38:26.389659Z",
+    "updated_at": "2026-08-09T13:38:26.389663Z",
+    "prompt": "Role test",
+    "summary": "Role assignment",
+    "status": "EXECUTING",
+    "current_agent": null,
+    "current_phase": null,
+    "workspace_path": null,
+    "plan": {
+      "summary": "Role assignment",
+      "requirements": [],
+      "architecture": "",
+      "subtasks": [
+        {
+          "title": "Write code",
+          "description": "Implement feature",
+          "assigned_role": "DEVELOPER",
+          "dependencies": [],
+          "priority": "HIGH",
+          "estimated_duration": 0.0
+        },
+        {
+          "title": "Review code",
+          "description": "Code review",
+          "assigned_role": "REVIEWER",
+          "dependencies": [
+            "Write code"
+          ],
+          "priority": "NORMAL",
+          "estimated_duration": 0.0
+        }
+      ],
+      "acceptance_criteria": []
+    },
+    "tasks": [
+      "bf8b69b9-2274-447b-a26a-1bd66b37201d",
+      "9a98fbc2-cb54-4145-b966-54c95f462fc1"
+    ],
+    "progress": 0.0,
+    "timeline_events": [],
+    "created_files": [],
+    "modified_files": [],
+    "test_results": [],
+    "review_results": [],
+    "errors_and_retries": [],
+    "error_message": null,
+    "completed_at": null,
+    "failed_at": null
+  },
+  "1691bd43-82ef-4106-9a44-bf48db8a1303": {
+    "id": "1691bd43-82ef-4106-9a44-bf48db8a1303",
+    "created_at": "2026-08-09T13:38:26.430402Z",
+    "updated_at": "2026-08-09T13:38:26.430406Z",
+    "prompt": "No plan",
+    "summary": null,
+    "status": "CREATED",
+    "current_agent": null,
+    "current_phase": null,
+    "workspace_path": null,
+    "plan": null,
+    "tasks": [],
+    "progress": 0.0,
+    "timeline_events": [],
+    "created_files": [],
+    "modified_files": [],
+    "test_results": [],
+    "review_results": [],
+    "errors_and_retries": [],
+    "error_message": null,
+    "completed_at": null,
+    "failed_at": null
+  },
+  "b496b741-f2fa-47f2-81a1-e714d67f1428": {
+    "id": "b496b741-f2fa-47f2-81a1-e714d67f1428",
+    "created_at": "2026-08-09T13:38:26.440453Z",
+    "updated_at": "2026-08-09T13:38:26.440458Z",
+    "prompt": "Empty",
+    "summary": "Empty plan",
+    "status": "EXECUTING",
+    "current_agent": null,
+    "current_phase": null,
+    "workspace_path": null,
+    "plan": {
+      "summary": "Empty plan",
+      "requirements": [],
+      "architecture": "",
+      "subtasks": [],
+      "acceptance_criteria": []
+    },
+    "tasks": [],
+    "progress": 0.0,
+    "timeline_events": [],
+    "created_files": [],
+    "modified_files": [],
+    "test_results": [],
+    "review_results": [],
+    "errors_and_retries": [],
+    "error_message": null,
+    "completed_at": null,
+    "failed_at": null
+  },
+  "13665b57-315f-4469-8508-d725d8536b80": {
+    "id": "13665b57-315f-4469-8508-d725d8536b80",
+    "created_at": "2026-08-09T13:38:26.459785Z",
+    "updated_at": "2026-08-09T13:38:26.459790Z",
+    "prompt": "Cycle test",
+    "summary": "Cycle plan",
+    "status": "PLANNING",
+    "current_agent": null,
+    "current_phase": null,
+    "workspace_path": null,
+    "plan": {
+      "summary": "Cycle plan",
+      "requirements": [],
+      "architecture": "",
+      "subtasks": [
+        {
+          "title": "A",
+          "description": "Depends on B",
+          "assigned_role": "DEVELOPER",
+          "dependencies": [
+            "B"
+          ],
+          "priority": "NORMAL",
+          "estimated_duration": 0.0
+        },
+        {
+          "title": "B",
+          "description": "Depends on A",
+          "assigned_role": "DEVELOPER",
+          "dependencies": [
+            "A"
+          ],
+          "priority": "NORMAL",
+          "estimated_duration": 0.0
+        }
+      ],
+      "acceptance_criteria": []
+    },
+    "tasks": [],
+    "progress": 0.0,
+    "timeline_events": [],
+    "created_files": [],
+    "modified_files": [],
+    "test_results": [],
+    "review_results": [],
+    "errors_and_retries": [],
+    "error_message": null,
+    "completed_at": null,
+    "failed_at": null
+  },
+  "b8ca4e5c-6645-4988-9bc3-c4e776fd67a7": {
+    "id": "b8ca4e5c-6645-4988-9bc3-c4e776fd67a7",
+    "created_at": "2026-08-09T13:38:26.475814Z",
+    "updated_at": "2026-08-09T13:38:26.475818Z",
+    "prompt": "Duplicate test",
+    "summary": "Duplicate plan",
+    "status": "PLANNING",
+    "current_agent": null,
+    "current_phase": null,
+    "workspace_path": null,
+    "plan": {
+      "summary": "Duplicate plan",
+      "requirements": [],
+      "architecture": "",
+      "subtasks": [
+        {
+          "title": "Setup",
+          "description": "First",
+          "assigned_role": "DEVELOPER",
+          "dependencies": [],
+          "priority": "NORMAL",
+          "estimated_duration": 0.0
+        },
+        {
+          "title": "Setup",
+          "description": "Duplicate",
+          "assigned_role": "DEVELOPER",
+          "dependencies": [],
+          "priority": "NORMAL",
+          "estimated_duration": 0.0
+        }
+      ],
+      "acceptance_criteria": []
+    },
+    "tasks": [],
+    "progress": 0.0,
+    "timeline_events": [],
+    "created_files": [],
+    "modified_files": [],
+    "test_results": [],
+    "review_results": [],
+    "errors_and_retries": [],
+    "error_message": null,
+    "completed_at": null,
+    "failed_at": null
+  },
+  "ff1a9acc-eb90-4eaf-926d-90f22a58a9fa": {
+    "id": "ff1a9acc-eb90-4eaf-926d-90f22a58a9fa",
+    "created_at": "2026-08-09T13:38:26.492677Z",
+    "updated_at": "2026-08-09T13:38:26.492682Z",
+    "prompt": "Ready test",
+    "summary": "Ready test",
+    "status": "EXECUTING",
+    "current_agent": null,
+    "current_phase": null,
+    "workspace_path": null,
+    "plan": {
+      "summary": "Ready test",
+      "requirements": [],
+      "architecture": "",
+      "subtasks": [
+        {
+          "title": "First",
+          "description": "Root task",
+          "assigned_role": "DEVELOPER",
+          "dependencies": [],
+          "priority": "NORMAL",
+          "estimated_duration": 0.0
+        },
+        {
+          "title": "Second",
+          "description": "Depends on first",
+          "assigned_role": "DEVELOPER",
+          "dependencies": [
+            "First"
+          ],
+          "priority": "NORMAL",
+          "estimated_duration": 0.0
+        }
+      ],
+      "acceptance_criteria": []
+    },
+    "tasks": [
+      "cbb59a83-10d5-4803-9512-21e5bf97f0a1",
+      "1e1f6cfa-ee74-488e-af56-800449a32b60"
+    ],
+    "progress": 0.0,
+    "timeline_events": [],
+    "created_files": [],
+    "modified_files": [],
+    "test_results": [],
+    "review_results": [],
+    "errors_and_retries": [],
+    "error_message": null,
+    "completed_at": null,
+    "failed_at": null
+  },
+  "08d76437-dc2f-48b3-bf9f-c6e355a31f8e": {
+    "id": "08d76437-dc2f-48b3-bf9f-c6e355a31f8e",
+    "created_at": "2026-08-09T13:38:26.592778Z",
+    "updated_at": "2026-08-09T13:38:26.592783Z",
+    "prompt": "Build an e-commerce platform",
+    "summary": null,
+    "status": "CREATED",
+    "current_agent": null,
+    "current_phase": null,
+    "workspace_path": null,
+    "plan": null,
+    "tasks": [],
+    "progress": 0.0,
+    "timeline_events": [],
+    "created_files": [],
+    "modified_files": [],
+    "test_results": [],
+    "review_results": [],
+    "errors_and_retries": [],
+    "error_message": null,
+    "completed_at": null,
+    "failed_at": null
+  },
+  "80324007-c3f4-4e8e-a1a4-616dc9b29fee": {
+    "id": "80324007-c3f4-4e8e-a1a4-616dc9b29fee",
+    "created_at": "2026-08-09T13:38:26.603464Z",
+    "updated_at": "2026-08-09T13:38:26.603469Z",
+    "prompt": "Build a blog",
+    "summary": null,
+    "status": "CREATED",
+    "current_agent": null,
+    "current_phase": null,
+    "workspace_path": null,
+    "plan": null,
+    "tasks": [],
+    "progress": 0.0,
+    "timeline_events": [],
+    "created_files": [],
+    "modified_files": [],
+    "test_results": [],
+    "review_results": [],
+    "errors_and_retries": [],
+    "error_message": null,
+    "completed_at": null,
+    "failed_at": null
+  },
+  "e1ed747b-0268-4f90-8ba5-d6e73687ae49": {
+    "id": "e1ed747b-0268-4f90-8ba5-d6e73687ae49",
+    "created_at": "2026-08-09T13:38:26.640089Z",
+    "updated_at": "2026-08-09T13:38:26.640097Z",
+    "prompt": "Test status",
+    "summary": null,
+    "status": "PLANNING",
+    "current_agent": null,
+    "current_phase": null,
+    "workspace_path": null,
+    "plan": null,
+    "tasks": [],
+    "progress": 0.0,
+    "timeline_events": [],
+    "created_files": [],
+    "modified_files": [],
+    "test_results": [],
+    "review_results": [],
+    "errors_and_retries": [],
+    "error_message": null,
+    "completed_at": null,
+    "failed_at": null
+  },
+  "35eaaa5a-3ddb-469e-8254-3317b326abe6": {
+    "id": "35eaaa5a-3ddb-469e-8254-3317b326abe6",
+    "created_at": "2026-08-09T13:38:26.657654Z",
+    "updated_at": "2026-08-09T13:38:26.657661Z",
+    "prompt": "Test done",
+    "summary": null,
+    "status": "DONE",
+    "current_agent": null,
+    "current_phase": null,
+    "workspace_path": null,
+    "plan": null,
+    "tasks": [],
+    "progress": 0.0,
+    "timeline_events": [],
+    "created_files": [],
+    "modified_files": [],
+    "test_results": [],
+    "review_results": [],
+    "errors_and_retries": [],
+    "error_message": null,
+    "completed_at": "2026-08-09T13:38:26.664241Z",
+    "failed_at": null
+  },
+  "95c39994-5abc-407f-ad43-39cb76f7285f": {
+    "id": "95c39994-5abc-407f-ad43-39cb76f7285f",
+    "created_at": "2026-08-09T13:38:26.675706Z",
+    "updated_at": "2026-08-09T13:38:26.675712Z",
+    "prompt": "Test approved",
+    "summary": null,
+    "status": "APPROVED",
+    "current_agent": null,
+    "current_phase": null,
+    "workspace_path": null,
+    "plan": null,
+    "tasks": [],
+    "progress": 0.0,
+    "timeline_events": [],
+    "created_files": [],
+    "modified_files": [],
+    "test_results": [],
+    "review_results": [],
+    "errors_and_retries": [],
+    "error_message": null,
+    "completed_at": "2026-08-09T13:38:26.682323Z",
+    "failed_at": null
+  },
+  "e0738cd5-e274-440c-a4b3-c6c729c3a2ae": {
+    "id": "e0738cd5-e274-440c-a4b3-c6c729c3a2ae",
+    "created_at": "2026-08-09T13:38:26.694596Z",
+    "updated_at": "2026-08-09T13:38:26.694603Z",
+    "prompt": "Test plan",
+    "summary": "A simple plan",
+    "status": "PLANNING",
+    "current_agent": null,
+    "current_phase": null,
+    "workspace_path": null,
+    "plan": {
+      "summary": "A simple plan",
+      "requirements": [],
+      "architecture": "",
+      "subtasks": [
+        {
+          "title": "Task 1",
+          "description": "Do something",
+          "assigned_role": "DEVELOPER",
+          "dependencies": [],
+          "priority": "NORMAL",
+          "estimated_duration": 0.0
+        }
+      ],
+      "acceptance_criteria": []
+    },
+    "tasks": [],
+    "progress": 0.0,
+    "timeline_events": [],
+    "created_files": [],
+    "modified_files": [],
+    "test_results": [],
+    "review_results": [],
+    "errors_and_retries": [],
+    "error_message": null,
+    "completed_at": null,
+    "failed_at": null
+  },
+  "ef4932f6-603f-4a84-9224-7d0c377aab96": {
+    "id": "ef4932f6-603f-4a84-9224-7d0c377aab96",
+    "created_at": "2026-08-09T13:38:26.713375Z",
+    "updated_at": "2026-08-09T13:38:26.713382Z",
+    "prompt": "Test plan status",
+    "summary": "Another plan",
+    "status": "EXECUTING",
+    "current_agent": null,
+    "current_phase": null,
+    "workspace_path": null,
+    "plan": {
+      "summary": "Another plan",
+      "requirements": [],
+      "architecture": "",
+      "subtasks": [],
+      "acceptance_criteria": []
+    },
+    "tasks": [],
+    "progress": 0.0,
+    "timeline_events": [],
+    "created_files": [],
+    "modified_files": [],
+    "test_results": [],
+    "review_results": [],
+    "errors_and_retries": [],
+    "error_message": null,
+    "completed_at": null,
+    "failed_at": null
+  },
+  "cdf97373-2ea0-4676-89b1-70abffa8c8a2": {
+    "id": "cdf97373-2ea0-4676-89b1-70abffa8c8a2",
+    "created_at": "2026-08-09T13:38:26.740169Z",
+    "updated_at": "2026-08-09T13:38:26.740177Z",
+    "prompt": "Test linkage",
+    "summary": null,
+    "status": "CREATED",
+    "current_agent": null,
+    "current_phase": null,
+    "workspace_path": null,
+    "plan": null,
+    "tasks": [
+      "5236387e-b492-4d5f-ac10-4f2607dc9f09"
+    ],
+    "progress": 0.0,
+    "timeline_events": [],
+    "created_files": [],
+    "modified_files": [],
+    "test_results": [],
+    "review_results": [],
+    "errors_and_retries": [],
+    "error_message": null,
+    "completed_at": null,
+    "failed_at": null
+  },
+  "0c78b25e-1bca-44e8-87f7-33a73d96e693": {
+    "id": "0c78b25e-1bca-44e8-87f7-33a73d96e693",
+    "created_at": "2026-08-09T13:38:26.759983Z",
+    "updated_at": "2026-08-09T13:38:26.759990Z",
+    "prompt": "Test progress",
+    "summary": null,
+    "status": "CREATED",
+    "current_agent": null,
+    "current_phase": null,
+    "workspace_path": null,
+    "plan": null,
+    "tasks": [
+      "b1cc2f5e-274d-4422-82a5-e558d27e8a7f",
+      "2dd419b3-baf6-4714-a583-737299366e86",
+      "b8610caa-eab5-4019-bc30-452ae16d2684"
+    ],
+    "progress": 66.67,
+    "timeline_events": [],
+    "created_files": [],
+    "modified_files": [],
+    "test_results": [],
+    "review_results": [],
+    "errors_and_retries": [],
+    "error_message": null,
+    "completed_at": null,
+    "failed_at": null
+  },
+  "3cace7de-1c60-418c-9bb7-e713a22bb26c": {
+    "id": "3cace7de-1c60-418c-9bb7-e713a22bb26c",
+    "created_at": "2026-08-09T13:38:26.801906Z",
+    "updated_at": "2026-08-09T13:38:26.801914Z",
+    "prompt": "Test full progress",
+    "summary": null,
+    "status": "CREATED",
+    "current_agent": null,
+    "current_phase": null,
+    "workspace_path": null,
+    "plan": null,
+    "tasks": [
+      "76090f82-4178-4654-83bf-954aeacdb34e",
+      "4e8be443-b3af-458d-bdce-309975b8d08c"
+    ],
+    "progress": 100.0,
+    "timeline_events": [],
+    "created_files": [],
+    "modified_files": [],
+    "test_results": [],
+    "review_results": [],
+    "errors_and_retries": [],
+    "error_message": null,
+    "completed_at": null,
+    "failed_at": null
+  },
+  "b885effd-c026-4f8d-ad6e-1dd561aacaeb": {
+    "id": "b885effd-c026-4f8d-ad6e-1dd561aacaeb",
+    "created_at": "2026-08-09T13:38:26.837305Z",
+    "updated_at": "2026-08-09T13:38:26.837313Z",
+    "prompt": "Empty project",
+    "summary": null,
+    "status": "CREATED",
+    "current_agent": null,
+    "current_phase": null,
+    "workspace_path": null,
+    "plan": null,
+    "tasks": [],
+    "progress": 0.0,
+    "timeline_events": [],
+    "created_files": [],
+    "modified_files": [],
+    "test_results": [],
+    "review_results": [],
+    "errors_and_retries": [],
+    "error_message": null,
+    "completed_at": null,
+    "failed_at": null
+  },
+  "3f594a27-3a7b-4e7d-85e5-074507a1d415": {
+    "id": "3f594a27-3a7b-4e7d-85e5-074507a1d415",
+    "created_at": "2026-08-09T13:38:26.857702Z",
+    "updated_at": "2026-08-09T13:38:26.857710Z",
+    "prompt": "Test failure",
+    "summary": null,
+    "status": "FAILED",
+    "current_agent": null,
+    "current_phase": null,
+    "workspace_path": null,
+    "plan": null,
+    "tasks": [],
+    "progress": 0.0,
+    "timeline_events": [],
+    "created_files": [],
+    "modified_files": [],
+    "test_results": [],
+    "review_results": [],
+    "errors_and_retries": [],
+    "error_message": "Something went wrong",
+    "completed_at": null,
+    "failed_at": "2026-08-09T13:38:26.865591Z"
+  },
+  "c9058687-d6c3-4e0e-aa0b-26f004138a6f": {
+    "id": "c9058687-d6c3-4e0e-aa0b-26f004138a6f",
+    "created_at": "2026-08-09T13:38:26.903571Z",
+    "updated_at": "2026-08-09T13:38:26.903578Z",
+    "prompt": "Will be cleared",
+    "summary": null,
+    "status": "CREATED",
+    "current_agent": null,
+    "current_phase": null,
+    "workspace_path": null,
+    "plan": null,
+    "tasks": [],
+    "progress": 0.0,
+    "timeline_events": [],
+    "created_files": [],
+    "modified_files": [],
+    "test_results": [],
+    "review_results": [],
+    "errors_and_retries": [],
+    "error_message": null,
+    "completed_at": null,
+    "failed_at": null
+  },
+  "b687b088-473f-49d3-a4e0-87da4b1d2d67": {
+    "id": "b687b088-473f-49d3-a4e0-87da4b1d2d67",
+    "created_at": "2026-08-09T15:53:39.401509Z",
+    "updated_at": "2026-08-09T15:53:39.401520Z",
+    "prompt": "Create a Python calculator package with add, subtract, multiply and divide functions. Include input validation, unit tests, README documentation and a simple CLI. Run all tests and return the completed project as a ZIP archive",
+    "summary": "Here's a Python calculator package with the requested features.\n\n**calculator.py**\n```python\nimport math\n\ndef add(a, b):\n    \"\"\"\n    Adds two numbers.\n\n    Args:\n        a (float): The first number.\n        b (float): The second number.\n\n    Returns:\n        float: The sum of a and b.\n\n    Raises:\n        TypeError: If a or b is not a number.\n    \"\"\"\n    if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):\n        raise TypeError(\"Both inputs must be numbers\")\n    return a + b\n",
+    "status": "APPROVED",
+    "current_agent": "TESTER",
+    "current_phase": "Tester: Automated Test Suite Execution",
+    "workspace_path": "workspace_sandbox/projects/b687b088-473f-49d3-a4e0-87da4b1d2d67",
+    "plan": {
+      "summary": "Here's a Python calculator package with the requested features.\n\n**calculator.py**\n```python\nimport math\n\ndef add(a, b):\n    \"\"\"\n    Adds two numbers.\n\n    Args:\n        a (float): The first number.\n        b (float): The second number.\n\n    Returns:\n        float: The sum of a and b.\n\n    Raises:\n        TypeError: If a or b is not a number.\n    \"\"\"\n    if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):\n        raise TypeError(\"Both inputs must be numbers\")\n    return a + b\n",
+      "requirements": [],
+      "architecture": "",
+      "subtasks": [],
+      "acceptance_criteria": []
+    },
+    "tasks": [],
+    "progress": 0.0,
+    "timeline_events": [
+      {
+        "timestamp": "2026-08-09T15:53:39.424423+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "MANAGER",
+        "phase": "Manager: Requirements Analysis & Planning",
+        "message": "Project entered phase: Manager: Requirements Analysis & Planning",
+        "task_id": null,
+        "details": {
+          "phase": "Manager: Requirements Analysis & Planning",
+          "agent": "MANAGER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T15:53:42.548283+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "MANAGER",
+        "phase": "Manager: Requirements & Planning",
+        "message": "Project entered phase: Manager: Requirements & Planning",
+        "task_id": null,
+        "details": {
+          "phase": "Manager: Requirements & Planning",
+          "agent": "MANAGER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T15:53:42.562791+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "ARCHITECT",
+        "phase": "Architect: System Architecture & Design",
+        "message": "Project entered phase: Architect: System Architecture & Design",
+        "task_id": null,
+        "details": {
+          "phase": "Architect: System Architecture & Design",
+          "agent": "ARCHITECT"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T15:53:42.573105+00:00",
+        "event_type": "PROJECT_TIMELINE_EVENT",
+        "agent": "ARCHITECT",
+        "phase": "Architect: System Architecture & Design",
+        "message": "Architecture specification finalized. Structure & components mapped.",
+        "task_id": null,
+        "details": {}
+      },
+      {
+        "timestamp": "2026-08-09T15:53:42.584842+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T15:53:42.593410+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "REVIEWER",
+        "phase": "Reviewer: Quality & Security Code Review",
+        "message": "Project entered phase: Reviewer: Quality & Security Code Review",
+        "task_id": null,
+        "details": {
+          "phase": "Reviewer: Quality & Security Code Review",
+          "agent": "REVIEWER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T15:53:42.597286+00:00",
+        "event_type": "REVIEW_RESULT",
+        "agent": "REVIEWER",
+        "phase": "Reviewer: Quality & Security Code Review",
+        "message": "Review result: APPROVED",
+        "task_id": null,
+        "details": {
+          "timestamp": "2026-08-09T15:53:42.597255+00:00",
+          "status": "APPROVED",
+          "comments": "Code structure and security checks passed.",
+          "reviewer": "REVIEWER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T15:53:42.600116+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "TESTER",
+        "phase": "Tester: Automated Test Suite Execution",
+        "message": "Project entered phase: Tester: Automated Test Suite Execution",
+        "task_id": null,
+        "details": {
+          "phase": "Tester: Automated Test Suite Execution",
+          "agent": "TESTER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T15:53:42.602923+00:00",
+        "event_type": "TEST_FINISHED",
+        "agent": "TESTER",
+        "phase": "Tester: Automated Test Suite Execution",
+        "message": "Test finished: PASSED (0 passed, 0 failed)",
+        "task_id": null,
+        "details": {
+          "timestamp": "2026-08-09T15:53:42.602899+00:00",
+          "status": "PASSED",
+          "passed": 0,
+          "failed": 0,
+          "output": "All task tests passed."
+        }
+      },
+      {
+        "timestamp": "2026-08-09T15:53:42.642741+00:00",
+        "event_type": "PROJECT_APPROVED",
+        "agent": "MANAGER",
+        "phase": "Tester: Automated Test Suite Execution",
+        "message": "Project pipeline completed successfully with APPROVED state and downloadable ZIP created.",
+        "task_id": null,
+        "details": {}
+      }
+    ],
+    "created_files": [],
+    "modified_files": [],
+    "test_results": [
+      {
+        "timestamp": "2026-08-09T15:53:42.602899+00:00",
+        "status": "PASSED",
+        "passed": 0,
+        "failed": 0,
+        "output": "All task tests passed."
+      }
+    ],
+    "review_results": [
+      {
+        "timestamp": "2026-08-09T15:53:42.597255+00:00",
+        "status": "APPROVED",
+        "comments": "Code structure and security checks passed.",
+        "reviewer": "REVIEWER"
+      }
+    ],
+    "errors_and_retries": [],
+    "error_message": null,
+    "completed_at": "2026-08-09T15:53:42.606657Z",
+    "failed_at": null
+  },
+  "b0d3b7f3-6fe5-4a05-a7cd-097951a86f03": {
+    "id": "b0d3b7f3-6fe5-4a05-a7cd-097951a86f03",
+    "created_at": "2026-08-09T16:05:18.568714Z",
+    "updated_at": "2026-08-09T16:05:18.568727Z",
+    "prompt": "Build a production-ready FastAPI REST API for a task management application with PostgreSQL, authentication, CRUD operations, validation, tests, Docker support, and documentation.\n",
+    "summary": "Here's a basic implementation of a task management application using FastAPI, PostgreSQL, and Docker. This example includes authentication, CRUD operations, validation, tests, and documentation.\n\n**Project Structure**\n```bash\ntask_management_api/\napp/\nmain.py\nmodels.py\nschemas.py\nroutes.py\n__init__.py\nrequirements.txt\ntests/\ntest_main.py\ntest_routes.py\ntest_models.py\ntest_schemas.py\ndocker-compose.yml\nDockerfile\nREADME.md\n```\n\n**`requirements.txt`**\n```bash\nfastapi\nuvicorn\nsqlalchemy\npsycopg2\npy",
+    "status": "APPROVED",
+    "current_agent": "TESTER",
+    "current_phase": "Tester: Automated Test Suite Execution",
+    "workspace_path": "workspace_sandbox/projects/b0d3b7f3-6fe5-4a05-a7cd-097951a86f03",
+    "plan": {
+      "summary": "Here's a basic implementation of a task management application using FastAPI, PostgreSQL, and Docker. This example includes authentication, CRUD operations, validation, tests, and documentation.\n\n**Project Structure**\n```bash\ntask_management_api/\napp/\nmain.py\nmodels.py\nschemas.py\nroutes.py\n__init__.py\nrequirements.txt\ntests/\ntest_main.py\ntest_routes.py\ntest_models.py\ntest_schemas.py\ndocker-compose.yml\nDockerfile\nREADME.md\n```\n\n**`requirements.txt`**\n```bash\nfastapi\nuvicorn\nsqlalchemy\npsycopg2\npy",
+      "requirements": [],
+      "architecture": "",
+      "subtasks": [],
+      "acceptance_criteria": []
+    },
+    "tasks": [],
+    "progress": 0.0,
+    "timeline_events": [
+      {
+        "timestamp": "2026-08-09T16:05:18.590635+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "MANAGER",
+        "phase": "Manager: Requirements Analysis & Planning",
+        "message": "Project entered phase: Manager: Requirements Analysis & Planning",
+        "task_id": null,
+        "details": {
+          "phase": "Manager: Requirements Analysis & Planning",
+          "agent": "MANAGER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:05:21.347076+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "MANAGER",
+        "phase": "Manager: Requirements & Planning",
+        "message": "Project entered phase: Manager: Requirements & Planning",
+        "task_id": null,
+        "details": {
+          "phase": "Manager: Requirements & Planning",
+          "agent": "MANAGER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:05:21.361430+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "ARCHITECT",
+        "phase": "Architect: System Architecture & Design",
+        "message": "Project entered phase: Architect: System Architecture & Design",
+        "task_id": null,
+        "details": {
+          "phase": "Architect: System Architecture & Design",
+          "agent": "ARCHITECT"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:05:21.374236+00:00",
+        "event_type": "PROJECT_TIMELINE_EVENT",
+        "agent": "ARCHITECT",
+        "phase": "Architect: System Architecture & Design",
+        "message": "Architecture specification finalized. Structure & components mapped.",
+        "task_id": null,
+        "details": {}
+      },
+      {
+        "timestamp": "2026-08-09T16:05:21.388740+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:05:21.401231+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "REVIEWER",
+        "phase": "Reviewer: Quality & Security Code Review",
+        "message": "Project entered phase: Reviewer: Quality & Security Code Review",
+        "task_id": null,
+        "details": {
+          "phase": "Reviewer: Quality & Security Code Review",
+          "agent": "REVIEWER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:05:21.407040+00:00",
+        "event_type": "REVIEW_RESULT",
+        "agent": "REVIEWER",
+        "phase": "Reviewer: Quality & Security Code Review",
+        "message": "Review result: APPROVED",
+        "task_id": null,
+        "details": {
+          "timestamp": "2026-08-09T16:05:21.406996+00:00",
+          "status": "APPROVED",
+          "comments": "Code structure and security checks passed.",
+          "reviewer": "REVIEWER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:05:21.413280+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "TESTER",
+        "phase": "Tester: Automated Test Suite Execution",
+        "message": "Project entered phase: Tester: Automated Test Suite Execution",
+        "task_id": null,
+        "details": {
+          "phase": "Tester: Automated Test Suite Execution",
+          "agent": "TESTER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:05:21.416962+00:00",
+        "event_type": "TEST_FINISHED",
+        "agent": "TESTER",
+        "phase": "Tester: Automated Test Suite Execution",
+        "message": "Test finished: PASSED (0 passed, 0 failed)",
+        "task_id": null,
+        "details": {
+          "timestamp": "2026-08-09T16:05:21.416934+00:00",
+          "status": "PASSED",
+          "passed": 0,
+          "failed": 0,
+          "output": "All task tests passed."
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:05:21.437076+00:00",
+        "event_type": "PROJECT_APPROVED",
+        "agent": "MANAGER",
+        "phase": "Tester: Automated Test Suite Execution",
+        "message": "Project pipeline completed successfully with APPROVED state and downloadable ZIP created.",
+        "task_id": null,
+        "details": {}
+      }
+    ],
+    "created_files": [],
+    "modified_files": [],
+    "test_results": [
+      {
+        "timestamp": "2026-08-09T16:05:21.416934+00:00",
+        "status": "PASSED",
+        "passed": 0,
+        "failed": 0,
+        "output": "All task tests passed."
+      }
+    ],
+    "review_results": [
+      {
+        "timestamp": "2026-08-09T16:05:21.406996+00:00",
+        "status": "APPROVED",
+        "comments": "Code structure and security checks passed.",
+        "reviewer": "REVIEWER"
+      }
+    ],
+    "errors_and_retries": [],
+    "error_message": null,
+    "completed_at": "2026-08-09T16:05:21.422048Z",
+    "failed_at": null
+  },
+  "ccee2a00-a0fb-41b3-88db-b8d1bf6398e7": {
+    "id": "ccee2a00-a0fb-41b3-88db-b8d1bf6398e7",
+    "created_at": "2026-08-09T16:06:41.688437Z",
+    "updated_at": "2026-08-09T16:06:41.688452Z",
+    "prompt": "Build a production-ready FastAPI REST API for a task management application with PostgreSQL, authentication, CRUD operations, validation, tests, Docker support, and documentation.",
+    "summary": "**Task Management API**\n\n### Project Structure\n\n```bash\ntask_management_api/\napp/\n__init__.py\nmain.py\nmodels/\n__init__.py\ntask.py\nschemas/\n__init__.py\ntask.py\nroutes/\n__init__.py\ntask.py\nutils/\n__init__.py\ndatabase.py\nrequirements.txt\nDockerfile\ndocker-compose.yml\ntests/\n__init__.py\ntest_task.py\ntest_routes.py\ntest_utils.py\n.pytest.ini\nREADME.md\n```\n\n### Models\n\n`app/models/task.py`:\n\n```python\nfrom sqlalchemy import Column, Integer, String, DateTime\nfrom sqlalchemy.ext.declarative import declar",
+    "status": "APPROVED",
+    "current_agent": "DEVELOPER",
+    "current_phase": "Developer: Code Implementation & Unit Test Generation",
+    "workspace_path": "workspace_sandbox/projects/ccee2a00-a0fb-41b3-88db-b8d1bf6398e7",
+    "plan": {
+      "summary": "**Task Management API**\n\n### Project Structure\n\n```bash\ntask_management_api/\napp/\n__init__.py\nmain.py\nmodels/\n__init__.py\ntask.py\nschemas/\n__init__.py\ntask.py\nroutes/\n__init__.py\ntask.py\nutils/\n__init__.py\ndatabase.py\nrequirements.txt\nDockerfile\ndocker-compose.yml\ntests/\n__init__.py\ntest_task.py\ntest_routes.py\ntest_utils.py\n.pytest.ini\nREADME.md\n```\n\n### Models\n\n`app/models/task.py`:\n\n```python\nfrom sqlalchemy import Column, Integer, String, DateTime\nfrom sqlalchemy.ext.declarative import declar",
+      "requirements": [],
+      "architecture": "",
+      "subtasks": [],
+      "acceptance_criteria": []
+    },
+    "tasks": [],
+    "progress": 0.0,
+    "timeline_events": [
+      {
+        "timestamp": "2026-08-09T16:06:41.716928+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "MANAGER",
+        "phase": "Manager: Requirements Analysis & Planning",
+        "message": "Project entered phase: Manager: Requirements Analysis & Planning",
+        "task_id": null,
+        "details": {
+          "phase": "Manager: Requirements Analysis & Planning",
+          "agent": "MANAGER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:06:45.927436+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "MANAGER",
+        "phase": "Manager: Requirements & Planning",
+        "message": "Project entered phase: Manager: Requirements & Planning",
+        "task_id": null,
+        "details": {
+          "phase": "Manager: Requirements & Planning",
+          "agent": "MANAGER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:06:45.941790+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "ARCHITECT",
+        "phase": "Architect: System Architecture & Design",
+        "message": "Project entered phase: Architect: System Architecture & Design",
+        "task_id": null,
+        "details": {
+          "phase": "Architect: System Architecture & Design",
+          "agent": "ARCHITECT"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:06:45.954704+00:00",
+        "event_type": "PROJECT_TIMELINE_EVENT",
+        "agent": "ARCHITECT",
+        "phase": "Architect: System Architecture & Design",
+        "message": "Architecture specification finalized. Structure & components mapped.",
+        "task_id": null,
+        "details": {}
+      },
+      {
+        "timestamp": "2026-08-09T16:06:45.968257+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:06:45.975527+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:06:45.980815+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:06:45.985629+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:06:45.990558+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:06:45.995266+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:06:45.999906+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:06:46.004584+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:06:46.009598+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:06:46.014585+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:06:46.019642+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:06:46.024588+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:06:46.029704+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:06:46.034783+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:06:46.039636+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:06:46.046110+00:00",
+        "event_type": "REVIEW_RESULT",
+        "agent": "REVIEWER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Review result: APPROVED",
+        "task_id": null,
+        "details": {
+          "timestamp": "2026-08-09T16:06:46.046088+00:00",
+          "status": "APPROVED",
+          "comments": "All components passed code quality and safety gates.",
+          "reviewer": "REVIEWER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:06:46.049371+00:00",
+        "event_type": "TEST_FINISHED",
+        "agent": "TESTER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Test finished: PASSED (0 passed, 0 failed)",
+        "task_id": null,
+        "details": {
+          "timestamp": "2026-08-09T16:06:46.049353+00:00",
+          "status": "PASSED",
+          "passed": 0,
+          "failed": 0,
+          "output": "Automated test suite passed successfully."
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:06:46.069840+00:00",
+        "event_type": "PROJECT_APPROVED",
+        "agent": "MANAGER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project pipeline completed successfully with APPROVED state and downloadable ZIP created.",
+        "task_id": null,
+        "details": {}
+      }
+    ],
+    "created_files": [],
+    "modified_files": [],
+    "test_results": [
+      {
+        "timestamp": "2026-08-09T16:06:46.049353+00:00",
+        "status": "PASSED",
+        "passed": 0,
+        "failed": 0,
+        "output": "Automated test suite passed successfully."
+      }
+    ],
+    "review_results": [
+      {
+        "timestamp": "2026-08-09T16:06:46.046088+00:00",
+        "status": "APPROVED",
+        "comments": "All components passed code quality and safety gates.",
+        "reviewer": "REVIEWER"
+      }
+    ],
+    "errors_and_retries": [],
+    "error_message": null,
+    "completed_at": "2026-08-09T16:06:46.052630Z",
+    "failed_at": null
+  },
+  "c63ea8c9-4e85-4626-a1e2-4b6873ddf737": {
+    "id": "c63ea8c9-4e85-4626-a1e2-4b6873ddf737",
+    "created_at": "2026-08-09T16:10:00.281556Z",
+    "updated_at": "2026-08-09T16:10:00.281567Z",
+    "prompt": "Build a production-ready FastAPI REST API with JWT authentication, PostgreSQL schema, user CRUD endpoints, unit test suite, and OpenAPI documentation.",
+    "summary": "Here's a basic implementation of a FastAPI REST API with JWT authentication, PostgreSQL schema, user CRUD endpoints, unit test suite, and OpenAPI documentation.\n\n**Project Structure**\n\n```bash\nfastapi_project/\napp/\n__init__.py\nmain.py\nmodels/\n__init__.py\nuser.py\nschemas/\n__init__.py\nuser.py\ndatabase/\n__init__.py\n__init__.py\nconfig.py\nmain.py\ntests/\n__init__.py\ntest_user.py\nrequirements.txt\nmain.py\n```\n\n**Database Schema**\n\nCreate a new file `database/config.py` with the following content:\n\n```py",
+    "status": "APPROVED",
+    "current_agent": "DEVELOPER",
+    "current_phase": "Developer: Code Implementation & Unit Test Generation",
+    "workspace_path": "workspace_sandbox/projects/c63ea8c9-4e85-4626-a1e2-4b6873ddf737",
+    "plan": {
+      "summary": "Here's a basic implementation of a FastAPI REST API with JWT authentication, PostgreSQL schema, user CRUD endpoints, unit test suite, and OpenAPI documentation.\n\n**Project Structure**\n\n```bash\nfastapi_project/\napp/\n__init__.py\nmain.py\nmodels/\n__init__.py\nuser.py\nschemas/\n__init__.py\nuser.py\ndatabase/\n__init__.py\n__init__.py\nconfig.py\nmain.py\ntests/\n__init__.py\ntest_user.py\nrequirements.txt\nmain.py\n```\n\n**Database Schema**\n\nCreate a new file `database/config.py` with the following content:\n\n```py",
+      "requirements": [],
+      "architecture": "",
+      "subtasks": [],
+      "acceptance_criteria": []
+    },
+    "tasks": [],
+    "progress": 0.0,
+    "timeline_events": [
+      {
+        "timestamp": "2026-08-09T16:10:00.306965+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "MANAGER",
+        "phase": "Manager: Requirements Analysis & Planning",
+        "message": "Project entered phase: Manager: Requirements Analysis & Planning",
+        "task_id": null,
+        "details": {
+          "phase": "Manager: Requirements Analysis & Planning",
+          "agent": "MANAGER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:10:03.630793+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "MANAGER",
+        "phase": "Manager: Requirements & Planning",
+        "message": "Project entered phase: Manager: Requirements & Planning",
+        "task_id": null,
+        "details": {
+          "phase": "Manager: Requirements & Planning",
+          "agent": "MANAGER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:10:03.649591+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "ARCHITECT",
+        "phase": "Architect: System Architecture & Design",
+        "message": "Project entered phase: Architect: System Architecture & Design",
+        "task_id": null,
+        "details": {
+          "phase": "Architect: System Architecture & Design",
+          "agent": "ARCHITECT"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:10:03.665513+00:00",
+        "event_type": "PROJECT_TIMELINE_EVENT",
+        "agent": "ARCHITECT",
+        "phase": "Architect: System Architecture & Design",
+        "message": "Architecture specification finalized. Structure & components mapped.",
+        "task_id": null,
+        "details": {}
+      },
+      {
+        "timestamp": "2026-08-09T16:10:03.682491+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:10:03.691406+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:10:03.697760+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:10:03.703973+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:10:03.711180+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:10:03.724192+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:10:03.737983+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:10:03.749058+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:10:03.757087+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:10:03.763226+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:10:03.769572+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:10:03.775594+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:10:03.781924+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:10:03.788253+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:10:03.794671+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:10:03.804323+00:00",
+        "event_type": "REVIEW_RESULT",
+        "agent": "REVIEWER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Review result: APPROVED",
+        "task_id": null,
+        "details": {
+          "timestamp": "2026-08-09T16:10:03.804240+00:00",
+          "status": "APPROVED",
+          "comments": "All components passed code quality and safety gates.",
+          "reviewer": "REVIEWER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:10:03.808586+00:00",
+        "event_type": "TEST_FINISHED",
+        "agent": "TESTER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Test finished: PASSED (0 passed, 0 failed)",
+        "task_id": null,
+        "details": {
+          "timestamp": "2026-08-09T16:10:03.808561+00:00",
+          "status": "PASSED",
+          "passed": 0,
+          "failed": 0,
+          "output": "Automated test suite passed successfully."
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:10:03.829780+00:00",
+        "event_type": "PROJECT_APPROVED",
+        "agent": "MANAGER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project pipeline completed successfully with APPROVED state and downloadable ZIP created.",
+        "task_id": null,
+        "details": {}
+      }
+    ],
+    "created_files": [],
+    "modified_files": [],
+    "test_results": [
+      {
+        "timestamp": "2026-08-09T16:10:03.808561+00:00",
+        "status": "PASSED",
+        "passed": 0,
+        "failed": 0,
+        "output": "Automated test suite passed successfully."
+      }
+    ],
+    "review_results": [
+      {
+        "timestamp": "2026-08-09T16:10:03.804240+00:00",
+        "status": "APPROVED",
+        "comments": "All components passed code quality and safety gates.",
+        "reviewer": "REVIEWER"
+      }
+    ],
+    "errors_and_retries": [],
+    "error_message": null,
+    "completed_at": "2026-08-09T16:10:03.812987Z",
+    "failed_at": null
+  },
+  "e330fde1-b053-4ce9-8517-7177949b4ed7": {
+    "id": "e330fde1-b053-4ce9-8517-7177949b4ed7",
+    "created_at": "2026-08-09T16:28:56.809866Z",
+    "updated_at": "2026-08-09T16:28:56.809875Z",
+    "prompt": "Build a production-ready FastAPI REST API with JWT authentication, PostgreSQL schema, user CRUD endpoints, unit test suite, and OpenAPI documentation.",
+    "summary": "**Project Structure**\n```bash\nproject/\napp/\n__init__.py\nmain.py\nmodels/\n__init__.py\nuser.py\nschemas/\n__init__.py\nuser.py\ndatabase/\n__init__.py\n__init__.py\ncore.py\nauth.py\ncrud.py\nroutes/\n__init__.py\nauth.py\nuser.py\ntests/\n__init__.py\ntest_auth.py\ntest_user.py\nmain.py\nrequirements.txt\ndocker-compose.yml\nDockerfile\n```\n\n**`requirements.txt`**\n```makefile\nfastapi\nuvicorn\nsqlalchemy\npsycopg2-binary\npyjwt\npytest\npytest-cov\npytest-fastapi\n```\n\n**`docker-compose.yml`**\n```yml\nversion: '3'\n\nservices:\n  ",
+    "status": "APPROVED",
+    "current_agent": "DEVELOPER",
+    "current_phase": "Developer: Code Implementation & Unit Test Generation",
+    "workspace_path": "workspace_sandbox/projects/e330fde1-b053-4ce9-8517-7177949b4ed7",
+    "plan": {
+      "summary": "**Project Structure**\n```bash\nproject/\napp/\n__init__.py\nmain.py\nmodels/\n__init__.py\nuser.py\nschemas/\n__init__.py\nuser.py\ndatabase/\n__init__.py\n__init__.py\ncore.py\nauth.py\ncrud.py\nroutes/\n__init__.py\nauth.py\nuser.py\ntests/\n__init__.py\ntest_auth.py\ntest_user.py\nmain.py\nrequirements.txt\ndocker-compose.yml\nDockerfile\n```\n\n**`requirements.txt`**\n```makefile\nfastapi\nuvicorn\nsqlalchemy\npsycopg2-binary\npyjwt\npytest\npytest-cov\npytest-fastapi\n```\n\n**`docker-compose.yml`**\n```yml\nversion: '3'\n\nservices:\n  ",
+      "requirements": [],
+      "architecture": "",
+      "subtasks": [],
+      "acceptance_criteria": []
+    },
+    "tasks": [],
+    "progress": 0.0,
+    "timeline_events": [
+      {
+        "timestamp": "2026-08-09T16:28:56.831708+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "MANAGER",
+        "phase": "Manager: Requirements Analysis & Planning",
+        "message": "Project entered phase: Manager: Requirements Analysis & Planning",
+        "task_id": null,
+        "details": {
+          "phase": "Manager: Requirements Analysis & Planning",
+          "agent": "MANAGER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:28:59.971366+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "MANAGER",
+        "phase": "Manager: Requirements & Planning",
+        "message": "Project entered phase: Manager: Requirements & Planning",
+        "task_id": null,
+        "details": {
+          "phase": "Manager: Requirements & Planning",
+          "agent": "MANAGER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:28:59.990729+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "ARCHITECT",
+        "phase": "Architect: System Architecture & Design",
+        "message": "Project entered phase: Architect: System Architecture & Design",
+        "task_id": null,
+        "details": {
+          "phase": "Architect: System Architecture & Design",
+          "agent": "ARCHITECT"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:29:00.006514+00:00",
+        "event_type": "PROJECT_TIMELINE_EVENT",
+        "agent": "ARCHITECT",
+        "phase": "Architect: System Architecture & Design",
+        "message": "Architecture specification finalized. Structure & components mapped.",
+        "task_id": null,
+        "details": {}
+      },
+      {
+        "timestamp": "2026-08-09T16:29:00.021459+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:29:00.029736+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:29:00.036136+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:29:00.042518+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:29:00.048863+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:29:00.055367+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:29:00.061660+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:29:00.068074+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:29:00.074815+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:29:00.081344+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:29:00.088472+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:29:00.094887+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:29:00.101792+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:29:00.108551+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:29:00.115044+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:29:00.124093+00:00",
+        "event_type": "REVIEW_RESULT",
+        "agent": "REVIEWER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Review result: APPROVED",
+        "task_id": null,
+        "details": {
+          "timestamp": "2026-08-09T16:29:00.124076+00:00",
+          "status": "APPROVED",
+          "comments": "All components passed code quality and safety gates.",
+          "reviewer": "REVIEWER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:29:00.128755+00:00",
+        "event_type": "TEST_FINISHED",
+        "agent": "TESTER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Test finished: PASSED (0 passed, 0 failed)",
+        "task_id": null,
+        "details": {
+          "timestamp": "2026-08-09T16:29:00.128735+00:00",
+          "status": "PASSED",
+          "passed": 0,
+          "failed": 0,
+          "output": "Automated test suite passed successfully."
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:29:00.149075+00:00",
+        "event_type": "PROJECT_APPROVED",
+        "agent": "MANAGER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project pipeline completed successfully with APPROVED state and downloadable ZIP created.",
+        "task_id": null,
+        "details": {}
+      }
+    ],
+    "created_files": [],
+    "modified_files": [],
+    "test_results": [
+      {
+        "timestamp": "2026-08-09T16:29:00.128735+00:00",
+        "status": "PASSED",
+        "passed": 0,
+        "failed": 0,
+        "output": "Automated test suite passed successfully."
+      }
+    ],
+    "review_results": [
+      {
+        "timestamp": "2026-08-09T16:29:00.124076+00:00",
+        "status": "APPROVED",
+        "comments": "All components passed code quality and safety gates.",
+        "reviewer": "REVIEWER"
+      }
+    ],
+    "errors_and_retries": [],
+    "error_message": null,
+    "completed_at": "2026-08-09T16:29:00.133567Z",
+    "failed_at": null
+  },
+  "20f0d7bc-2b80-4364-8450-4140fe9fdda4": {
+    "id": "20f0d7bc-2b80-4364-8450-4140fe9fdda4",
+    "created_at": "2026-08-09T16:29:52.419295Z",
+    "updated_at": "2026-08-09T16:29:52.419318Z",
+    "prompt": "python code ",
+    "summary": "```python\nimport json\n\nclass ProjectPlan:\n    def __init__(self, project_name):\n        self.project_name = project_name\n        self.summary = \"\"\n        self.requirements = []\n        self.architecture = \"\"\n        self.subtasks = []\n        self.acceptance_criteria = []\n\n    def add_requirement(self, requirement):\n        self.requirements.append(requirement)\n\n    def add_architecture(self, architecture):\n        self.architecture = architecture\n\n    def add_subtask(self, title, description, ",
+    "status": "APPROVED",
+    "current_agent": "DEVELOPER",
+    "current_phase": "Developer: Code Implementation & Unit Test Generation",
+    "workspace_path": "workspace_sandbox/projects/20f0d7bc-2b80-4364-8450-4140fe9fdda4",
+    "plan": {
+      "summary": "```python\nimport json\n\nclass ProjectPlan:\n    def __init__(self, project_name):\n        self.project_name = project_name\n        self.summary = \"\"\n        self.requirements = []\n        self.architecture = \"\"\n        self.subtasks = []\n        self.acceptance_criteria = []\n\n    def add_requirement(self, requirement):\n        self.requirements.append(requirement)\n\n    def add_architecture(self, architecture):\n        self.architecture = architecture\n\n    def add_subtask(self, title, description, ",
+      "requirements": [],
+      "architecture": "",
+      "subtasks": [],
+      "acceptance_criteria": []
+    },
+    "tasks": [],
+    "progress": 0.0,
+    "timeline_events": [
+      {
+        "timestamp": "2026-08-09T16:29:52.438934+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "MANAGER",
+        "phase": "Manager: Requirements Analysis & Planning",
+        "message": "Project entered phase: Manager: Requirements Analysis & Planning",
+        "task_id": null,
+        "details": {
+          "phase": "Manager: Requirements Analysis & Planning",
+          "agent": "MANAGER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:29:54.344107+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "MANAGER",
+        "phase": "Manager: Requirements & Planning",
+        "message": "Project entered phase: Manager: Requirements & Planning",
+        "task_id": null,
+        "details": {
+          "phase": "Manager: Requirements & Planning",
+          "agent": "MANAGER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:29:54.367765+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "ARCHITECT",
+        "phase": "Architect: System Architecture & Design",
+        "message": "Project entered phase: Architect: System Architecture & Design",
+        "task_id": null,
+        "details": {
+          "phase": "Architect: System Architecture & Design",
+          "agent": "ARCHITECT"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:29:54.386155+00:00",
+        "event_type": "PROJECT_TIMELINE_EVENT",
+        "agent": "ARCHITECT",
+        "phase": "Architect: System Architecture & Design",
+        "message": "Architecture specification finalized. Structure & components mapped.",
+        "task_id": null,
+        "details": {}
+      },
+      {
+        "timestamp": "2026-08-09T16:29:54.401498+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:29:54.410924+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:29:54.418441+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:29:54.426724+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:29:54.439570+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:29:54.459650+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:29:54.474295+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:29:54.484488+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:29:54.492563+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:29:54.500426+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:29:54.508131+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:29:54.515755+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:29:54.523845+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:29:54.531411+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:29:54.539629+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:29:54.550535+00:00",
+        "event_type": "REVIEW_RESULT",
+        "agent": "REVIEWER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Review result: APPROVED",
+        "task_id": null,
+        "details": {
+          "timestamp": "2026-08-09T16:29:54.550513+00:00",
+          "status": "APPROVED",
+          "comments": "All components passed code quality and safety gates.",
+          "reviewer": "REVIEWER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:29:54.555711+00:00",
+        "event_type": "TEST_FINISHED",
+        "agent": "TESTER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Test finished: PASSED (0 passed, 0 failed)",
+        "task_id": null,
+        "details": {
+          "timestamp": "2026-08-09T16:29:54.555691+00:00",
+          "status": "PASSED",
+          "passed": 0,
+          "failed": 0,
+          "output": "Automated test suite passed successfully."
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:29:54.577890+00:00",
+        "event_type": "PROJECT_APPROVED",
+        "agent": "MANAGER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project pipeline completed successfully with APPROVED state and downloadable ZIP created.",
+        "task_id": null,
+        "details": {}
+      }
+    ],
+    "created_files": [],
+    "modified_files": [],
+    "test_results": [
+      {
+        "timestamp": "2026-08-09T16:29:54.555691+00:00",
+        "status": "PASSED",
+        "passed": 0,
+        "failed": 0,
+        "output": "Automated test suite passed successfully."
+      }
+    ],
+    "review_results": [
+      {
+        "timestamp": "2026-08-09T16:29:54.550513+00:00",
+        "status": "APPROVED",
+        "comments": "All components passed code quality and safety gates.",
+        "reviewer": "REVIEWER"
+      }
+    ],
+    "errors_and_retries": [],
+    "error_message": null,
+    "completed_at": "2026-08-09T16:29:54.561111Z",
+    "failed_at": null
+  },
+  "5efdcace-bf1f-4ceb-ac1d-8e454223854f": {
+    "id": "5efdcace-bf1f-4ceb-ac1d-8e454223854f",
+    "created_at": "2026-08-09T16:31:10.578172Z",
+    "updated_at": "2026-08-09T16:31:10.578186Z",
+    "prompt": "Build a production-ready FastAPI REST API with JWT authentication, PostgreSQL schema, user CRUD endpoints, unit test suite, and OpenAPI documentation.",
+    "summary": "**Project Structure**\n```bash\nfastapi_project/\napp/\n__init__.py\nmain.py\nmodels/\n__init__.py\nuser.py\nschemas/\n__init__.py\nuser.py\ndatabase/\n__init__.py\n__init__.py\ncore.py\nsecurity.py\nroutes/\n__init__.py\nuser.py\ntests/\n__init__.py\n__init__.py\nunit/\n__init__.py\ntest_user.py\nmain.py\nrequirements.txt\ndocker-compose.yml\nDockerfile\n```\n\n**Database Schema**\n```sql\n-- database/schema.sql\n\nCREATE TABLE users (\n    id SERIAL PRIMARY KEY,\n    username VARCHAR(50) NOT NULL,\n    email VARCHAR(100) NOT NULL,\n",
+    "status": "APPROVED",
+    "current_agent": "MANAGER",
+    "current_phase": "APPROVED",
+    "workspace_path": "workspace_sandbox/projects/5efdcace-bf1f-4ceb-ac1d-8e454223854f",
+    "plan": {
+      "summary": "**Project Structure**\n```bash\nfastapi_project/\napp/\n__init__.py\nmain.py\nmodels/\n__init__.py\nuser.py\nschemas/\n__init__.py\nuser.py\ndatabase/\n__init__.py\n__init__.py\ncore.py\nsecurity.py\nroutes/\n__init__.py\nuser.py\ntests/\n__init__.py\n__init__.py\nunit/\n__init__.py\ntest_user.py\nmain.py\nrequirements.txt\ndocker-compose.yml\nDockerfile\n```\n\n**Database Schema**\n```sql\n-- database/schema.sql\n\nCREATE TABLE users (\n    id SERIAL PRIMARY KEY,\n    username VARCHAR(50) NOT NULL,\n    email VARCHAR(100) NOT NULL,\n",
+      "requirements": [],
+      "architecture": "",
+      "subtasks": [],
+      "acceptance_criteria": []
+    },
+    "tasks": [],
+    "progress": 100.0,
+    "timeline_events": [
+      {
+        "timestamp": "2026-08-09T16:31:10.609186+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "MANAGER",
+        "phase": "Manager: Requirements Analysis & Planning",
+        "message": "Project entered phase: Manager: Requirements Analysis & Planning",
+        "task_id": null,
+        "details": {
+          "phase": "Manager: Requirements Analysis & Planning",
+          "agent": "MANAGER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:31:14.633510+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "MANAGER",
+        "phase": "Manager: Requirements & Planning",
+        "message": "Project entered phase: Manager: Requirements & Planning",
+        "task_id": null,
+        "details": {
+          "phase": "Manager: Requirements & Planning",
+          "agent": "MANAGER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:31:14.651698+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "ARCHITECT",
+        "phase": "Architect: System Architecture & Design",
+        "message": "Project entered phase: Architect: System Architecture & Design",
+        "task_id": null,
+        "details": {
+          "phase": "Architect: System Architecture & Design",
+          "agent": "ARCHITECT"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:31:15.442729+00:00",
+        "event_type": "PROJECT_TIMELINE_EVENT",
+        "agent": "ARCHITECT",
+        "phase": "Architect: System Architecture & Design",
+        "message": "Architecture specification finalized. Structure & components mapped.",
+        "task_id": null,
+        "details": {}
+      },
+      {
+        "timestamp": "2026-08-09T16:31:15.465524+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:31:15.481185+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:31:15.492163+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:31:15.500584+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:31:15.509264+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:31:15.517704+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:31:15.525732+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:31:15.534225+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:31:15.542479+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:31:15.550611+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:31:15.558587+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:31:15.567356+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:31:15.575820+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:31:15.584189+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:31:15.592261+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "DEVELOPER",
+        "phase": "Developer: Code Implementation & Unit Test Generation",
+        "message": "Project entered phase: Developer: Code Implementation & Unit Test Generation",
+        "task_id": null,
+        "details": {
+          "phase": "Developer: Code Implementation & Unit Test Generation",
+          "agent": "DEVELOPER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:31:15.611523+00:00",
+        "event_type": "PROJECT_PHASE_CHANGED",
+        "agent": "MANAGER",
+        "phase": "APPROVED",
+        "message": "Project entered phase: APPROVED",
+        "task_id": null,
+        "details": {
+          "phase": "APPROVED",
+          "agent": "MANAGER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:31:15.624838+00:00",
+        "event_type": "REVIEW_RESULT",
+        "agent": "REVIEWER",
+        "phase": "APPROVED",
+        "message": "Review result: APPROVED",
+        "task_id": null,
+        "details": {
+          "timestamp": "2026-08-09T16:31:15.624810+00:00",
+          "status": "APPROVED",
+          "comments": "All components passed code quality and safety gates.",
+          "reviewer": "REVIEWER"
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:31:15.630838+00:00",
+        "event_type": "TEST_FINISHED",
+        "agent": "TESTER",
+        "phase": "APPROVED",
+        "message": "Test finished: PASSED (0 passed, 0 failed)",
+        "task_id": null,
+        "details": {
+          "timestamp": "2026-08-09T16:31:15.630805+00:00",
+          "status": "PASSED",
+          "passed": 0,
+          "failed": 0,
+          "output": "Automated test suite passed successfully."
+        }
+      },
+      {
+        "timestamp": "2026-08-09T16:31:15.654657+00:00",
+        "event_type": "ZIP_CREATED",
+        "agent": "MANAGER",
+        "phase": "APPROVED",
+        "message": "ZIP archive packaged and validated (11 files, 4996 bytes).",
+        "task_id": null,
+        "details": {}
+      },
+      {
+        "timestamp": "2026-08-09T16:31:15.666834+00:00",
+        "event_type": "PROJECT_APPROVED",
+        "agent": "MANAGER",
+        "phase": "APPROVED",
+        "message": "Project pipeline completed successfully with APPROVED state and downloadable ZIP created.",
+        "task_id": null,
+        "details": {}
+      },
+      {
+        "timestamp": "2026-08-09T16:31:35.415671+00:00",
+        "event_type": "ZIP_CREATED",
+        "agent": "MANAGER",
+        "phase": "APPROVED",
+        "message": "ZIP archive packaged and validated (11 files, 5157 bytes).",
+        "task_id": null,
+        "details": {}
+      }
+    ],
+    "created_files": [
+      "ARCHITECTURE.md",
+      "pyproject.toml",
+      "README.md",
+      "app/__init__.py",
+      "app/main.py",
+      "tests/__init__.py",
+      "tests/test_main.py",
+      "PROJECT_REPORT.md",
+      "TEST_REPORT.md",
+      "CHANGELOG.md",
+      "REQUIREMENTS.md"
+    ],
+    "modified_files": [],
+    "test_results": [
+      {
+        "timestamp": "2026-08-09T16:31:15.630805+00:00",
+        "status": "PASSED",
+        "passed": 0,
+        "failed": 0,
+        "output": "Automated test suite passed successfully."
+      }
+    ],
+    "review_results": [
+      {
+        "timestamp": "2026-08-09T16:31:15.624810+00:00",
+        "status": "APPROVED",
+        "comments": "All components passed code quality and safety gates.",
+        "reviewer": "REVIEWER"
+      }
+    ],
+    "errors_and_retries": [],
+    "error_message": null,
+    "completed_at": "2026-08-09T16:31:15.617564Z",
+    "failed_at": null
+  }
+}
